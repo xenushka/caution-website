@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+		<div class="container">
+			<main>
+				<div class="video-background-container">
+					<video autoplay muted loop playsinline style="left: 85%; width: 200px !important" class="video-background">
+						    <source src="assets/videos/landing-globe.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+								<source src="assets/videos/landing-globe.webm" type='video/webm; codecs="vp8, vorbis"' />
+					</video>
+					<div class="gradient-overlay"></div>
+				</div>
+
+				<section class="flex-container video-content landing-page-header">
+					<div class="flex-container-inner">
+						<div class="text-well">
+							<h1 class="gradient-text hero-header landing-header">security without blind trust</h1>
+							<p class="hero-p" style="margin-top: 0px">Distrust secures mission-critical infrastructure by applying a first principles approach. No guessing, only verifiable security.</p>
+							<br />
+							<a href="/contact.html" class="mega button">Work with us</a>
+							<br />
+						</div>
+					</div>
+					<div class="flex-container-inner">
+					</div>
+				</section>
+
+				{% include companies-carousel.html %}
+
+				<section>
+					<div class="center">
+						<div class="capsule">what we do</div>
+					</div>
+					<br>
+					<div class="gradient-text-h3">
+					<h3 class="gradient-text center" style="padding-bottom: 5px">our services today, our vision for tomorrow</h3>
+					</div>
+					<br>
+					<div class="flex-container">
+						<a href="/services.html" class="arrow-link">
+							<div class="flex-container-inner card landing-offerings">
+								<div class="text-well">
+									<h4>services</h4>
+									<p class="text-description-desktop">Our threat model approach stems from working with high-risk organizations, uniquely positioning us to offer advice and support others can't. We specialize in system architecture design, security assessments, penetration tests, code reviews, and infrastructure hardening.</p>
+									<p class="text-description-mobile">We specialize in system architecture design, security assessments, penetration tests, code reviews, and infrastructure hardening. Hire Distrust to solve your hardest security challenges. </p>
+									<br>
+									Explore services
+									<span class="arrow">&#x2192;</span>
+								</div>
+							</div>
+						</a>
+						<a href="/software.html" class="arrow-link">
+							<div class="flex-container-inner card roadmap-card roadmap-card-teal" style="background: #00191E; border: 1px solid #01586A">
+								<div class="text-well">
+									<h4>software</h4>
+									<p class="text-description-desktop">We build open source software that eliminates reliance on any single computer, person or system. Our tooling unlocks a new level of trust in infrastructure through uncompromising transparency and verifiability. Explore and start using our open source tools today.</p>
+									<p class="text-description-mobile">We develop open source software that eliminates reliance on any single computer, person or system. Explore active tools and what's coming soon.<br></p>
+									<br>
+									View software
+									<span class="arrow">&#x2192;</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</section>
+				
+				{% include powered-by.html %}
+
+				{% include threatmodel-cta.html %}
+
+				{% include values.html %}
+
+				{% include primary-cta.html %}
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+</html>

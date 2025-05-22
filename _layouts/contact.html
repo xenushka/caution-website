@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+		
+	<section class="flex-container contact-section" style="margin-top: 80px">
+		<div class="contact-page container">
+			<div class="flex-container-inner two-column-layout">
+			  <!-- Left Column: Text content -->
+			  <div class="contact-info">
+				<h2 class="gradient-text" style="padding-bottom: 1.5rem">contact us</h2>
+				<p class="contact-description">
+					Building something new or need a second set of eyes on what’s already live? Our security engineers are ready to help you move faster, safer, and with full control.<br>
+				</p>
+				<div class="logo-grid-container"></div>
+					<ul class="logo-grid">
+						<li><img style="height: 40px" src="assets/base/companies/bitgo-logo-white.svg" alt="BitGo"></li>
+						<li><img src="assets/base/companies/ledn-white.svg" alt="Ledn"></li>
+						<li><img style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);"
+								 src="assets/base/companies/bishop-fox-dark.png" alt="Bishop Fox"></li>
+						<li><img style="filter: invert(100)" src="assets/base/companies/turnkey-black.svg" alt="Turnkey"></li>
+						<li><img style="height: 40px" src="assets/base/companies/falconx-white.svg" alt="FalconX"></li>
+						<li><img src="assets/base/companies/mysten-labs-white.svg" alt="Mysten Labs"></li>
+						<li><img src="assets/base/companies/sidero-labs-white.png" alt="Sidero Labs"></li>
+						<li><img src="assets/base/companies/zoom-white.png" alt="Zoom"></li>
+						<li><img style="margin-left: -6px; height: 60px !important; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(200%) contrast(102%);"
+							src="assets/base/companies/ankr.png" alt="Ankr"></li>
+						<li><img src="assets/base/companies/exodus-white.svg" alt="Exodus"></li>
+						 <li><img style="height: 60px" src="assets/base/companies/hashicorp-white.png" alt="HashiCorp"></li>
+						<li><img src="assets/base/companies/fitbit-white.png" alt="Fitbit"></li>
+					</ul>
+				</div>
+
+			  <div class="form-container card" style="font-size: 1.1rem; padding: 30px 30px 10px 30px">
+				<form onsubmit="return validateForm()" action="/submit-email" method="post">
+					<div class="form-flex-container">
+						
+						<div class="form-row">
+							<div class="form-half">
+								<label for="name" class="form-label">Your name</label>
+								<input type="text" id="name" name="name" class="form-input">
+							</div>
+							<div class="form-half">
+								<label for="company-name" class="form-label">Company name</label>
+								<input type="text" id="company-name" name="company-name" class="form-input">
+							</div>
+						  </div>
+
+					<label for="email" class="form-label required">Your email</label>
+					<input placeholder="Enter your business email..." type="email" id="email" name="email" class="form-input" required>
+
+					<label for="service" class="form-label required">What service are you interested in?</label>
+					<select id="service" name="service" class="form-select" required>
+						<option value="" disabled selected>Select option</option>
+						<option value="software-security-assessment">Security assessment</option>
+						<option value="retained">Retainer / Fractional CISO</option>
+						<option value="engineering">Software engineering</option>
+						<option value="digital-asset-custody">Digital asset custody</option>
+						<option value="general-inquiry">General inquiry</option>
+					</select>
+
+					<label for="help" class="form-label required">How can we help?</label>
+					<textarea id="help" name="help" class="form-textarea" required></textarea>
+
+					<div id="other-field" style="display:none;">
+						<input type="text" id="other-source" name="other-source" class="form-input" placeholder="Please specify">
+					</div>
+
+					 <!-- TODO: add captcha of some sort -->
+
+					<button type="submit" class="contact-button">Submit</button>
+					<p class="center submit-policy" style="text-align: start">We respect your privacy. The information you provide will only be used to respond to your inquiry and will never be shared externally.</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include testimonials.html %}
+
+			</main>
+			<br />
+		</div>
+		{%- include footer.html -%}
+	</body>
+
+	<script>
+		function toggleOtherField() {
+			var hearAbout = document.getElementById('hear-about').value;
+			var otherField = document.getElementById('other-field');
+			if (hearAbout === 'other') {
+				otherField.style.display = 'block';
+				document.getElementById('other-source').required = true;
+			} else {
+				otherField.style.display = 'none';
+				document.getElementById('other-source').required = false;
+			}
+		}
+
+		function validateForm() {
+			var inquiryType = document.getElementById('inquiry-type');
+			var services = document.getElementById('services');
+			var hearAbout = document.getElementById('hear-about');
+
+			if (inquiryType.value === "") {
+				alert("Please select a valid Inquiry Type");
+				return false;
+			}
+			if (services.value === "") {
+				alert("Please select a valid Service you are interested in");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</html>

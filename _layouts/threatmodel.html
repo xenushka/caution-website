@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+
+		<div class="container blog">
+			<main>
+				<section class="flex-container threat model" style="margin-top: 80px; margin-bottom: 10px !important;">
+					<div class="flex-container-inner">
+						<h1>Distrust threat model</h1>
+						<p>Distrust's threat model aids organizations in methodically eliminating surface area for attack, making entire classes of attacks impossible. 
+						<br>
+						<br>Unlike conventional frameworks (e.g., STRIDE, PASTA) that focus on identifying and preventing specific risks, our threat model assumes that at some level <b>systems are already compromised</b>. This pessimistic set of assumptions allows organizations to build systems that can remain secure even when up against their worst case adversary.</p> 
+					</div>
+				</section>
+
+				<section class="flex-container threat model" style="margin-top: 50px; margin-bottom: 10px !important">
+					<div class="flex-container-inner">
+						<h2>Levels</h2>
+						<p>While the end-goal is to adequately address the risks which stem from the <a href="#assumptions">assumptions</a>, organizations are at varying levels of maturity and often need a path towards mitigating threats in a phased approach. To this end, the threat model defines 4 levels, each corresponding to increasingly more sophisticated threat actors as the levels increase. Each threat actor is assumed to have access to specific methods of attack limited by factors such as cost to execute, sophistication, time required etc.</p>
+						<p>It is a reasonable approach to apply different threat model levels to different parts of systems relative to the amount of value they protect.</p>
+					</div>
+				</section>
+
+				<section class="flex-container threat model" style="margin-top: 50px; margin-bottom: 10px !important">
+					<div class="flex-container-inner">
+						<h3 id="level-1">Level 1</h3>
+						<p>Defense against remote adversaries with limited resources.</p>
+						<h5>Adversary</h5>
+						<p>An unskilled or lightly skilled individual leveraging widely available tools and publicly known vulnerabilities. Their attacks are largely opportunistic and automated. We do, however, assume they can be very patient and willing to work across a long time horizon.</p>
+						<h5>Capabilities</h5>
+						<ul>
+							<li>Scanning for and exploiting known vulnerabilities with public exploits.</li>
+							<li>Phishing attempts using off-the-shelf kits.</li>
+							<li>Basic malware deployment (e.g., ransomware-as-a-service).</li>
+							<li>Making malicious changes to open source libraries</li>
+							<li>Buying expired domain names</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="flex-container threat model" style="margin-top: 50px; margin-bottom: 10px !important">
+					<div class="flex-container-inner">
+						<h3 id="level-2">Level 2</h3>
+						<p>Defense against insiders.</p>
+						<h5>Adversary</h5>
+						<p>We assume the adversary is an individual or system that already has some level of privilege or trust inside the organization. This could be anything from a disgruntled employee to a compromised work station or server.</p>
+						<h5>Capabilities</h5>
+						<ul>
+							<li>Can execute any code on at least one work station.</li>
+							<li>Can exfiltrate any secrets exposed to system memory.</li>
+							<li>Can use reputation to fast track change deployment.</li>
+							<li>Administrative privileges (email, MDM, AWS etc.)</li>
+							<li>Unencrypted traffic interception.</li>
+							<li>Injection of malicious code into development pipelines.</li>
+							<li>Physical access to all devices in the office.</li>
+							<li>Ability to impersonate unsigned actions of other employees</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="flex-container threat model" style="margin-top: 50px; margin-bottom: 10px !important">
+					<div class="flex-container-inner">
+						<h3 id="level-3">Level 3</h3>
+						<p>Defense against well-funded organizations.</p>
+						<h5>Adversary</h5>
+						<p>An organized, well-funded group possessing diverse expertise across multiple domains (malware, supply chain, network exploitation, physical access, insider recruitment). Capable of sustained campaigns combining internal and external compromise.</p>
+						<h5>Capabilities</h5>
+						<ul>
+							<li>Deployment of agents willing to commit physical violence.</li>
+							<li>Compromised third party insiders (GitHub, AWS etc.)</li>
+							<li>Ability to do extensive reconnaissance on all personnel.</li>
+							<li>Access to large bot-nets or server farms.</li>
+							<li>Ability to purchase 0-day exploits for any internet connected device.</li>
+							<li>Coordinated, multi-stage attacks across digital and physical realms.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="flex-container threat model" style="margin-top: 50px; margin-bottom: 10px !important">
+					<div class="flex-container-inner">
+						<h3 id="level-4">Level 4</h3>
+						<p>Defense against nation state actors.
+						<h5>Adversary</h5>
+						<p>A state-backed or similarly resourced entity capable of executing the most advanced forms of cyber and physical attacks, including full-spectrum operations across the supply chain, hardware, firmware, and human factors..</p>
+						<h5>Capabilities</h5>
+						<ul>
+							<li>Observe all displays and input devices in public areas.</li>
+							<li>Ability to tamper with a major hardware/firmware supply chain.</li>
+							<li>Access to any network-connected system.</li>
+							<li>Advanced side-channel attacks (RF, power, magnetic etc.).</li>
+							<li>Data extraction from insufficiently wiped systems.</li>
+							<li>Sophisticated deception and counter-forensics to evade detection.</li>
+							<li>Maximal access to computational resources.</li>
+						</ul>
+					</div>
+				</section>
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+</html>
+

@@ -1,0 +1,122 @@
+[
+    { 
+        "link": "https://www.wired.com/story/the-untold-story-of-solarwinds-the-boldest-supply-chain-hack-ever/",
+        "description": "SolarWind: The Untold Story of the Boldest Supply-Chain Hack Ever" 
+    },
+    { 
+        "link": "https://www.theverge.com/2018/4/24/17275982/myetherwallet-hack-bgp-dns-hijacking-stolen-ethereum",
+        "description": "Hackers emptied Ethereum wallets by breaking the basic infrastructure of the internet"
+    },
+    { 
+        "link": "https://milksad.info/",
+        "description": "A practical explanation of how weak entropy can ruin your day - and your savings."
+    },
+    { 
+        "link": "https://thehackerblog.com/zero-days-without-incident-compromising-angular-via-expired-npm-publisher-email-domains-7kZplW4x/", 
+        "description": "Compromising Angular via Expired npm Publisher Email Domains" 
+    },
+    { 
+        "link": "https://blog.ryotak.net/post/homebrew-security-incident-en/", 
+        "description": "Remote code execution in Homebrew by compromising the official Cask repository" 
+    },
+    { 
+        "link": "https://gizmodo.com/u-s-federal-investigators-are-reportedly-looking-into-1846707144link4", 
+        "description": "U.S. Federal Investigators Are Reportedly Looking Into Codecov Security Breach, Undetected for Months" 
+    },
+    { 
+        "link": "https://www.bleepingcomputer.com/news/security/big-sabotage-famous-npm-package-deletes-files-to-protest-ukraine-war/", 
+        "description": "BIG sabotage: Famous npm package deletes files to protest Ukraine war" 
+    },
+    { 
+        "link": "https://certitude.consulting/blog/en/invisible-backdoor/", 
+        "description": "The Invisible JavaScript Backdoor" 
+    },
+    { 
+        "link": "https://thehackernews.com/2022/06/multiple-backdoored-python-libraries.html?m=1", 
+        "description": "Multiple Backdoored Python Libraries Caught Stealing AWS Secrets and Keys" 
+    },
+    { 
+        "link": "https://www.wired.com/story/3cx-supply-chain-attack-times-two/", 
+        "description": "The Huge 3CX Breach Was Actually 2 Linked Supply Chain Attacks" 
+    },
+    { 
+        "link": "https://www.zdnet.com/article/iota-cryptocurrency-shuts-down-entire-network-after-wallet-hack/", 
+        "description": "IOTA cryptocurrency shuts down entire network after wallet hack " 
+    },
+    { 
+        "link": "https://arstechnica.com/information-technology/2021/02/supply-chain-attack-that-fooled-apple-and-microsoft-is-attracting-copycats/", 
+        "description": "New type of supply-chain attack hit Apple, Microsoft and 33 other companies" 
+    },
+    { 
+        "link": "https://www.bankinfosecurity.com/crypto-exchange-klayswap-loses-19m-after-bgp-hijack-a-18518",
+        "description": "Crypto Exchange KLAYswap Loses $1.9M After BGP Hijack"
+    },
+    { 
+        "link": "https://www.businessinsider.com/kidnapped-crypto-exec-released-after-paying-1-million-bitcoin-ransom-2017-12",
+        "description": "A kidnapped crypto executive was reportedly released after paying a $1 million bitcoin ransom"
+    },
+    { 
+        "link": "https://www.independent.co.uk/tech/bitcoin-robbery-torture-cryptocurrency-netherlands-a8807986.html",
+        "description": "Bitcoin trader brutally tortured with drill in cryptocurrency robbery"
+    },
+    { 
+        "link": "https://www.vice.com/en/article/ne4pvg/police-in-ottawa-canada-charged-a-teen-with-armed-bitcoin-robbery-are-hunting-two-suspects",
+        "description": "Three Armed Men Attempted to Rob a Bitcoin Exchange In Canada"
+    },
+    { 
+        "link": "https://www.birminghammail.co.uk/news/midlands-news/watch-masked-raiders-hold-up-16599570",
+        "description": "Watch - Masked raiders hold up Bitcoin Exchange store in Sparkhill in front of dozens of witnesses"
+    },
+    { 
+        "link": "https://www.nzherald.co.nz/nz/crypto-heist-raiders-steal-safe-containing-4m-in-cryptocurrency-from-westmere-home/PI3L5LMS6PCSVABJDYSW5O4YGA/",
+        "description": "Crypto heist: Raiders steal safe containing $4m in cryptocurrency from Westmere home"
+    },
+    { 
+        "link": "https://www.computerworld.com/article/2538534/data-center-robbery-leads-to-new-thinking-on-security.html",
+        "description": "Data center robbery leads to new thinking on security"
+    },
+    { 
+        "link": "https://www.thirdsector.co.uk/plan-uk-alerts-supporters-theft-computer-servers-its-offices/management/article/1375208",
+        "description": "Plan UK alerts supporters to theft of computer servers from its offices"
+    },
+    { 
+        "link": "https://www.pcmag.com/news/vudu-resets-passwords-after-user-data-stolen-in-burglary",
+        "description": "Vudu Resets Passwords After User Data Stolen in Burglary"
+    },
+    { 
+        "link": "https://finance.yahoo.com/news/hackers-scored-data-center-logins-020028440.html",
+        "description": "Hackers Scored Data Center Logins for Some of the World's Biggest Companies"
+    },
+    { 
+        "link": "https://www.cbsnews.com/news/nsa-broke-into-yahoo-and-google-data-centers-around-world-report-says/",
+        "description": "NSA broke into Yahoo and Google data centers around world, report says"
+    },
+    { 
+        "link": "https://www.vice.com/en/article/3kxy4k/high-tech-japanese-hotel-service-robots-easily-hackable",
+        "description": "High-Tech Japanese Hotel Finds Out Its Service Robots Are Easily Hackable"
+    },
+    { 
+        "link": "https://www.washingtonpost.com/news/innovations/wp/2017/07/21/how-a-fish-tank-helped-hack-a-casino/",
+        "description": "How a fish tank helped hack a casino"
+    },
+    { 
+        "link": "https://www.wsj.com/articles/fraudsters-use-ai-to-mimic-ceos-voice-in-unusual-cybercrime-case-11567157402",
+        "description": "Fraudsters Used AI to Mimic CEO's Voice in Unusual Cybercrime Case"
+    },
+    { 
+        "link": "https://www.forbes.com/sites/iainmartin/2023/08/21/blockchain-capitals-bart-stephens-lost-63-million-in-sim-swap-crypto-hack/?sh=6cc4576bf74c",
+        "description": "Blockchain Capital's Bart Stephens Lost $6.3 Million In SIM-Swap Crypto Hack"
+    },
+    { 
+        "link": "https://www.wsj.com/articles/he-thought-his-phone-was-secure-then-he-lost-24-million-to-hackers-11573221600",
+        "description": "He Thought His Phone Was Secure; Then He Lost $24 Million to Hackers"
+    },
+    { 
+        "link": "https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/",
+        "description": "Tesla cloud resources are hacked to run cryptocurrency-mining malware"
+    },
+    { 
+        "link": "https://www.wired.com/story/sea-turtle-dns-hijacking/",
+        "description": "Cyberspies Hijacked the Internet Domains of Entire Countries"
+    }
+]

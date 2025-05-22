@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+
+	{%- include head.html -%}
+
+	<body>
+		{%- include header.html -%}
+
+		<div class="container">
+			<main>
+				<div class="video-background-container">
+					<video autoplay muted loop playsinline class="video-background">
+						<source src="assets/videos/turq-blocks.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+						<source src="assets/videos/turq-blocks.webm" type='video/webm; codecs="vp8, vorbis"' />
+					</video>
+					<div class="gradient-overlay"></div>
+				</div>
+
+				<section class="flex-container capsule-header video-content" style="margin-top: 80px">
+					<div class="flex-container-inner" style="padding-top: 0px">
+						<div class="text-well center">
+							<div class="capsule-teal">software</div>
+							<br>
+							<h1 style="max-width: 1000px; margin: auto">open source tools for verifiable security</h1>
+							<br>
+							<p class="hero-p center">Most systems still rely on single individuals or computers, unverifiable software, and opaque processes. We’re redesigning security for transparency from the ground up.</p>
+							<div class="button-container center">
+								<a href="#ready-to-use" class="mega-teal button center">View software</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				{%- include live-tools.html -%}
+
+
+				<div class="video-background-container-building-blocks">
+					<video autoplay muted loop playsinline class="video-background-building-blocks">
+						<source src="assets/videos/building-cubes.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+						<source src="assets/videos/building-cubes.webm" type='video/webm; codecs="vp8, vorbis"' />
+					</video>
+					<div class="gradient-overlay-building-blocks"></div>
+				</div>
+
+				<section class="flex-container video-content-building-blocks">
+					<div class="flex-container-inner">
+						<h2 class="gradient-text why-distrust">building blocks <br> for provable security</h2>
+						<p class="hero-p">Modern software systems still rely on trust—maintainers, IT admins, third-party providers. But what happens when they are compromised? How do you verify that your systems haven't been tampered with?</p>
+						<p class="hero-p">We’ve identified critical gaps and built tools to remove single points of failure across all levels of the software lifecycle—from toolchains and dependencies to how code is built, signed, verified and deployed.</p>
+						<p class="hero-p">By combining multi-party trust, remote attestation, and bit-for-bit reproducibility, we are eliminating trust assumptions, ensuring security isn't just a claim—it's provable. And as everything we do, all our software is open source.</p>
+						<a href="#roadmap" class="arrow-link">
+							See what we're building
+							<span class="arrow">&#x2192;</span>
+						</a>
+					</div>
+					<div class="flex-container-inner"></div>
+				</section>
+
+				<div class="roadmap" id="roadmap">
+					<h2 class="center gradient-text">our roadmap</h2>
+					<p style="margin-top: 20px" class="hero-p center">We're actively building some tools—and raising support to build others. Here's what's in-progress and what's coming next.</p>
+				</div>
+				<div id="kanban" class="flex-container">
+					<div class="flex-container-inner flex-container kanban-column column-backlog">
+						<h4 style="color: var(--light-grey)">backlog (fundraising)</h4>
+						<a target="_blank" rel=”noopener noreferrer” class="flex-container-inner mini-card" href="https://git.distrust.co/public/bootproof">
+							<p><b>Bootproof</b></p>
+							<p>Prove what software booted on a system via remote attestation technologies.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+
+						<a class="flex-container-inner mini-card" target="_blank" rel=”noopener noreferrer” href="https://git.distrust.co/public/sourceid">
+							<p><b>SourceId</b></p>
+							<p>Verify source code inegrity with hash-based fingerprints.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+						<a class="flex-container-inner mini-card" href="https://git.distrust.co/public/sigrev" class="arrow-link">
+							<p><b>SigRev</b></p>
+							<p>Crowdsource and discover signed manual code reviews.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+					</div>
+					<div class="flex-container-inner flex-container kanban-column column-progress">
+						<h4 style="color: var(--light-purple)">in-progress</h4>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” target="_blank" href="https://qvs.distrust.co/">
+							<p><b>Trove</b></p>
+							<p>Documentation for managing secrets that you can't afford to lose.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” target="_blank" href="https://codeberg.org/stagex/repros">
+							<p><b>ReprOS</b></p>
+							<p>Create ephemeral build environments to eliminate persistent risks.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” href="https://git.distrust.co/public/enclaveos">
+							<p><b>EnclaveOS</b></p>
+							<p>Immutable operating system for powering secure enclaves.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+					</div>
+					<div class="flex-container-inner flex-container kanban-column column-active">
+						<h4 style="color: var(--light-teal)">active</h4>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” target="_blank" href="https://codeberg.org/stagex/stagex">
+							<p><b>StageX</b></p>
+							<p>Hermetic, deterministic, reproducible, multi-signed OCI-based build toolchain.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” target="_blank" href="https://git.distrust.co/public/airgap">
+							<p><b>AirgapOS</b></p>
+							<p>Minimal, immutable, offline-first swiss-army knife for secret management.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” target="_blank" href="https://git.distrust.co/public/keyfork">
+							<p><b>Keyfork</b></p>
+							<p>Derive keys from a single entropy source to simplify their management.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+						<a class="flex-container-inner mini-card" rel=”noopener noreferrer” target="_blank" href="https://git.distrust.co/public/icepick">
+							<p><b>Icepick</b></p>
+							<p>Framework for offline cryptographic signing operations.</p>
+							<div class="arrow-link">
+								View git repository
+								<span class="arrow">&#x2192;</span>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				{%- include divider.html -%}
+
+				{% include powered-by.html %}
+
+				{%- include divider.html -%}
+
+				<section class="flex-container">
+					<div class="flex-container-inner"></div>
+					<div class="flex-container-inner">
+						<h4 class="quote" style="filter: brightness(80%)">❝We want to use our knowledge to improve security, privacy, and freedom for as many people as possible. We believe that verifiable foundations for building technology are essential to human wellbeing and solving the coordination problem.❝ — Distrust team</h4>
+					</div>
+				</section>
+
+				{%- include divider.html -%}
+				
+				<div class="software-cta">
+					<h4 class="gradient-text center" style="line-height: 50px; max-width: 650px; margin: auto;">fund open source development</h4>
+					<p class="hero-p center text-description-desktop" style="max-width: 650px; margin-top: 10px">Your support funds the tools. Your forks spread the mission. Help us build transparent, verifiable security tools — together.</p>
+					<p class="hero-p center text-description-mobile" style="max-width: 650px; margin-top: 10px">Your support funds the tools. Help us build transparent, verifiable security tools — together.</p>
+					<div class="button-container center">
+						<a href="/contact.html" class="mega-teal button center">Get in touch</a>
+					</div>
+				</div>
+
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+
+</html>

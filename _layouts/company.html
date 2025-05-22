@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+		<div class="container">
+			<main>
+				<section style="margin-top: 170px">
+					<div class="video-background-container">
+						<video autoplay muted loop playsinline class="video-background">
+							<source src="assets/videos/globe.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+							<source src="assets/videos/globe.webm" type='video/webm; codecs="vp8, vorbis"' />
+						</video>
+						<div class="gradient-overlay"></div>
+					</div>
+
+					<br>
+					<br>
+					<div class="about-special video-content" style="max-width: 700px">
+						<br>
+						<h2>the world is built on blind trust. we are here to change that.</h2>
+						<br>
+					</div>
+				</section>
+
+				<section class="flex-container who-we-are-section">
+					<div class="team flex-container-inner">
+						<div class="team flex-container" style="margin-bottom: 0px">
+							<div class="flex-container-inner card">
+								<h5>Lance Vick</h5>
+								<p>Co-Founder</p>
+								<p>Security Engineer</p>
+								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/6B61ECD76088748C70590D55E90A401336C8AAA9">Keyoxide</a>
+								<span>|</span>
+								<a rel=”noopener noreferrer” target="_blank" href="https://lance.dev/">Website</a>
+							</div>
+							<div class="flex-container-inner card">
+								<h5>Anton Livaja</h5>
+								<p>Co-Founder</p>
+								<p>Security Engineer</p>
+								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/F4BF5C81EC78A5DD341C91EEDC4B7D1F52E0BA4D">Keyoxide</a>
+								<span>|</span>
+								<a rel=”noopener noreferrer” target="_blank" href="https://antonlivaja.com">Website</a>
+							</div>
+						</div>
+						<div class="team flex-container">
+							<div class="flex-container-inner card">
+								<h5>Ryan Heywood</h5>
+								<p>Security Engineer</p>
+								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/88823A75ECAA786B0FF38B148E401478A3FBEF72">Keyoxide</a>
+								<span>|</span>
+								<a rel=”noopener noreferrer” target="_blank" href="https://ryansquared.pub">Website</a>
+							</div>
+							<div class="flex-container-inner card">
+								<h5>Danny Grove</h5>
+								<p>Security Engineer</p>
+								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/C92FE5A3FBD58DD3EC5AA26BB10116B8193F2DBD">Keyoxide</a>
+								<span>|</span>
+								<a rel=”noopener noreferrer” target="_blank" href="https://dannygrove.com/">Website</a>
+							</div> 
+						</div>
+					</div>
+
+					<div class="flex-container-inner who-we-are">
+						<h2 class="gradient-text">who we are</h2>
+						<p class="hero-p" style="max-width: 550px">Distrust is made up of engineers behind some of the most security-critical projects in the world—including BitGo, Turnkey, and Unit410.</p>
+						<p class="hero-p" style="max-width: 550px">We’ve helped hundreds of companies by conducting security reviews, building out their security infrastructure, and aiding them in launching products which can withstand the modern threat landscape. We don’t just secure systems. We build them.</p>
+					</div>
+				</section>
+			
+				{% include values.html %}
+
+			<div class="video-background-container-our-approach">
+				<video autoplay muted loop playsinline class="video-background-our-approach">
+					<source src="assets/videos/swirly-lines.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+					<source src="assets/videos/swirly-lines.webm" type='video/webm; codecs="vp8, vorbis"' />
+				</video>
+				<div class="gradient-overlay-our-approach"></div>
+			</div>
+			<section class="flex-container video-content-our-approach">
+				<div class="flex-container-inner"></div>
+				<div class="flex-container-inner">
+					<h2 class="gradient-text why-distrust">our approach</h2>
+					<p>Too often, security is an afterthought—based on dogma, checklists, and outdated best practices. Distrust was founded to redefine security by developing new methods to eliminate single points of failure, and building systems in a manner where they don't need to be blindly trusted.</p>
+					<p>We don’t just advise on security. We build it. We open source it. And we teach organizations how to think critically about risk—because security isn’t about checking boxes.</p>
+				<div class="button-container">
+					<a href="/contact.html" class="mega button">Work with us</a>
+				</div>
+				</div>
+			</section>
+
+			{% include why-choose-distrust.html %}
+
+			{% include primary-cta.html %}
+			
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+</html>
