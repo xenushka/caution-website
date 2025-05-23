@@ -5,9 +5,6 @@
 	src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
 }
 
-/**
- * Style variables
- */
 $base-font-family: 'Inter', monospace !default;
 $base-font-size: 1.3rem !default;
 $mobile-font-size: 1.125rem !default;
@@ -15,9 +12,7 @@ $base-line-height: 1.5 !default;
 $container-width: 90% !default;
 $container-max-width: 1280px !default;
 
-/**
- * Global
- */
+
 html {
 	scroll-behavior: smooth;
 }
@@ -26,18 +21,131 @@ body {
 	width: 100%;
 	background-color: var(--ghost-white);
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 auto;
 	font-family: $base-font-family;
 	font-size: clamp(1.25rem, 2.5vw, 1.4rem);
-	color: var(--text-color);
+	color: var(--raisin-black);
 	text-align: left;
 	line-height: $base-line-height !important;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
 }
 
-body > div.container {
+.center {
+	text-align: center;
+	margin: auto;
+}
+  
+  .logo  img {
+	margin-top: 2.5rem;
+	margin-bottom: 2rem;
+  }
+  
+  h1 {
+	font-size: clamp(3rem, 10vw, 5rem);
+	margin-bottom: 0rem;
+  }
+  
+  .subtext {
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	max-width: 670px;
+	margin-bottom: 10rem;
+  }
+  
+  .info-block {
+	font-size: clamp(.7rem, 10vw, .9rem);
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+	max-width:  300px;
+	margin-right: 30rem;
+  }
+
+  .spaced-text {
+	margin-right: 1.25rem;
+	display: inline-block;
+  }
+
+  .waitlist-form {
+	width: min(90%, 500px);
+  }
+  
+  .email-form {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+  }
+
+  .input-wrapper {
+	display: flex;
+	align-items: center;
+	border: 2px solid var(--raisin-black);
+	border-radius: 999px;
+	padding: 0.25rem;
+	max-width: 400px;
+	width: 100%;
+	background: white;
+	justify-content: space-between;
+	margin-bottom: 10rem;
+  }
+  
+  .email-input {
+	flex: 1;
+	font-size: 1.25rem;
+	padding: 0.75rem 1rem;
+	background: transparent;
+  	border: none;
+	padding: 0.25rem;
+	max-width: 400px;
+	width: 100%;
+	background: white;
+	margin-left: 0.5rem;
+  }
+
+  .email-input:focus {
+	outline: none !important;
+  	border: none !important;
+  }
+
+  .submit-btn {
+	background-color: var(--raisin-black);
+	color: var(--ghost-white);
+	border: none;
+	border-radius: 50%;
+	width: 44px;
+	height: 44px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+  .submit-btn .arrow {
+	font-size: 1.5rem;
+	transition: transform 0.25s ease;
+  }
+
+  .submit-btn .arrow:hover {
+	transform: translateX(2.5px);
+}
+  
+  
+  .footer {
+	margin-bottom: 2rem;
+	font-size: clamp(0.5rem, 10vw, 0.9rem);
+	color: var(--dark-grey);
+	display: flex;
+	word-spacing: 80%;
+	justify-content: center;
+  }
+  
+  a {
+	text-decoration: none;
+	color: inherit;
+  }
+
+/* body > div.container {
 	flex: 1;
 }
 
@@ -119,6 +227,8 @@ a:hover {
 .divider {
 	margin-top: 3rem;
 }
+
+/*
 
 .gradient-text {
 	font-size: 48px;
@@ -242,8 +352,6 @@ h3.gradient-text.center {
 	display: flex;
 	justify-content: left;
 }
-
-/* software page */
 
 .live-tool-name {
 	font-size: 2.5rem;
@@ -756,9 +864,6 @@ h3.gradient-text.center {
 	//}//
 //}//
 
-/**
- * Layout
- */
 .container {
 	width: $container-width;
 	max-width: $container-max-width;
@@ -767,11 +872,11 @@ h3.gradient-text.center {
 }
 
 p {
-	/*
+	
 	word-wrap: break-word;
 	word-break: break-word;
 	white-space: pre-wrap;
-	 */
+	
 margin-top: 16px;
 margin-bottom: 16px;
 }
@@ -893,9 +998,6 @@ hr {
 	margin-top: 20px;
 }
 
-/**
- * Navbar
- */
 
  .inline-email-form .form-row {
 	display: flex;
@@ -1076,17 +1178,13 @@ hr {
   color: #ccc;
 }
 
-/**
- * Services Page
- */
+
 .why-distrust {
 	text-align: left;
 	padding-bottom: 15px;
 }
 
-/**
- * Company Page
- */
+
 .about-special h2 {
 	font-weight: 600 !important;
 	margin: 0px;
@@ -1152,9 +1250,6 @@ hr {
 	margin-right: 20px;
 }
 
-/**
- * End-Company Page
- */
 
  @media (max-width: 1390px) {
 
@@ -1216,10 +1311,6 @@ hr {
 	}
 }
 
-
-/**
- * Buttons
- */
 .button {
 	display: inline-block;
 	padding: 10px 20px 9px 20px;
@@ -1233,13 +1324,10 @@ hr {
 }
 
 .button:hover {
-	/* invert */
 	background-color: var(--base-color);
 	color: var(--background-color);
 	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-
-/* important button */
 
 @mixin mega {
 	border-radius: 30px;
@@ -1347,9 +1435,7 @@ hr {
 	transition: filter 0.3s ease;
   }
   
-/**
- * Highlight/Markup
- */
+
 ::selection {
 	background: var(--selection-background);
 	color: var(--selection-text);
@@ -1360,20 +1446,15 @@ hr {
 	color: var(--selection-text);
 }
 
-/**
- * Lists
- */
+
 
 .right-menu>ul>li:before {
 	content: "" !important;
 	margin-right: 4px;
 }
 
-/**
- * Header/Navigation
- */
+
 .menu {
-	/* border-bottom: var(--border); */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1390,9 +1471,7 @@ hr {
 	margin-left: 10px;
 }
 
-/**
- * Form
- */
+
 input,
 select,
 textarea {
@@ -1462,9 +1541,7 @@ textarea {
 	vertical-align: top;
 }
 
-/**
- * Contact Form
- */
+
 .required:after {
 	content: "*";
 	color: var(--ghost-white);
@@ -1526,9 +1603,7 @@ textarea {
 	min-width: 200px;
   }
 
-/**
- * Homepage
- */
+
 .particles-wrapper {
 	background-color: #222;
 	width: 100%;
@@ -1608,9 +1683,7 @@ section {
 	max-width: 100%;
 }
 
-/**
- * Code and syntax highlighting
- */
+
 .lineno {
 	color: var(--code-color-1);
 	margin-right: 15px;
@@ -1641,227 +1714,226 @@ pre {
 	font-style: italic
 }
 
-/* Comment */
+
 .highlight .err {
 	color: var(--code-color-3);
 	background-color: var(--code-color-4);
 }
 
-/* Error */
+
 .highlight .k {
 	color: var(--code-color-5);
 }
 
-/* Keyword */
+
 .highlight .cm {
 	color: var(--code-color-1);
 	font-style: italic
 }
 
-/* Comment.Multiline */
+
 .highlight .cp {
 	color: var(--code-color-6);
 }
 
-/* Comment.Preproc */
+
 .highlight .c1 {
 	color: var(--code-color-1);
 	font-style: italic
 }
 
-/* Comment.Single */
+
 .highlight .cs {
 	color: var(--code-color-5);
 	font-style: italic
 }
 
-/* Comment.Special */
+
 .highlight .gd {
 	color: var(--code-color-7);
 }
 
-/* Generic.Deleted */
+
 .highlight .ge {
 	font-style: italic
 }
 
-/* Generic.Emph */
+
 .highlight .gr {
 	color: var(--code-color-7);
 }
-
-/* Generic.Error */
+ 
 .highlight .gh {
 	color: var(--code-color-8);
 	font-weight: bold
 }
 
-/* Generic.Heading */
+
 .highlight .gi {
 	color: var(--code-color-9);
 }
 
-/* Generic.Inserted */
+
 .highlight .go {
 	color: var(--code-color-10);
 }
 
-/* Generic.Output */
+
 .highlight .gp {
 	color: var(--code-color-11);
 }
 
-/* Generic.Prompt */
+
 .highlight .gs {
 	font-weight: bold
 }
 
-/* Generic.Strong */
+
 .highlight .gu {
 	color: var(--code-color-12);
 	font-weight: bold
 }
 
-/* Generic.Subheading */
+
 .highlight .gt {
 	color: var(--code-color-7);
 }
 
-/* Generic.Traceback */
+
 .highlight .kc {
 	color: var(--code-color-5);
 }
 
-/* Keyword.Constant */
+
 .highlight .kd {
 	color: var(--code-color-5);
 }
 
-/* Keyword.Declaration */
+
 .highlight .kn {
 	color: var(--code-color-5);
 }
 
-/* Keyword.Namespace */
+
 .highlight .kp {
 	color: var(--code-color-5);
 }
 
-/* Keyword.Pseudo */
+
 .highlight .kr {
 	color: var(--code-color-5);
 }
 
-/* Keyword.Reserved */
+
 .highlight .kt {
 	color: var(--code-color-13);
 }
 
-/* Keyword.Type */
+
 .highlight .m {
 	color: var(--code-color-14);
 }
 
-/* Literal.Number */
+
 .highlight .s {
 	color: var(--code-color-15);
 }
 
-/* Literal.String */
+/* Literal.String *
 .highlight .na {
 	color: var(--code-color-16);
 }
 
-/* Name.Attribute */
+/* Name.Attribute *
 .highlight .nb {
 	color: var(--code-color-13);
 }
 
-/* Name.Builtin */
+/* Name.Builtin *
 .highlight .nc {
 	color: var(--code-color-9);
 	text-decoration: underline
 }
 
-/* Name.Class */
+/* Name.Class *
 .highlight .no {
 	color: var(--code-color-7);
 }
 
-/* Name.Constant */
+/* Name.Constant *
 .highlight .nd {
 	color: var(--code-color-10);
 }
 
-/* Name.Decorator */
+/* Name.Decorator *
 .highlight .ni {
 	color: var(--code-color-17);
 	font-weight: bold
 }
 
-/* Name.Entity */
+/* Name.Entity *
 .highlight .nf {
 	color: var(--code-color-9);
 }
 
-/* Name.Function */
+/* Name.Function *
 .highlight .nn {
 	color: var(--code-color-13);
 	text-decoration: underline
 }
 
-/* Name.Namespace */
+/* Name.Namespace *
 .highlight .nt {
 	color: var(--code-color-16);
 	font-weight: bold
 }
 
-/* Name.Tag */
+/* Name.Tag *
 .highlight .nv {
 	color: var(--code-color-7);
 }
 
-/* Name.Variable */
+/* Name.Variable *
 .highlight .ow {
 	color: var(--code-color-5);
 }
 
-/* Operator.Word */
+/* Operator.Word *
 .highlight .w {
 	color: var(--code-color-18);
 }
 
-/* Text.Whitespace */
+/* Text.Whitespace *
 .highlight .mf {
 	color: var(--code-color-14);
 }
 
-/* Literal.Number.Float */
+/* Literal.Number.Float *
 .highlight .mh {
 	color: var(--code-color-14);
 }
 
-/* Literal.Number.Hex */
+/* Literal.Number.Hex *
 .highlight .mi {
 	color: var(--code-color-14);
 }
 
-/* Literal.Number.Integer */
+/* Literal.Number.Integer *
 .highlight .mo {
 	color: var(--code-color-14);
 }
 
-/* Literal.Number.Oct */
+/* Literal.Number.Oct *
 .highlight .sb {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Backtick */
+/* Literal.String.Backtick *
 .highlight .sc {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Char */
+/* Literal.String.Char *
 .highlight .sd {
 	color: var(--code-color-15);
 }
@@ -1871,67 +1943,67 @@ pre {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Double */
+/* Literal.String.Double *
 .highlight .se {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Escape */
+/* Literal.String.Escape *
 .highlight .sh {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Heredoc */
+/* Literal.String.Heredoc *
 .highlight .si {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Interpol */
+/* Literal.String.Interpol *
 .highlight .sx {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Other */
+/* Literal.String.Other *
 .highlight .sr {
 	color: var(--code-color-14);
 }
 
-/* Literal.String.Regex */
+/* Literal.String.Regex *
 .highlight .s1 {
 	color: var(--code-color-15);
 }
 
-/* Literal.String.Single */
+/* Literal.String.Single *
 .highlight .ss {
 	color: var(--code-color-5);
 }
 
-/* Literal.String.Symbol */
+/* Literal.String.Symbol *
 .highlight .bp {
 	color: var(--code-color-13);
 }
 
-/* Name.Builtin.Pseudo */
+/* Name.Builtin.Pseudo *
 .highlight .vc {
 	color: var(--code-color-7);
 }
 
-/* Name.Variable.Class */
+/* Name.Variable.Class *
 .highlight .vg {
 	color: var(--code-color-7);
 }
 
-/* Name.Variable.Global */
+/* Name.Variable.Global *
 .highlight .vi {
 	color: var(--code-color-7);
 }
 
-/* Name.Variable.Instance */
+/* Name.Variable.Instance *
 .highlight .il {
 	color: var(--code-color-14);
 }
 
-/* Literal.Number.Integer.Long */
+/* Literal.Number.Integer.Long *
 
 .hide {
 	display: none;
@@ -1944,7 +2016,7 @@ pre {
 
 /**
  * Companies Carousel
- */
+ *
 
 .logo-section {
 	width: 100%;
@@ -1972,7 +2044,7 @@ pre {
 
 /**
  * Carousel
- */
+ *
 
 .carousel-container {
 	padding-left: 80px;
@@ -2044,7 +2116,7 @@ pre {
 
 /**
  * Blog
- */
+ *
 
 .blog {
 	margin: auto;
@@ -2155,7 +2227,7 @@ pre {
 
 /** end blog */
 
-/** TESTIMONIALS **/
+/** TESTIMONIALS **
 
 .testimonials {
 	display: flex;
@@ -2213,7 +2285,7 @@ pre {
 	margin: 0;
   }
 
-//* TESTIMONIALS *//
+//* TESTIMONIALS *
 
 *,
 	*::before,
@@ -2241,7 +2313,7 @@ pre {
 
 	/**
 	 * media queries
-	 */
+	 *
 @media (max-width: 1500px) {
 
 	 .video-background-container-our-approach {
@@ -2710,3 +2782,4 @@ pre {
 		margin-bottom: 1.5rem;
 	  }
 }
+	  */

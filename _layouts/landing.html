@@ -1,70 +1,58 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: en }}">
 	{%- include head.html -%} 
-	<body>
-		<!-- {%- include header.html -%} -->
-		<div class="container">
-			<main>
-				<div class="landing-logo-container">
-					<a id="home-link" href="/index.html">
-						<img class="menu-logo" src="/assets/base/caution-logo-triangle-black.svg"
-						  alt="Caution triangle logo with black text" />
-					  </a>
-				</div>
 
+<!-- index.html -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caution Waitlist</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+	html, body {
+  		height: 100vh;
+		width: 100vw;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+  </style>
+</head>
 
-
-				<section class="flex-container capsule-header video-content">
-					<div class="flex-container-inner">
-						<div class="text-well center">
-							<br>
-							<h1 class="hero-title gradient-text hero-header">
-								Security, rethought
-							</h1>
-							<br>
-							<p class="hero-p center" style="max-width: 40rem">We're building something secure, open, and long overdue. Sign up for updates and get early access.</p>
-						</div>
-					</div>
-				</section>
-
-				</section>
-				
-				
-				
-				<div class="form-container card" style="font-size: 1.1rem; padding: 10px 15px 0px 30px">
-					<form onsubmit="return validateForm()" action="/submit-email" method="post" class="inline-email-form">
-					  <label for="email" class="form-label required" style="margin-bottom: 0.5rem;">Your email</label>
-					  <div class="form-row">
-						<input placeholder="Enter your email address" type="email" id="email" name="email" class="form-input" required>
-						<button type="submit" class="circle-btn" aria-label="Submit email">
-						  <span class="arrow">→</span>
-						</button>
-					  </div>
-					</form>
-				  </div>
-				
-
-				
-				<!--
-				  <div class="form-container card" style="font-size: 1.1rem; padding: 30px 30px 10px 30px">
-					<form onsubmit="return validateForm()" action="/submit-email" method="post">
-						<div class="form-flex-container">
-						
-							<div class="form-row">
-								<div class="form-half">
-									<label for="email" class="form-label required">Your email</label>
-									<input placeholder="Enter your email address" type="email" id="email" name="email" class="form-input" required>
-								</div>
-								<div class="form-half">
-									<button type="submit" class="contact-button">Submit</button>
-								</div>
-							  </div>
-					</form>
-				</div>
-				-->
-	
-			</main>
+<body>
+ 	<section class="logo-section center"></section> 
+		<div class="logo">
+    		<img src="/assets/base/caution-logo-triangle-black.svg" alt="Caution logo" style="height: clamp(3rem, 10vw, 4rem)">
+  		</div>
+		<div class="heading center">
+			<h1>Join the waitlist</h1>
+			<p class="subtext  center">
+				The first open source platform for encrypted data recovery and escrow. No trust required. Join the waitlist to be the first to try it.
+			  </p>
 		</div>
-		{%- include footer.html -%}
-	</body>
+  	</section>
+
+
+  <div class="info-block">
+    <span class="spaced-text">STAY TUNED</span>
+  	<span class="spaced-text">FOR</span>
+  	<span class="spaced-text">EARLY ACCESS</span><br>
+  	NO SPAM – WE’LL ONLY EMAIL YOU ABOUT CAUTION
+  </div>
+
+ <div class="waitlist-form">
+	<form  method="post" class="email-form">
+	  	<div class="input-wrapper">
+			<input type="email" name="email" placeholder="Enter your email" id="email" class="email-input" required>
+			<button type="submit" class="submit-btn" aria-label="Submit email">
+			  <span class="arrow">→</span>
+			</button>
+		</div>
+	</form>
+</div>
+
+<div class="footer">
+	<p>Brought to you by the security engineers behind Distrust, BitGo, Unit410 and Turkney.</p>
+</div>
+
 </html>
+
