@@ -1,22 +1,17 @@
-title: Distrust
-email: info@distrust.co
+title: Caution
+email: info@caution.co
 description: Security without blind trust.
 baseurl: ""
-url: "https://distrust.co"
+url: "https://caution.co"
 banner: "https://distrust.co/assets/base/distrust-thumbnail.png"
 
 header_pages:
 - index.md
-- services.md
-- software.md
-- company.md
-- blog.md
-- contact.md
 
 style: dark
 listen_for_clients_preferred_style: false
 
-footer: '© 2025 Caution LLC'
+footer: '© 2025 Caution SEZC'
 
 theme: jekyll-theme-console
 

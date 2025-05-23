@@ -1,19 +1,10 @@
-image: ruby:3.1
-
-variables:
-  JEKYLL_ENV: production
-  BUNDLE_PATH: vendor/bundle
-
-before_script:
-  - apt-get update -y
-  - gem install bundler
-  - bundle install
+image: ruby:2.7
 
 pages:
   script:
+    - gem install bundler -v 2.4.22
+    - bundle install
     - bundle exec jekyll build -d public
   artifacts:
     paths:
-      - public
-  only:
-    - main 
+      - public 
