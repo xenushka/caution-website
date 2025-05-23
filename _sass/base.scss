@@ -24,7 +24,7 @@ html {
 
 body {
 	width: 100%;
-	background-color: var(--background-color);
+	background-color: var(--ghost-white);
 	margin: 0 auto;
 	padding: 0;
 	font-family: $base-font-family;
@@ -123,7 +123,7 @@ a:hover {
 .gradient-text {
 	font-size: 48px;
 	font-weight: bold;
-	background: linear-gradient(100deg, white, #8a8d97);
+	background: linear-gradient(100deg, var(--raisin-black), var(--ghost-white));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -131,7 +131,7 @@ a:hover {
 .gradient-text-inverse {
 	font-size: 48px;
 	font-weight: bold;
-	background: linear-gradient(-100deg, white, #8a8d97);
+	background: linear-gradient(-100deg, var(--raisin-black), var(--ghost-white));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
@@ -161,7 +161,7 @@ h3.gradient-text.center {
 	border-radius: 20px;
 	padding: 45px; 
 	margin: 20px;
-	min-height: 430px;
+	min-height: 150px;
 	max-width: 550px;
 }
 
@@ -777,7 +777,7 @@ margin-bottom: 16px;
 }
 
 footer {
-	color: var(--light-grey);
+	color: var(--raisin-black);
 	background-color: color-mix(in srgb, var(--background-color), white 1.5%);
 	border-top: 2px solid var(--purple);
 	padding: 60px 0px 40px 0px;
@@ -896,13 +896,57 @@ hr {
 /**
  * Navbar
  */
+
+ .inline-email-form .form-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+  }
+  
+  .form-input {
+	flex: 1;
+	padding: 12px 16px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 1rem;
+  }
+  
+  .circle-btn {
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 42px;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.25rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+  }
+  
+  .circle-btn:hover {
+	background-color: #333;
+  }
+  
+  .btn-arrow {
+	font-weight: bold;
+  }
+
+  .landing-logo-container {
+	text-align: center;
+	margin: auto;
+  }
+
 .menu {
 	max-width: 1280px;
 	margin: auto;
 }
 
 .menu-logo {
-	height: 48px;
+	height: clamp(1.5rem, 10vw, 5rem);
+	margin-top: 2rem;
 }
 
 #home-link:hover {
@@ -923,12 +967,12 @@ hr {
 }
 
 .header-page-links a.active {
-	color: white;
+	color: var(--raisin-black);
 }
 
 .header-page-links a:hover {
 	background-color: transparent;
-	color: white;
+	color: (--raisin-black);
 }
 
 .left-menu {
@@ -1422,8 +1466,8 @@ textarea {
  * Contact Form
  */
 .required:after {
-	content: " (required)";
-	color: white;
+	content: "*";
+	color: var(--ghost-white);
 }
 
 .placeholder:after {
@@ -1437,9 +1481,8 @@ textarea {
 }
 
 .form-container.card {
-	background: #222222;
-	border: 1px solid #222222;
-	padding-bottom: 25px;
+	background: var(--ghost-white);
+	min-height: 150px !important;
 }
 
 .form-label {
@@ -1454,8 +1497,8 @@ textarea {
 	border: 1px solid grey;
 	border-radius: 10px;
 	font-size: 16px;
-	caret-color: white !important;
-	color: white !important;
+	caret-color: black !important;
+	color: var(--ghost-white) !important;
 	background: var(--background-color) !important;
 	height: 50px;
 	width: 100%;

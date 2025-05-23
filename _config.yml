@@ -16,7 +16,7 @@ header_pages:
 style: dark
 listen_for_clients_preferred_style: false
 
-footer: '© 2025 Distrust LLC'
+footer: '© 2025 Caution LLC'
 
 theme: jekyll-theme-console
 

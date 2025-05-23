@@ -3,15 +3,16 @@
  */
 
 :root {
-	--base-color: rgba(255, 255, 255, 0.87);
-	--header-color: #ffffff;
-	--border: solid 2px rgba(219, 219, 219, 0.9);
+	--base-color: #120F1A;
+	--header-color: #120F1A;
+	--border: solid 2px #292929;
 	--selection-background: rgba(219, 219, 219, 0.99);
 	--selection-text: #000;
-	--background-color: #0F0F0F;
+	--background-color: #f1f2f9;
 	--text-color: var(--base-color);
 	--placeholder-color: rgba(0, 0, 0, 0.5);
 	--link-color: var(--base-color);
+	--raisin-black: #120F1A;
 	/* yoinkt from Material Design 2014, Deep Purple A200 */
 	--purple: #7C4DFF;
 	--light-purple: #A998ED;
@@ -25,6 +26,7 @@
 	--light-grey: #9A9A9A;
 	--mid-grey: #292929;
 	--dark-grey: #120F1A;
+	--ghost-white: #f1f2f9;
 	--code-color-1: #aaaaaa;
 	--code-color-2: #ffffcc;
 	--code-color-3: #F00000;
