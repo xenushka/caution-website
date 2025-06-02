@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: en }}">
-	{%- include head.html -%} 
+	
+{%- include head.html -%} 
 
-<!-- index.html -->
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caution Waitlist</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-	html, body {
-  		height: 100vh;
-		width: 100vw;
-		overflow-x: hidden;
-		overflow-y: auto;
-	}
-  </style>
-</head>
+<div class="video-background-container">
+	<video autoplay muted loop playsinline class="video-background">
+		<!-- <source src="assets/videos/caution-waitlist.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /> -->
+		<source src="assets/videos/caution-waitlist.webm" type='video/webm; codecs="vp8, vorbis"' />
+	</video>
+</div>
 
 <body>
- 	<section class="logo-section center"></section> 
+
+<section class="logo-section center">
+	
 		<div class="logo">
-    		<img src="/assets/base/caution-logo-triangle-black.svg" alt="Caution logo" style="height: clamp(3rem, 10vw, 4rem)">
-  		</div>
-		<div class="heading center">
-			<h1>Join the waitlist</h1>
-			<p class="subtext  center">
-				The first open source platform for encrypted data recovery and escrow. No trust required. Join the waitlist to be the first to try it.
-			  </p>
+			<a href="/">
+    			<img src="/assets/base/caution-logo/caution-logo-text-black.svg" alt="Caution logo" style="height: clamp(1.5rem, 10vw, 2.2rem); opacity: 0.8">
+			</a>
 		</div>
-  	</section>
+	
 
+	<div class="heading center">
+		<h1>Join the waitlist</h1>
+		<p class="subtext  center">
+			The first open source platform for encrypted data recovery and escrow. Built by the security engineers behind <a rel=”noopener noreferrer” target="_blank" href="https://distrust.co/" class="distrust-link-subtext">Distrust</a>, formerly at BitGo, Unit410, and Turnkey.
+		  </p>
+	</div>
 
-  <div class="info-block">
-    <span class="spaced-text">STAY TUNED</span>
-  	<span class="spaced-text">FOR</span>
-  	<span class="spaced-text">EARLY ACCESS</span><br>
-  	NO SPAM – WE’LL ONLY EMAIL YOU ABOUT CAUTION
-  </div>
+</section>
 
- <div class="waitlist-form">
-	<form  method="post" class="email-form">
-	  	<div class="input-wrapper">
+<div class="info-block">
+	 <span class="spaced-text">GET</span>
+	<span class="spaced-text">EARLY</span>
+	<span class="spaced-text">ACCESS</span><br>
+	<span class="spaced-text">BE THE</span>
+	<span class="spaced-text">FIRST</span><br>
+	<span class="spaced-text">TO</span>
+	<span class="spaced-text">TRY IT</span>
+ </div>
+
+<div class="waitlist-form">
+	<form id="contact-form" method="post" class="email-form" action="https://distrust.co/submit-email">
+		<div class="input-wrapper">
 			<input type="email" name="email" placeholder="Enter your email" id="email" class="email-input" required>
+			<input type="hidden" id="name" name="name" class="form-input" value="caution.co">
+			<input type="hidden" id="company-name" value="caution.co" name="company-name" class="form-input">
+			<input id="service" type="hidden" name="service" class="form-select" value="caution.co">
+			<input type="hidden" id="other-source" name="other-source" class="form-input" placeholder="Please specify">
+			<input type="hidden" id="other-source" name="help" class="form-input" placeholder="Please specify">
 			<button type="submit" class="submit-btn" aria-label="Submit email">
-			  <span class="arrow">→</span>
+				<span class="arrow">→</span>
 			</button>
 		</div>
-	</form>
+	</form>	
 </div>
 
 <div class="footer">
-	<p>Brought to you by the security engineers behind Distrust, BitGo, Unit410 and Turkney.</p>
+	<p>No spam – we'll only email you about Caution.</p>
 </div>
+<div class="footer-mobile">
+	<p>Get early access. Be the first to try it. No spam – we'll only email you about Caution.</p>
+</div>
+
+</body>
 
 </html>
 
