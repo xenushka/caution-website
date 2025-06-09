@@ -87,8 +87,8 @@ body {
 	margin-top: 1.5rem;
 	margin-bottom: 4rem;
 }
-  
-  
+
+
 h1 {
 	font-size: clamp(3rem, 10vw, 4.8rem);
 	line-height: clamp(5rem, 10vw, 5.8rem);
@@ -101,7 +101,7 @@ h1 {
 	opacity: 0;
 	animation: fadeIn ease 1.1s forwards;
   }
-  
+
 @keyframes fadeIn {
 	from {
 	  opacity: 0;
@@ -128,7 +128,7 @@ h1 {
 .delay-4 {
 	animation-delay: 0.3s;
 }
-  
+
 .subtext, .subtext-thanks {
 	font-size: clamp(1.1rem, 2vw, 1.25rem);
 	background: rgba(232, 246, 253, 0.6);
@@ -145,7 +145,7 @@ h1 {
 	max-width: 410px;
 	margin-bottom: 22rem;
 }
-  
+
 .info-block, .info-block-thanks {
 	font-size: 1rem;
 	text-transform: uppercase;
@@ -161,15 +161,10 @@ h1 {
 	margin-bottom: 7rem;
 }
 
-.spaced-text {
-	margin-right: 1.25rem;
-	display: inline-block;
-}
-
 .waitlist-form {
 	width: min(90%, 500px);
 }
-  
+
 .email-form {
 	display: flex;
 	justify-content: center;
@@ -188,7 +183,7 @@ h1 {
 	justify-content: space-between;
 	margin-bottom: 2rem;
 }
-  
+
 .email-input {
 	flex: 1;
 	font-size: 1.25rem;
@@ -228,7 +223,7 @@ h1 {
 .submit-btn .arrow:hover {
 	transform: translateX(2.5px);
 }
-  
+
 .footer {
 	margin-bottom: 1rem;
 	font-size: clamp(0.9rem, 10vw, 1rem);
@@ -466,7 +461,7 @@ h3.gradient-text.center {
 	background: var(--dark-grey);
 	border: 1px solid var(--mid-purple);
 	border-radius: 20px;
-	padding: 45px; 
+	padding: 45px;
 	margin: 20px;
 	min-height: 150px;
 	max-width: 550px;
@@ -686,7 +681,7 @@ h3.gradient-text.center {
 }
 
 .threat-model {
-	margin-top: 1rem; 
+	margin-top: 1rem;
 	margin-bottom: 1.5rem;
 }
 
@@ -811,7 +806,7 @@ h3.gradient-text.center {
 	flex-direction: column;
 	min-height: 360px;
 	padding: 35px;
-	background: none; 
+	background: none;
 	border: 1px solid var(--light-teal);
 }
 
@@ -897,7 +892,7 @@ h3.gradient-text.center {
 	top: 1850px;
 	left: 0;
 	z-index: -1;
-	transform: scaleY(-1) 
+	transform: scaleY(-1)
 }
 
 .video-background-container-building-blocks {
@@ -907,7 +902,7 @@ h3.gradient-text.center {
 	overflow: hidden;
 	top: 2170px;
 	left: 0;
-	z-index: -1; 
+	z-index: -1;
 }
 
 .gradient-overlay-philosophy, .gradient-overlay-our-approach {
@@ -1004,12 +999,12 @@ h3.gradient-text.center {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap; 
-	gap: 1rem; 
+	flex-wrap: wrap;
+	gap: 1rem;
 	margin-top: 15rem;
   }
 
-  
+
   .flex-container-inner {
 	flex: 1;
 	min-width: 250px;
@@ -1018,13 +1013,13 @@ h3.gradient-text.center {
   .flex-container-inner .card .landing-offerings {
 	min-height: 480px;
   }
-  
+
   .threatmodel-cta-right-column .button-container {
 	flex-shrink: 0;
 	display: block;
   }
 
-  .threatmodel-cta-bottom .button-container { 
+  .threatmodel-cta-bottom .button-container {
 	display: none;
   }
 
@@ -1033,7 +1028,7 @@ h3.gradient-text.center {
 	box-shadow: 0 0 18px var(--pink);
 	background-color: #2A0A1F;
   }
-  
+
   .threatmodel-cta-right-column .mega.button:hover, .threatmodel-cta-bottom .mega-inverted.button:hover {
 	border: 2px solid var(--pink);
 	box-shadow: 0 0 18px var(--pink);
@@ -1069,11 +1064,11 @@ h3.gradient-text.center {
 }
 
 p {
-	
+
 	word-wrap: break-word;
 	word-break: break-word;
 	white-space: pre-wrap;
-	
+
 margin-top: 16px;
 margin-bottom: 16px;
 }
@@ -1150,7 +1145,7 @@ footer {
 }
 
 .footer-links a:hover {
-	color: var(--purple);	
+	color: var(--purple);
 }
 
 .footer-bottom {
@@ -1167,7 +1162,7 @@ footer {
 
 .footer-social a img {
 	height: 20px;
-	width: 20px; 
+	width: 20px;
 	margin-left: 0.5rem;
 	filter: invert(1) grayscale(1) brightness(0.5);
 	transition: filter 0.2s ease;
@@ -1201,7 +1196,7 @@ hr {
 	align-items: center;
 	gap: 10px;
   }
-  
+
   .form-input {
 	flex: 1;
 	padding: 12px 16px;
@@ -1209,7 +1204,7 @@ hr {
 	border-radius: 8px;
 	font-size: 1rem;
   }
-  
+
   .circle-btn {
 	background-color: black;
 	color: white;
@@ -1224,11 +1219,11 @@ hr {
 	cursor: pointer;
 	transition: background-color 0.2s ease-in-out;
   }
-  
+
   .circle-btn:hover {
 	background-color: #333;
   }
-  
+
   .btn-arrow {
 	font-weight: bold;
   }
@@ -1602,7 +1597,7 @@ hr {
 	justify-content: space-between;
   }
 
-.contact-info {	
+.contact-info {
 	flex: 1 1 45%;
 	max-width: 500px;
   }
@@ -1623,7 +1618,7 @@ hr {
 	opacity: 0.9;
 	padding-top: 1.5rem;
   }
-  
+
   .logo-grid img {
 	max-width: 100%;
 	max-height: 30px;
@@ -1631,7 +1626,7 @@ hr {
 	filter: grayscale(100%);
 	transition: filter 0.3s ease;
   }
-  
+
 
 ::selection {
 	background: var(--selection-background);
@@ -1794,7 +1789,7 @@ textarea {
 	gap: 20px;
 	flex-wrap: wrap;
   }
-  
+
   .form-half {
 	flex: 1;
 	min-width: 200px;
@@ -1959,7 +1954,7 @@ pre {
 .highlight .gr {
 	color: var(--code-color-7);
 }
- 
+
 .highlight .gh {
 	color: var(--code-color-8);
 	font-weight: bold
@@ -2434,7 +2429,7 @@ pre {
 	padding: 3rem 1.5rem;
 	background-color: #0d0d0d;
   }
-  
+
   .testimonial-card {
 	background-color: #121212;
 	padding: 2rem;
@@ -2445,37 +2440,37 @@ pre {
 	justify-content: space-between;
 	gap: 1.5rem;
   }
-  
+
   .testimonial-logo {
 	height: 32px;
   }
-  
+
   .testimonial-quote {
 	color: #fff;
 	font-size: 1rem;
 	line-height: 1.6;
 	font-style: italic;
   }
-  
+
   .testimonial-author {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
   }
-  
+
   .testimonial-avatar {
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
 	object-fit: cover;
   }
-  
+
   .testimonial-name {
 	font-weight: 600;
 	color: #fff;
 	margin: 0;
   }
-  
+
   .testimonial-title {
 	font-size: 0.875rem;
 	color: #aaa;
@@ -2585,7 +2580,7 @@ pre {
 	}
 
 	.footer-links a:hover {
-		color: var(--purple);	
+		color: var(--purple);
 	}
 
 	.footer-footer {
@@ -2599,7 +2594,7 @@ pre {
 	.footer-social a img {
 		height: 20px;
 		margin-left: 0rem;
-		width: 20px; 
+		width: 20px;
 	}
 
 }
@@ -2615,7 +2610,7 @@ pre {
 	.text-description-desktop {
 		display: none;
 	}
-	
+
 	.text-description-mobile {
 		display: block;
 	}
@@ -2712,7 +2707,7 @@ pre {
 		display: none;
 	}
 
-	.threatmodel-cta-bottom .button-container { 
+	.threatmodel-cta-bottom .button-container {
 		display: block;
 	}
 
@@ -2746,7 +2741,7 @@ pre {
 }
 
 @media (max-width: 600px) {
-	
+
 	.live-tools-cards .card {
 		min-height: 300px;
 	}
@@ -2858,7 +2853,7 @@ pre {
 	}
 
 	.footer-links a:hover {
-		color: var(--purple);	
+		color: var(--purple);
 	}
 
 	.footer-footer {
@@ -2872,7 +2867,7 @@ pre {
 	.footer-social a img {
 		height: 20px;
 		margin-left: 0rem;
-		width: 20px; 
+		width: 20px;
 	}
 
 	//footer//
@@ -2970,7 +2965,7 @@ pre {
 }
 
 @media (max-width: 400px) {
- 
+
 	.footer-description-mobile {
 		display: none;
 	}
