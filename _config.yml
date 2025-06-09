@@ -1,9 +1,9 @@
 title: Caution
 email: info@caution.co
-description: Security without blind trust.
+description: The first open source platform for encrypted data recovery and escrow.
 baseurl: ""
 url: "https://caution.co"
-banner: "https://distrust.co/assets/base/distrust-thumbnail.png"
+banner: "https://caution.co/assets/base/caution-thumbnail.png"
 
 header_pages:
 - index.md
@@ -11,7 +11,7 @@ header_pages:
 style: dark
 listen_for_clients_preferred_style: false
 
-footer: '© 2025 Caution SEZC'
+footer: '© 2025 Caution'
 
 theme: jekyll-theme-console
 
