@@ -1,5 +1,5 @@
 FROM ruby:3.2.2-alpine AS builder
-LABEL stage=distrust-co-builder
+LABEL stage=caution-co-builder
 RUN apk update && apk add g++ make git git-lfs
 RUN mkdir -p /home
 COPY Gemfile /home
@@ -8,7 +8,7 @@ COPY _vendor /home/_vendor
 WORKDIR /home
 RUN bundle install
 COPY . /home
-RUN jekyll build 
+RUN jekyll build
 
 FROM debian:bookworm AS mime-types
 RUN apt-get update && apt-get install -y media-types
