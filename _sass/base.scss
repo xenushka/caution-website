@@ -161,6 +161,11 @@ h1 {
 	margin-bottom: 7rem;
 }
 
+.spaced-text {
+	display: inline-block;
+	margin-right: 1.25rem;
+}
+
 .waitlist-form {
 	width: min(90%, 500px);
 }
@@ -295,13 +300,13 @@ a {
 
 	.subtext {
 		max-width: 350px;
-		margin-bottom: 19rem;
+		margin-bottom: 17rem;
 		margin-top: 0rem;
 	}
 
 	.subtext-thanks {
 		max-width: 320px;
-		margin-bottom: 27.5rem;
+		margin-bottom: 25rem;
 		margin-top: 0rem;
 	}
 
@@ -333,6 +338,7 @@ a {
 		color: #636363;
 		max-width: 340px;
 		font-size: 0.9rem;
+		margin-bottom: 5rem;
 	}
 }
 
