@@ -1,71 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: en }}">
-
-{%- include head.html -%}
-
-<!-- <div class="video-background-container">
-	<video autoplay muted loop playsinline class="video-background">
-		<source src="assets/videos/caution-waitlist.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-		<source src="assets/videos/caution-waitlist.webm" type='video/webm; codecs="vp8, vorbis"' />
-	</video>
-</div> -->
-
-
-
-<body>
-
-<section class="logo-section center">
-
-		<div class="logo fade-in">
-			<a href="/">
-    			<img src="/assets/base/caution-logo/caution-logo-text-black.svg" alt="Caution logo" style="height: clamp(1.5rem, 10vw, 2rem); opacity: 0.8">
-			</a>
-		</div>
-
-
-	<div class="heading center fade-in">
-		<h1>Join the waitlist</h1>
-		<p class="subtext  center delay-1">
-			The first open source platform for encrypted data recovery and escrow. Built by the security engineers behind <a rel=”noopener noreferrer” target="_blank" href="https://distrust.co/" class="distrust-link-subtext">Distrust</a>, formerly at BitGo, Unit410, and Turnkey.
-		  </p>
-	</div>
-
-</section>
-
-<div class="info-block fade-in delay-2">
-	<span class="spaced-text">GET</span>
-	<span class="spaced-text">EARLY</span>
-	<span class="spaced-text">ACCESS</span><br>
-	<span class="spaced-text">BE THE</span>
-	<span class="spaced-text">FIRST</span><br>
-	<span class="spaced-text">TO</span>
-	<span class="spaced-text">TRY IT</span>
-</div>
-
-<div class="waitlist-form">
-	<form id="contact-form" method="post" class="email-form" action="/submit-email">
-		<div class="input-wrapper">
-			<input type="email" name="email" placeholder="Enter your email" id="email" class="email-input" required>
-			<input type="hidden" id="name" name="name" class="form-input" value="caution.co">
-			<input type="hidden" id="company-name" value="caution.co" name="company-name" class="form-input">
-			<input id="service" type="hidden" name="service" class="form-select" value="caution.co">
-			<input type="hidden" id="other-source" name="other-source" class="form-input" placeholder="Please specify">
-			<input type="hidden" id="other-source" name="help" class="form-input" placeholder="Please specify">
-			<button type="submit" class="submit-btn" aria-label="Submit email">
-				<span class="arrow">→</span>
-			</button>
-		</div>
-	</form>
-</div>
-
-<div class="footer fade-in delay-3">
-	<p>No spam – we'll only email you about Caution.</p>
-</div>
-<div class="footer-mobile">
-	<p>Get early access. Be the first to try it. No spam – we'll only email you about Caution.</p>
-</div>
-
-</body>
-
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+		<section class="hero-landing">
+			<div class="hero-lading-content container">
+				<h1 class="hero-landing-title">Secure what matters most.</h1>
+				<p class="hero-landing-subtext">
+					Recover any encrypted data without relying on blind trust. Open
+					source, verifiable, and trustless by design.
+				</p>
+				<div class="hero-landing-cta">
+					<a href="#" class="btn btn-primary">Get started →</a>
+					<a href="/contact.html" class="btn btn-secondary">Contact sales →</a>
+				</div>
+			</div>
+		</section>
+		{%- include footer.html -%}
+	</body>
 </html>
-

@@ -1,9 +1,48 @@
 {%- assign page_paths = site.header_pages | default: default_paths -%}
-<header>
+
+<header class="header-navbar">
+	<div class="nav-container container">
+		<a href="/_layouts/landing.html" class="nav-logo">
+			<img
+				src="/assets/base/caution-logo/caution-icon-black.svg"
+				alt="Caution logo"
+			/>
+		</a>
+
+		<nav class="nav-menu">
+			<div class="nav-dropdown">
+				<button class="nav-dropdown-toggle">
+					Caution
+					<img
+						src="/assets/base/dropdown.svg"
+						alt="Dropdown caret"
+						class="nav-caret-icon"
+					/>
+				</button>
+				<ul class="nav-dropdown-menu">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Team</a></li>
+					<li><a href="#">R&D</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+
+			<a class="nav-link" href="#">Disaster Recovery</a>
+			<a class="nav-link" href="/_layouts/Pricing.html">Pricing</a>
+			<a class="nav-link" href="#">Docs</a>
+		</nav>
+
+		<div class="nav-cta">
+			<a href="#" class="btn btn-primary">Get started →</a>
+		</div>
+	</div>
+</header>
+
+<!-- <header>
   <div class="menu">
     <div class="left-menu">
       <a id="home-link" href="/index.html">
-        <img class="menu-logo" src="/assets/base/caution-logo-triangle-black.svg"
+        <img class="menu-logo" src="/assets/base/caution-logo/caution-icon-black.svg"
           alt="Caution triangle logo with black text" />
       </a>
     </div>
@@ -18,7 +57,7 @@
           {%- endif -%}
         {%- endfor -%}
         <li class="show">
-          <a href="/contact.html" class="mega-inverted button">Work with us</a>
+          <a href="#" class="btn btn-primary">Get started →</a>
         </li>
 
       </ul>
@@ -37,7 +76,10 @@
 			</div>
     </div>
   </div>
-	<script>
+	
+	
+	
+	<script> 
 		document.addEventListener('DOMContentLoaded', function () {
 			let pathSegment = window.location.pathname.split('/')[1];
 
@@ -71,3 +113,5 @@
 	</script>
 
 </header>
+
+-->
