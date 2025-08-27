@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+		<div class="container">
+			<main>
+				<section class="hero">
+					<div class="hero-content">
+						<h1 class="hero-title">Transparent, flexible pricing.</h1>
+						<p class="subtext">
+							Choose the control level and recovery guarantees that match your
+							risk profile.
+						</p>
+						<div class="hero-landing-cta">
+							<a href="#" class="btn">Get started →</a>
+							<a href="/contact.html" class="btn btn-secondary"
+								>Contact sales →</a
+							>
+						</div>
+					</div>
+				</section>
+
+				<section class="pricing-options section">
+					<div class="pricing-grid">
+						<!-- Card 1: Open source -->
+						<a class="pricing-card" href="#" aria-label="open-source pricing">
+							<h3 class="card-title">Open source</h3>
+							<p class="card-body">
+								Self-host with full control. Deploy, run, and audit every line
+								of code. Free forever with optional paid support.
+							</p>
+							<!-- corner arrow -->
+							<span class="card-corner" aria-hidden="true">
+								<!-- tiny NE arrow -->
+								<svg
+									viewBox="0 0 20 20"
+									class="corner-icon"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M6 6h8v8"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+									<path
+										d="M6 14L14 6"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+								</svg>
+							</span>
+						</a>
+
+						<!-- Card 2: Managed by Caution -->
+						<a
+							class="pricing-card"
+							href="#"
+							aria-label="managed-by-caution pricing"
+						>
+							<h3 class="card-title">Managed by Caution</h3>
+							<p class="card-body">
+								Choose a hosted recovery service. Pick from paid plans with
+								verifiable guarantees.
+							</p>
+							<span class="card-corner" aria-hidden="true">
+								<svg
+									viewBox="0 0 20 20"
+									class="corner-icon"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M6 6h8v8"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+									<path
+										d="M6 14L14 6"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</section>
+
+				<section class="open-source">
+					<div class="open-source-container">
+						<img class="open-source-img" src="/assets/base/bubble.svg" alt="" />
+
+						<div class="open-source-content">
+							<span class="tag-pill">Open source</span>
+							<h2 class="open-source-title">Self‑host<br />for free</h2>
+							<p class="subtext oss">
+								Open source at the core. Audit, customize, and self‑host Caution
+								Disaster Recovery — transparent, free, and fully under your
+								control.
+							</p>
+							<div class="hero-landing-cta">
+								<a href="#" class="btn">Read the docs →</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- PAID PLANS -->
+
+				<section class="plans">
+					<header class="plans__head">
+						<span class="tag-pill">Paid plans</span>
+						<h2 class="plans__title">Managed by Caution</h2>
+						<p class="subtext pricing-plans">
+							Prefer not to self‑host? Choose one of our managed recovery plans.
+						</p>
+					</header>
+
+					<div class="plans__grid">
+						<!-- On‑demand -->
+						<article class="plan-card">
+							<h3 class="plan-card__name">On‑demand</h3>
+							<p class="plan-card__desc">
+								Store your own data and pay only when you need to recover. No
+								recurring fees.
+							</p>
+
+							<div class="plan-card__price">
+								<div class="price" aria-label="$0 per year">
+									<span class="price-amount">0</span>
+									<span class="price-currency" aria-hidden="true">$</span>
+									<span class="price-per" aria-hidden="true">/year</span>
+								</div>
+							</div>
+
+							<a href="/get-started" class="btn">Get started →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>Self‑store your encrypted backups</li>
+									<li>$100K per each on‑schedule recovery</li>
+									<li>Email support</li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- Enterprise -->
+						<article class="plan-card plan-card--primary">
+							<h3 class="plan-card__name">Enterprise</h3>
+							<p class="plan-card__desc">
+								Enterprise-grade data storage and recovery with premium support.
+							</p>
+
+							<div class="plan-card__price">
+								<div class="price" aria-label="$15K per year">
+									<span class="price-amount">15K</span>
+									<span class="price-currency" aria-hidden="true">$</span>
+									<span class="price-per" aria-hidden="true">/year</span>
+								</div>
+							</div>
+
+							<a href="/get-started" class="btn btn-primary">Get started →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>10 TB of data storage, then $X/TB/year</li>
+									<li>2 scheduled recoveries per year</li>
+									<li>$10K per each extra on‑schedule recovery</li>
+									<li>Guided onboarding + premium support</li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- Dedicated -->
+						<article class="plan-card">
+							<h3 class="plan-card__name">Dedicated</h3>
+							<p class="plan-card__desc">
+								Private infrastructure with full isolation and custom
+								governance.
+							</p>
+
+							<div class="plan-card__price">
+								<div class="price price--word" aria-hidden="true">Custom</div>
+								<span class="sr-only">Custom pricing — contact sales</span>
+							</div>
+
+							<a href="/contact" class="btn">Contact sales →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>Fully isolated environment</li>
+									<li>Private recovery infrastructure</li>
+									<li>Custom governance controls</li>
+									<li>Dedicated support team</li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Pricing: Included with every plan -->
+				<section class="included">
+					<h3 class="included__title">Included with every plan:</h3>
+
+					<ul class="included__grid list-check">
+						<li>Open source transparency</li>
+						<li>Verifiable, quorum‑based recovery</li>
+						<li>Full‑source bootstrapped binaries</li>
+						<li>Air‑gapped recovery ceremonies</li>
+						<li>Policy‑based recovery engine</li>
+						<li>Cryptographic audit logs</li>
+						<li>Guided policy creation</li>
+						<li>Built-in threat modeling logic</li>
+						<li>Ongoing community support</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+</html>

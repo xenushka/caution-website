@@ -5,94 +5,223 @@
 		{%- include header.html -%}
 		<div class="container">
 			<main>
-				<section style="margin-top: 170px">
-					<div class="video-background-container">
-						<video autoplay muted loop playsinline class="video-background">
-							<source src="assets/videos/globe.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-							<source src="assets/videos/globe.webm" type='video/webm; codecs="vp8, vorbis"' />
-						</video>
-						<div class="gradient-overlay"></div>
-					</div>
-
-					<br>
-					<br>
-					<div class="about-special video-content" style="max-width: 700px">
-						<br>
-						<h2>the world is built on blind trust. we are here to change that.</h2>
-						<br>
+				<section class="hero">
+					<div class="hero-content">
+						<h1 class="hero-title">Transparent, flexible pricing.</h1>
+						<p class="subtext">
+							Choose the control level and recovery guarantees that match your
+							risk profile.
+						</p>
+						<div class="hero-landing-cta">
+							<a href="#" class="btn">Get started →</a>
+							<a href="/contact.html" class="btn btn-secondary"
+								>Contact sales →</a
+							>
+						</div>
 					</div>
 				</section>
 
-				<section class="flex-container who-we-are-section">
-					<div class="team flex-container-inner">
-						<div class="team flex-container" style="margin-bottom: 0px">
-							<div class="flex-container-inner card">
-								<h5>Lance Vick</h5>
-								<p>Co-Founder</p>
-								<p>Security Engineer</p>
-								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/6B61ECD76088748C70590D55E90A401336C8AAA9">Keyoxide</a>
-								<span>|</span>
-								<a rel=”noopener noreferrer” target="_blank" href="https://lance.dev/">Website</a>
-							</div>
-							<div class="flex-container-inner card">
-								<h5>Anton Livaja</h5>
-								<p>Co-Founder</p>
-								<p>Security Engineer</p>
-								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/F4BF5C81EC78A5DD341C91EEDC4B7D1F52E0BA4D">Keyoxide</a>
-								<span>|</span>
-								<a rel=”noopener noreferrer” target="_blank" href="https://antonlivaja.com">Website</a>
-							</div>
-						</div>
-						<div class="team flex-container">
-							<div class="flex-container-inner card">
-								<h5>Ryan Heywood</h5>
-								<p>Security Engineer</p>
-								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/88823A75ECAA786B0FF38B148E401478A3FBEF72">Keyoxide</a>
-								<span>|</span>
-								<a rel=”noopener noreferrer” target="_blank" href="https://ryansquared.pub">Website</a>
-							</div>
-							<div class="flex-container-inner card">
-								<h5>Danny Grove</h5>
-								<p>Security Engineer</p>
-								<a rel=”noopener noreferrer” target="_blank" href="https://keyoxide.org/C92FE5A3FBD58DD3EC5AA26BB10116B8193F2DBD">Keyoxide</a>
-								<span>|</span>
-								<a rel=”noopener noreferrer” target="_blank" href="https://dannygrove.com/">Website</a>
-							</div> 
-						</div>
-					</div>
+				<section class="pricing-options section">
+					<div class="pricing-grid">
+						<!-- Card 1: Open source -->
+						<a class="pricing-card" href="#" aria-label="open-source pricing">
+							<h3 class="card-title">Open source</h3>
+							<p class="card-body">
+								Self-host with full control. Deploy, run, and audit every line
+								of code. Free forever with optional paid support.
+							</p>
+							<!-- corner arrow -->
+							<span class="card-corner" aria-hidden="true">
+								<!-- tiny NE arrow -->
+								<svg
+									viewBox="0 0 20 20"
+									class="corner-icon"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M6 6h8v8"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+									<path
+										d="M6 14L14 6"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+								</svg>
+							</span>
+						</a>
 
-					<div class="flex-container-inner who-we-are">
-						<h2 class="gradient-text">who we are</h2>
-						<p class="hero-p" style="max-width: 550px">Distrust is made up of engineers behind some of the most security-critical projects in the world—including BitGo, Turnkey, and Unit410.</p>
-						<p class="hero-p" style="max-width: 550px">We’ve helped hundreds of companies by conducting security reviews, building out their security infrastructure, and aiding them in launching products which can withstand the modern threat landscape. We don’t just secure systems. We build them.</p>
+						<!-- Card 2: Managed by Caution -->
+						<a
+							class="pricing-card"
+							href="#"
+							aria-label="managed-by-caution pricing"
+						>
+							<h3 class="card-title">Managed by Caution</h3>
+							<p class="card-body">
+								Choose a hosted recovery service. Pick from paid plans with
+								verifiable guarantees.
+							</p>
+							<span class="card-corner" aria-hidden="true">
+								<svg
+									viewBox="0 0 20 20"
+									class="corner-icon"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M6 6h8v8"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+									<path
+										d="M6 14L14 6"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+								</svg>
+							</span>
+						</a>
 					</div>
 				</section>
-			
-				{% include values.html %}
 
-			<div class="video-background-container-our-approach">
-				<video autoplay muted loop playsinline class="video-background-our-approach">
-					<source src="assets/videos/swirly-lines.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					<source src="assets/videos/swirly-lines.webm" type='video/webm; codecs="vp8, vorbis"' />
-				</video>
-				<div class="gradient-overlay-our-approach"></div>
-			</div>
-			<section class="flex-container video-content-our-approach">
-				<div class="flex-container-inner"></div>
-				<div class="flex-container-inner">
-					<h2 class="gradient-text why-distrust">our approach</h2>
-					<p>Too often, security is an afterthought—based on dogma, checklists, and outdated best practices. Distrust was founded to redefine security by developing new methods to eliminate single points of failure, and building systems in a manner where they don't need to be blindly trusted.</p>
-					<p>We don’t just advise on security. We build it. We open source it. And we teach organizations how to think critically about risk—because security isn’t about checking boxes.</p>
-				<div class="button-container">
-					<a href="/contact.html" class="mega button">Work with us</a>
-				</div>
-				</div>
-			</section>
+				<section class="open-source">
+					<div class="open-source-container">
+						<img class="open-source-img" src="/assets/base/bubble.svg" alt="" />
 
-			{% include why-choose-distrust.html %}
+						<div class="open-source-content">
+							<span class="tag-pill">Open source</span>
+							<h2 class="open-source-title">Self‑host<br />for free</h2>
+							<p class="subtext oss">
+								Open source at the core. Audit, customize, and self‑host Caution
+								Disaster Recovery — transparent, free, and fully under your
+								control.
+							</p>
+							<div class="hero-landing-cta">
+								<a href="#" class="btn">Read the docs →</a>
+							</div>
+						</div>
+					</div>
+				</section>
 
-			{% include primary-cta.html %}
-			
+				<!-- PAID PLANS -->
+
+				<section class="plans">
+					<header class="plans__head">
+						<span class="tag-pill">Paid plans</span>
+						<h2 class="plans__title">Managed by Caution</h2>
+						<p class="subtext pricing-plans">
+							Prefer not to self‑host? Choose one of our managed recovery plans.
+						</p>
+					</header>
+
+					<div class="plans__grid">
+						<!-- On‑demand -->
+						<article class="plan-card">
+							<h3 class="plan-card__name">On‑demand</h3>
+							<p class="plan-card__desc">
+								Store your own data and pay only when you need to recover. No
+								recurring fees.
+							</p>
+
+							<div class="price">
+								<span class="price__currency">$</span>
+								<span class="price__amount">0</span>
+								<span class="price__unit">/year</span>
+							</div>
+							<p class="plan-card__note">Pay per recovery, no recurring fees</p>
+
+							<a href="/get-started" class="btn">Get started →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>Self‑store your encrypted backups</li>
+									<li>$100K per each on‑schedule recovery</li>
+									<li>Email support</li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- Enterprise -->
+						<article class="plan-card plan-card--primary">
+							<h3 class="plan-card__name">Enterprise</h3>
+							<p class="plan-card__desc">
+								Enterprise-grade data storage and recovery with premium support.
+							</p>
+
+							<div class="price">
+								<span class="price__currency">$</span>
+								<span class="price__amount">15K</span>
+								<span class="price__unit">/year</span>
+							</div>
+							<p class="plan-card__note">Billed annually</p>
+
+							<a href="/get-started" class="btn btn-primary">Get started →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>10 TB of data storage, then $X/TB/year</li>
+									<li>2 scheduled recoveries per year</li>
+									<li>$10K per each extra on‑schedule recovery</li>
+									<li>Guided onboarding + premium support</li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- Dedicated -->
+						<article class="plan-card">
+							<h3 class="plan-card__name">Dedicated</h3>
+							<p class="plan-card__desc">
+								Private infrastructure with full isolation and custom
+								governance.
+							</p>
+
+							<div class="price">
+								<span class="price__amount">Custom</span>
+							</div>
+							<p class="plan-card__note">Bespoke implementation, from $300K</p>
+
+							<a href="/contact" class="btn">Contact sales →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>Fully isolated environment</li>
+									<li>Private recovery infrastructure</li>
+									<li>Custom governance controls</li>
+									<li>Dedicated support team</li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Pricing: Included with every plan -->
+				<section class="included">
+					<h3 class="included__title">Included with every plan:</h3>
+
+					<ul class="included__grid list-check">
+						<li>Open source transparency</li>
+						<li>Verifiable, quorum‑based recovery</li>
+						<li>Full‑source bootstrapped binaries</li>
+						<li>Air‑gapped recovery ceremonies</li>
+						<li>Policy‑based recovery engine</li>
+						<li>Cryptographic audit logs</li>
+						<li>Guided policy creation</li>
+						<li>Built-in threat modeling logic</li>
+						<li>Ongoing community support</li>
+					</ul>
+				</section>
 			</main>
 		</div>
 		{%- include footer.html -%}

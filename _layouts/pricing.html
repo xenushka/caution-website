@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body>
+		{%- include header.html -%}
+		<div class="container">
+			<main>
+				<section class="hero">
+					<div class="hero-content">
+						<h1 class="hero-title">Transparent, flexible pricing.</h1>
+						<p class="subtext">
+							Choose the control level and recovery guarantees that match your
+							risk profile.
+						</p>
+						<div class="hero-landing-cta">
+							<a href="#" class="btn">Get started →</a>
+							<a href="/contact.html" class="btn btn-secondary"
+								>Contact sales →</a
+							>
+						</div>
+					</div>
+				</section>
+
+				<section class="pricing-options section">
+					<div class="pricing-grid">
+						<!-- Card 1: Open source -->
+						<a class="pricing-card" href="#" aria-label="open-source pricing">
+							<h3 class="card-title">Open source</h3>
+							<p class="card-body">
+								Self-host with full control. Deploy, run, and audit every line
+								of code. Free forever with optional paid support.
+							</p>
+							<!-- corner arrow -->
+							<span class="card-corner" aria-hidden="true">
+								<!-- tiny NE arrow -->
+								<svg
+									viewBox="0 0 20 20"
+									class="corner-icon"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M6 6h8v8"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+									<path
+										d="M6 14L14 6"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+								</svg>
+							</span>
+						</a>
+
+						<!-- Card 2: Managed by Caution -->
+						<a
+							class="pricing-card"
+							href="#"
+							aria-label="managed-by-caution pricing"
+						>
+							<h3 class="card-title">Managed by Caution</h3>
+							<p class="card-body">
+								Choose a hosted recovery service. Pick from paid plans with
+								verifiable guarantees.
+							</p>
+							<span class="card-corner" aria-hidden="true">
+								<svg
+									viewBox="0 0 20 20"
+									class="corner-icon"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M6 6h8v8"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+									<path
+										d="M6 14L14 6"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.75"
+										stroke-linecap="round"
+									/>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</section>
+
+				<section id="open-source" class="open-source">
+					<div class="open-source-container">
+						<img class="open-source-img" src="/assets/base/bubble.svg" alt="" />
+
+						<div class="open-source-content">
+							<span class="tag-pill">Open source</span>
+							<h2 class="open-source-title">Self‑host<br />for free</h2>
+							<p class="subtext oss">
+								Open source at the core. Audit, customize, and self‑host Caution
+								Disaster Recovery — transparent, free, and fully under your
+								control.
+							</p>
+							<div class="hero-landing-cta">
+								<a href="#" class="btn">Read the docs →</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- PAID PLANS -->
+
+				<section id="paidplans" class="plans">
+					<header class="plans__head">
+						<span class="tag-pill">Paid plans</span>
+						<h2 class="plans__title">Managed by Caution</h2>
+						<p class="subtext pricing-plans">
+							Prefer not to self‑host? Choose one of our managed recovery plans.
+						</p>
+					</header>
+
+					<div class="plans__grid">
+						<!-- On‑demand -->
+						<article class="plan-card">
+							<h3 class="plan-card__name">On‑demand</h3>
+							<p class="plan-card__desc">
+								Store your own data and pay only when you need to recover. No
+								recurring fees.
+							</p>
+
+							<div class="price price-card" aria-label="$0 per year">
+								<span class="price__currency" aria-hidden="true">$</span>
+								<span class="price__amount">0</span>
+								<span class="price__unit on-demand" aria-hidden="true"
+									>/year</span
+								>
+							</div>
+							<p class="plan-card__note">Pay per recovery, no recurring fees</p>
+
+							<a href="/get-started" class="btn on-demand">Get started →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>Self‑store your encrypted backups</li>
+									<li>$200K per recovery</li>
+									<li>Email support</li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- Enterprise -->
+						<article class="plan-card plan-card__primary">
+							<h3 class="plan-card__name">Enterprise</h3>
+							<p class="plan-card__desc">
+								Enterprise-grade data storage and recovery with premium support.
+							</p>
+
+							<div class="price price-card" aria-label="$15K per year">
+								<span class="price__currency" aria-hidden="true">$</span>
+								<span class="price__amount">15K</span>
+								<span class="price__unit" aria-hidden="true">/year</span>
+							</div>
+							<p class="plan-card__note">Billed annually</p>
+
+							<a href="/get-started" class="btn enterprise">Get started →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>10 TB of data storage, then $X/TB/year</li>
+									<li>2 scheduled recoveries per year</li>
+									<li>Priority + extra recoveries available</li>
+									<li>Premium support</li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- Dedicated -->
+						<article class="plan-card">
+							<h3 class="plan-card__name">Dedicated</h3>
+							<p class="plan-card__desc">
+								Private infrastructure with full isolation and custom
+								governance.
+							</p>
+
+							<div
+								class="price price-card price--custom"
+								aria-label="Custom pricing"
+							>
+								<span class="price__amount">Custom</span>
+							</div>
+							<p class="plan-card__note">Bespoke implementation, from $300K</p>
+
+							<a href="/contact" class="btn dedicated">Contact sales →</a>
+
+							<div class="plan-card__includes">
+								<h4>Includes:</h4>
+								<ul class="list-check-included">
+									<li>Fully isolated environment</li>
+									<li>Private recovery infrastructure</li>
+									<li>Custom governance controls</li>
+									<li>Dedicated support team</li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Pricing: Included with every plan -->
+				<section class="included">
+					<h3 class="included__title">Included with every plan:</h3>
+
+					<ul class="included__grid list-check">
+						<li>Open source transparency</li>
+						<li>Verifiable, quorum‑based recovery</li>
+						<li>Full‑source bootstrapped binaries</li>
+						<li>Air‑gapped recovery ceremonies</li>
+						<li>Policy‑based recovery engine</li>
+						<li>Cryptographic audit logs</li>
+						<li>Guided policy creation</li>
+						<li>Built-in threat modeling logic</li>
+						<li>Ongoing community support</li>
+					</ul>
+				</section>
+
+				<!-- Compares plans in a semantic table for better accessibility and screen‑reader support -->
+				<section
+					id="compare"
+					class="pricing-compare"
+					aria-labelledby="compare-plans"
+				>
+					<!-- Provides a visible heading for the section -->
+					<h2 class="pc-title">Compare plans</h2>
+					<!-- Provides a short subtitle -->
+					<p class="subtext compare-plans">
+						Find the right level of control, support, and infrastructure for
+						your security posture.
+					</p>
+
+					<!-- Creates a scroll container so the table is usable on narrow screens without breaking layout -->
+					<div
+						class="pc-table-wrap"
+						role="region"
+						aria-label="Plan comparison"
+						tabindex="0"
+					>
+						<!-- Uses a caption for additional context; hidden visually but available to assistive tech -->
+						<table class="pc-table">
+							<caption class="sr-only">
+								Feature comparison across On‑demand, Enterprise, and Dedicated
+								plans
+							</caption>
+
+							<!-- Defines the column headers: the first column is the feature name -->
+							<thead>
+								<tr>
+									<th scope="col" class="col-feature">Features</th>
+									<th scope="col" class="col-plan">
+										<div class="plan-head">
+											<span>On‑demand</span>
+											<span class="plan-price">$0/year</span>
+										</div>
+									</th>
+									<th scope="col" class="col-plan">
+										<div class="plan-head">
+											<span>Enterprise</span>
+											<span class="plan-price">$15K/year</span>
+										</div>
+									</th>
+									<th scope="col" class="col-plan">
+										<div class="plan-head">
+											<span>Dedicated</span>
+											<span class="plan-price">Starting at $300K</span>
+										</div>
+									</th>
+								</tr>
+							</thead>
+
+							<!-- Groups: each <tbody> block represents a visual section with its own heading row -->
+							<tbody>
+								<!-- Section heading row -->
+								<tr class="row-section">
+									<th scope="rowgroup" colspan="4">
+										Technology &amp; governance
+									</th>
+								</tr>
+
+								<!-- Feature rows -->
+								<tr>
+									<th scope="row">Open‑source transparency</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="row">Managed by Caution</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+
+								<tr></tr>
+								<tr class="row-custom-policy">
+									<th scope="row">Custom recovery policy design</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+							</tbody>
+
+							<tbody>
+								<tr class="row-section">
+									<th scope="rowgroup" colspan="4">Data storage</th>
+								</tr>
+
+								<tr>
+									<th scope="row">Encrypted data storage</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">10TB/year</td>
+									<td data-label="Dedicated">Custom</td>
+								</tr>
+
+								<tr></tr>
+								<tr class="row-additional-storage">
+									<th scope="row">Additional data storage</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">$X/TB/year</td>
+									<td data-label="Dedicated">$X/TB/year</td>
+								</tr>
+							</tbody>
+
+							<tbody>
+								<tr class="row-section">
+									<th scope="rowgroup" colspan="4">Recovery</th>
+								</tr>
+
+								<tr>
+									<th scope="row">Air‑gapped recovery ceremonies</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="row">Verifiable, quorum‑based recovery</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="row">
+										On‑schedule recovery
+										<!-- Adds an info icon with an accessible tooltip; the text lives in data-tooltip -->
+										<button
+											class="info"
+											type="button"
+											aria-label="More info"
+											data-tooltip="Scheduled recoveries included with plan."
+										>
+											<img
+												src="/assets/base/info.svg"
+												alt=""
+												aria-hidden="true"
+											/>
+										</button>
+									</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">2/year</td>
+									<td data-label="Dedicated">Custom</td>
+								</tr>
+
+								<tr>
+									<th scope="row">
+										Off‑schedule recovery
+										<button
+											class="info"
+											type="button"
+											aria-label="More info"
+											data-tooltip="Out-of-cycle recovery outside the annual schedule."
+										>
+											<img
+												src="/assets/base/info.svg"
+												alt=""
+												aria-hidden="true"
+											/>
+										</button>
+									</th>
+									<td data-label="On‑demand">$200,000/event</td>
+									<td data-label="Enterprise">$50,000/event</td>
+									<td data-label="Dedicated">$50,000/event</td>
+								</tr>
+
+								<tr class="row-priority-recovery">
+									<th scope="row">
+										Priority recovery (&lt;48h)
+										<button
+											class="info"
+											type="button"
+											aria-label="More info"
+											data-tooltip="Faster SLA for critical recoveries within 48 hours."
+										>
+											<img
+												src="/assets/base/info.svg"
+												alt=""
+												aria-hidden="true"
+											/>
+										</button>
+									</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">$150,000 surcharge</td>
+									<td data-label="Dedicated">$150,000 surcharge</td>
+								</tr>
+							</tbody>
+
+							<tbody>
+								<tr class="row-section">
+									<th scope="rowgroup" colspan="4">Support</th>
+								</tr>
+
+								<tr>
+									<th scope="row">Open source community access</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="row">Guided onboarding</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="row">Premium support</th>
+									<td data-label="On‑demand">
+										<img
+											class="icon icon__muted"
+											src="/assets/base/not-available.svg"
+											alt="Not available"
+										/>
+									</td>
+									<td data-label="Enterprise">
+										<img
+											class="icon"
+											src="/assets/base/available.svg"
+											alt="Included"
+										/>
+									</td>
+									<td data-label="Dedicated">Dedicated team</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				<!-- FAQ section uses <details> for native accessibility and keyboard support -->
+				<section class="faq" aria-labelledby="faq-title">
+					<div class="faq-wrap">
+						<h2 id="faq-title" class="faq-title">Frequently asked questions</h2>
+						<p class="subtext faq-description">
+							We’re here to help with any questions about plans, pricing, or
+							what’s included.
+						</p>
+
+						<!-- Category group -->
+						<section class="faq-group" aria-labelledby="faq-plans">
+							<h3 id="faq-plans" class="faq-group-title">Plans &amp; prices</h3>
+
+							<div class="faq-list">
+								<details class="faq-item" open>
+									<summary class="faq-q">
+										<span class="faq-q-text">Which plan is best for me?</span>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												The right plans depends on your situation. Each one is
+												designed for a different balance of control,
+												responsibility, and assurance — how much you want to
+												handle yourself, and how much support you want us to
+												provide.
+											</p>
+
+											<ul class="plans-list">
+												<li>
+													<a href="#open-source"
+														><strong>Self-hosted open source</strong></a
+													>
+													is for organizations with dedicated technical
+													resources who want maximum control and are prepared to
+													manage everything themselves.
+												</li>
+
+												<li>
+													<a href="#paidplans"><strong>On-demand</strong></a> is
+													for individuals, family offices, or small teams who
+													need a safety net for critical data without frequent
+													recoveries.
+												</li>
+
+												<li>
+													<a href="#paidplans"><strong>Enterprise</strong></a>
+													is for companies that want guided onboarding, managed
+													storage, scheduled recoveries, and premium support —
+													reducing operational load without adding headcount.
+												</li>
+
+												<li>
+													<a href="#paidplans"><strong>Dedicated</strong></a>
+													is for organizations with nuanced needs such as strict
+													compliance, jurisdictional requirements, or complete
+													isolation. It delivers a private deployment with
+													tailored infrastructure and a recovery policy designed
+													specifically for your organization.
+												</li>
+											</ul>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>Is there really a free self-hosted version?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												Yes. Caution Disaster Recovery is fully open source, and
+												you can run it yourself at no cost. Disaster Recovery is
+												freely available to inspect, audit, and deploy in your
+												own environment.
+											</p>
+											<p>
+												Self-hosting is best for organizations with dedicated
+												technical resources that can manage infrastructure,
+												encrypted storage, quorum coordination, and in-person
+												recovery ceremonies on their own. It offers maximum
+												control, but requires significant ongoing
+												responsibility.
+											</p>
+											<p>
+												If you’d prefer not to dedicate resources to running the
+												system yourself, consider our
+												<a href="#enterprise">Enterprise</a> and
+												<a href="#dedicated">Dedicated</a> plans. They include
+												guided onboarding, managed storage, guaranteed recovery
+												timelines, and ongoing support.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>What do I get with the On-demand plan?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												<a href="#paidplans">On-demand</a> lets you store your
+												own encrypted backups and only pay if you need a
+												recovery. This plan is designed as a self-service tier,
+												but limited paid support can be added if needed.
+											</p>
+											<p>
+												<a href="#paidplans">On-demand</a> is best suited for
+												individuals, family offices, or small teams who need a
+												safety net for critical data without frequent
+												recoveries. If you require help with onboarding, ongoing
+												support, and guaranteed response times,
+												<a href="#paidplans">Enterprise</a> is a better fit.
+											</p>
+											<p>
+												<a href="contact.html">Talk to our Sales team</a> to
+												explore the right level of support for your needs.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>What’s included in the Enterprise plan?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												<a href="#paidplans">Enterprise</a> includes 10TB of
+												managed encrypted storage, geo-replication, two
+												scheduled recoveries per year, and premium support. It
+												is designed to provide predictable, reliable recovery
+												without adding operational overhead to your team.
+											</p>
+											<p>
+												This plan is best suited for companies that want to
+												reduce operational load and increase confidence in their
+												recovery process without hiring additional staff. For
+												organizations with nuanced requirements such as strict
+												compliance, jurisdictional controls, or full isolation,
+												<a href="#paidplans">Dedicated</a> is a better fit.
+											</p>
+											<p>
+												<a href="contact.html">Talk to our Sales team</a> to
+												explore whether <a href="#paidplans">Enterprise</a> or
+												<a href="#paidplans">Dedicated</a> is the right option
+												for your organization.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>How does pricing work for Dedicated?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												<a href="#paidplans">Dedicated</a> is for organizations
+												with nuanced requirements — such as strict compliance,
+												jurisdictional controls, or complete isolation. It
+												provides a fully private deployment with tailored
+												infrastructure and a recovery policy designed
+												specifically for your organization.
+											</p>
+											<p>
+												Deployments start at $300K. Pricing is based on the
+												scope of your environment, which may include private
+												infrastructure, custom recovery policies,
+												compliance-driven configurations, and expanded storage
+												capacity.
+											</p>
+											<p>
+												Our team will work with you to define a tailored scope
+												for your organization and provide a custom quote.
+												<a href="contact.html">Talk to our Sales team</a> to
+												begin the process.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text">Are there any hidden fees?</span>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												No. All storage, recovery, and support costs are
+												<a href="#compare">published above on this page</a>.
+												Optional add-ons (like additional storage and priority
+												recoveries) are billed separately.
+											</p>
+										</div>
+									</div>
+								</details>
+							</div>
+						</section>
+
+						<!-- Category: Security -->
+						<section class="faq-group" aria-labelledby="faq-security">
+							<h3 id="faq-security" class="faq-group-title">
+								Security &amp; infrastructure
+							</h3>
+
+							<div class="faq-list">
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>How does Caution ensure backups and recoveries are
+											secure?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												Both backups and recoveries are designed to minimize
+												trust and maximize verifiability. Backups are always
+												stored encrypted — Caution never sees plaintext data.
+												When a recovery is triggered, it’s quorum-based,
+												end-to-end encrypted, and run fully offline to prevent
+												outside interference.
+											</p>
+											<p>
+												No single person, system, or service can act alone;
+												multi-party approval is always required. Every step is
+												cryptographically logged and independently auditable.
+											</p>
+											<p>
+												Learn more about our threat model, design principles,
+												and security architecture on our
+												<a href="#">Security page</a>.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>What does “open source transparency” mean?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												Open source means our software’s code is public and
+												freely available to inspect, audit, and even run
+												yourself. We believe that true security requires
+												transparency and verifiability — you should never have
+												to trust what you can’t see.
+											</p>
+											<p>
+												Caution Disaster Recovery is and will always remain
+												fully open source. We don’t sell source code. What we
+												offer commercially is hosting, automation, and support
+												for organizations that want the assurance of managed
+												operations without giving up control.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text">Who has access to my data?</span>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>Only you. Caution never sees plaintext data.</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>What happens if something happens to Caution?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												Caution Disaster Recovery is built with strong risk
+												mitigation and business continuity practices to ensure
+												our services remain available even during major
+												incidents. Your data and recovery policies remain
+												protected, and ceremonies continue to operate without
+												interruption.
+											</p>
+											<p>
+												For full details, see our <a href="#">Security page</a>.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>Why back up with Caution instead of in-house or another
+											provider?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												Most backup options force you into trade-offs: in-house
+												setups are costly and hard to scale, while other vendors
+												lock you into closed systems you can’t fully trust.
+											</p>
+											<p>
+												Caution is the first open source disaster recovery
+												system — which means you don’t have to take anything on
+												blind trust. Here’s what makes it different:
+											</p>
+											<ul class="plans-list">
+												<li>
+													<strong>Fully open source and verifiable</strong> — no
+													black boxes, no hidden processes.
+												</li>
+
+												<li>
+													<strong>Works with any encrypted data</strong> — not
+													limited to crypto wallets.
+												</li>
+
+												<li>
+													<strong>Trustless and modular</strong>
+													— choose between self-hosting or managed services,
+													without lock-in.
+												</li>
+
+												<li>
+													<strong
+														>Recovery is cryptographically verifiable</strong
+													>
+													conducted through in-person, quorum-based offline
+													ceremonies, where no single party can act alone.
+												</li>
+											</ul>
+											<p>
+												With Caution, you can trust the recovery itself, not the
+												vendor.
+											</p>
+										</div>
+									</div>
+								</details>
+							</div>
+						</section>
+
+						<!-- Category: Data storage -->
+						<section class="faq-group" aria-labelledby="faq-storage">
+							<h3 id="faq-storage" class="faq-group-title">Data storage</h3>
+
+							<div class="faq-list">
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>How much data is included in each plan?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<p>
+											No. Storage is included with
+											<a href="#enterprise">Enterprise</a> (10 TB) and
+											<a href="#dedicated">Dedicated</a>.
+											<a href="#on-demand">On-demand</a> requires you to store
+											your own backups.
+										</p>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>What happens if I exceed my 10TB storage limit?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												<a href="#paidplans">Enterprise</a> includes 10 TB per
+												year, and additional storage is billed per TB.
+												<a href="#paidplans">Dedicated</a> deployments can scale
+												far beyond that with custom capacity.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text">Where is my data stored?</span>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<p>
+												<a href="#paidplans">Enterprise</a> storage is
+												geo-replicated across compliant facilities in North
+												America and Europe. <a href="#paidplans">Dedicated</a>
+												customers can choose jurisdictions to meet local
+												compliance requirements.
+											</p>
+										</div>
+									</div>
+								</details>
+							</div>
+						</section>
+
+						<!-- Category: Recovery -->
+						<section class="faq-group" aria-labelledby="faq-recovery">
+							<h3 id="faq-recovery" class="faq-group-title">Recovery</h3>
+
+							<div class="faq-list">
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>How much does a recovery cost?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<ul class="plans-list">
+											<li><strong>On-demand:</strong> $200,000 per recovery</li>
+
+											<li>
+												<strong>Enterprise:</strong> 2 recoveries included per
+												year; additional at $50,000 each (up to 4 annually)
+											</li>
+
+											<li>
+												<strong>Dedicated:</strong>
+												Custom number of recoveries defined in contract;
+												additional at $50,000 each
+											</li>
+
+											<li>
+												<strong>Priority recovery:</strong>
+												$150,000 surcharge on top of the standard recovery fee
+											</li>
+										</ul>
+										<p>
+											Each recovery — whether on-schedule, off-schedule, or
+											priority — is conducted as an in-person, quorum-based,
+											offline ceremony with cryptographic logging for
+											verifiability. Learn more on our
+											<a href="#">Recovery page</a>.
+										</p>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>How long does a recovery take?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<ul class="plans-list">
+												<li>
+													<strong>On-schedule:</strong> Performed on fixed
+													quarterly dates. Customers must notify us at least 4
+													business days in advance to participate.
+												</li>
+
+												<li>
+													<strong>Off-schedule:</strong> Ad hoc, performed as
+													soon as quorum approvals and logistics allow.
+												</li>
+
+												<li>
+													<strong>Priority:</strong>
+													Completed in under 48 hours, provided all recovery
+													policy requirements are met.
+												</li>
+											</ul>
+											<p>
+												Each recovery — whether on-schedule, off-schedule, or
+												priority — is conducted as an in-person, quorum-based,
+												offline ceremony with cryptographic logging for
+												verifiability. Learn more on our
+												<a href="#">Recovery page</a>.
+											</p>
+										</div>
+									</div>
+								</details>
+
+								<details class="faq-item">
+									<summary class="faq-q">
+										<span class="faq-q-text"
+											>What’s the difference between on-schedule and
+											off-schedule recoveries?</span
+										>
+										<span class="faq-toggle" aria-hidden="true"></span>
+									</summary>
+									<div class="faq-a">
+										<div class="faq-a-inner">
+											<ul class="plans-list">
+												<li>
+													<strong>On-schedule</strong> recoveries are planned in
+													advance and run on fixed quarterly dates, making them
+													predictable and cost-efficient. Customers confirm
+													participation at least 4 business days beforehand.
+												</li>
+
+												<li>
+													<strong>Off-schedule:</strong> recoveries are ad hoc,
+													triggered outside those windows. They depend on quorum
+													approvals and logistics, making them less predictable
+													and more resource-intensive.
+												</li>
+											</ul>
+										</div>
+									</div>
+								</details>
+							</div>
+						</section>
+					</div>
+				</section>
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+</html>

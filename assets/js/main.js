@@ -19,7 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-// === Navbar dropdown toggle ===
+// === Navbar dropdown toggle ENDS === //
+
+// === NAVBAR SCROLL STARTS === //
+
+window.addEventListener("scroll", function () {
+	const header = document.querySelector(".header-navbar");
+	if (this.window.scrollY > 20) {
+		header.classList.add("scrolled");
+	} else {
+		header.classList.remove("scrolled");
+	}
+});
+
+// === NAVBAR SCROLL ENDS === //
 
 document.addEventListener("DOMContentLoaded", function () {
 	const collapsibleButton = document.querySelector(".hamburger-menu");
