@@ -64,5 +64,5 @@ Our team has chosen a no-compromise approach to solving this problem by building
 
 Caution is the next generation cloud hosting platform launching in 2026. We believe this marks the beginning of a new era of infrastructure: verifiable, open, and resilient by default.
 
-If you’re interested in collaborating, contributing, or investing, we’d love to talk info<at>caution<dot>co.
+If you’re interested in collaborating, contributing, or investing, we’d love to talk. Email us at info@caution.co.
 
