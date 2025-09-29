@@ -11,8 +11,6 @@ header_pages:
 style: dark
 listen_for_clients_preferred_style: false
 
-footer: '© 2025 Caution'
-
 theme: jekyll-theme-console
 
 permalink: blog/:title.html

@@ -129,15 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	if (!footer) return;
 
-	const borderStyles = {
-		"/software.html": "2px solid var(--light-teal)",
-		"/blog.html": "2px solid var(--pink)",
-	};
-
-	if (borderStyles[path]) {
-		footer.style.borderTop = borderStyles[path];
-	}
-
 	// Set hover color
 	const hoverColors = {
 		"/software.html": "var(--light-teal)",
