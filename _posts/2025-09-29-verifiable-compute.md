@@ -18,7 +18,7 @@ Like “zero trust” before it, the term verifiable compute is already being hi
 
 The risks of unverifiable systems are not theoretical; they’ve already caused some of the most damaging security incidents of the past decade.
 
-**<a href="https://thehackernews.com/2025/09/solarwinds-releases-hotfix-for-critical.html" target="_blank" rel="noopener noreferrer">SolarWinds (2020)</a>** showed how a compromised software supply chain can cascade globally. Attackers injected malicious code into SolarWinds’ Orion updates, which were then shipped to thousands of companies and U.S. government agencies. Because customers had no way to verify what software they were actually running, the backdoor spread silently through trusted update channels.
+**<a href="https://thehackernews.com/2025/09/solarwinds-releases-hotfix-for-critical.html" target="_blank" rel="noopener noreferrer" title="View article on thehackernews.com">SolarWinds (2020)</a>** showed how a compromised software supply chain can cascade globally. Attackers injected malicious code into SolarWinds’ Orion updates, which were then shipped to thousands of companies and U.S. government agencies. Because customers had no way to verify what software they were actually running, the backdoor spread silently through trusted update channels.
 
 This is one of the many breaches which demonstrate that without verifiability across the entire stack, organizations have no reliable way to prove the integrity of the systems they depend on.
 
@@ -58,5 +58,5 @@ Our team has chosen a no-compromise approach to solving this problem by building
 
 Caution is the next generation cloud hosting platform launching in 2026. We believe this marks the beginning of a new era of infrastructure: verifiable, open, and resilient by default.
 
-We’re building Caution in the open. If you’d like to use it, contribute, or partner with us, get in touch at **<a href="mailto:info@caution.co?subject=Website%20Inquiry">
+We’re building Caution in the open. If you’d like to use it, contribute, or partner with us, get in touch at **<a href="mailto:info@caution.co?subject=Website%20Inquiry" title="Contact our team">
 info@caution.co</a>**.
