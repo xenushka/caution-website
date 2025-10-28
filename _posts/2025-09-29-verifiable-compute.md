@@ -42,7 +42,7 @@ Other companies, such as Tinfoil, Turnkey, and Privy, offer wrappers around encl
 
 In short, there are currently no solutions offering full transparency and elimination of single points of failure in the market.
 
-## “Cautiously” building the next generation of verifiable vompute
+## “Cautiously” building the next generation of verifiable compute
 
 Our team has chosen a no-compromise approach to solving this problem by building a cloud hosting platform, **Caution**, that:
 
