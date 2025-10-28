@@ -145,7 +145,7 @@ h4 {
 }
 
 h1 {
-	font-size: clamp(3.2rem, 10vw, 4.2rem);
+	font-size: clamp(2.6rem, 10vw, 4.2rem);
 	line-height: 1.1;
 	letter-spacing: 0.005rem;
 	word-spacing: 0.3rem;
@@ -196,14 +196,18 @@ em {
 	position: relative;
 }
 
+.hero-cta {
+	margin-bottom: 19rem;
+}
+
 .hero-title {
 	max-width: 45rem;
-	margin-top: 25rem;
+	margin-top: 23rem;
 }
 
 .subtext {
-	font-size: clamp(1.12rem, 2.5vw, 1.3rem);
-	max-width: 48rem;
+	font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+	max-width: 47.5rem;
 	line-height: 1.5;
 	margin: 0 0 2.5rem 0;
 	word-spacing: 0.05rem;
@@ -357,17 +361,17 @@ img {
 
 /* ======== LANDING ======== */
 
-.hero.landing {
-	min-height: 100svh;
-	background-size: 125%;
-	background-position-y: 0vh;
-	background-repeat: no-repeat;
-	display: flex;
-	position: relative;
-	background-color: var(--blue-base); /* Fallback color */
-	backface-visibility: hidden;
-	transform: translateZ(0);
-}
+// .hero.landing {
+// 	min-height: 100svh;
+// 	background-size: 125%;
+// 	background-position-y: 0vh;
+// 	background-repeat: no-repeat;
+// 	display: flex;
+// 	position: relative;
+// 	background-color: var(--blue-base); /* Fallback color */
+// 	backface-visibility: hidden;
+// 	transform: translateZ(0);
+// }
 
 .subtext.landing {
 	max-width: 650px;
@@ -450,7 +454,7 @@ img {
 }
 
 .footer-middle {
-	margin: 2.5rem auto 1.5rem auto;
+	margin: 1rem auto 1rem auto;
 	padding: 0;
 }
 
@@ -663,7 +667,7 @@ img {
 
 .posts {
 	margin-top: 12rem;
-	margin-bottom: 41.75rem; //to be removed//
+	margin-bottom: 34rem; //to be removed//
 }
 
 .post p,
@@ -1419,6 +1423,10 @@ li {
 	.open-source-content {
 		transform: none;
 	}
+
+	.posts {
+		margin-top: 15rem; //to be removed//
+	}
 }
 
 @media (max-width: 768px) {
@@ -1426,18 +1434,33 @@ li {
 		width: 90%;
 	}
 
+	.hero-title {
+		margin-top: 19rem;
+	}
+
 	// ======= FOOTER ======= //
 
 	.site-footer {
-		padding: 2.5rem 0 2rem 0;
+		padding: 1.5rem 0 1.5rem 0;
 	}
 
+	.footer-middle {
+		margin: 0 auto 0 auto;
+	}
 	.footer-mobile {
 		display: block;
 	}
 
 	.footer-desktop {
 		display: none;
+	}
+
+	.footer-heading {
+		font-size: 0.95rem;
+	}
+
+	.hero-cta {
+		margin-bottom: 12rem;
 	}
 
 	.footer-subheading.footer-mobile {
