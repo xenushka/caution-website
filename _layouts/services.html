@@ -2,104 +2,17 @@
 <html lang="{{ page.lang | default: site.lang | default: en }}">
 	{%- include head.html -%}
 	<body>
-		{%- include header.html -%}
 		<div class="container">
-			<main>
-				<div class="video-background-container" style="top: 350px">
-					<video autoplay muted loop playsinline class="video-background">
-						<source src="assets/videos/swirly-lines.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-						<source src="assets/videos/swirly-lines.webm" type='video/webm; codecs="vp8, vorbis"' />
-					</video>
-					<!--<div class="gradient-overlay"></div> -->
-				</div>
+			{%- include header.html -%}
 
-				<section class="flex-container capsule-header video-content">
-					<div class="flex-container-inner">
-						<div class="text-well center">
-							<div class="text-well" style="text-align: center; margin: auto">
-								<div class="capsule">services</div>
-							</div>
-							<br>
-							<h1 class="hero-title gradient-text hero-header">
-								solve your hardest security challenges
-							</h1>
-							<br>
-							<p class="hero-p center">Built by engineers behind BitGo, Unit410, and Turnkey, we apply hard-earned lessons from securing critical infrastructure to build transparent, resilient, and universally applicable security solutions.</p>
-							<div class="button-container">
-								<a href="/contact.html" class="mega button">Work with us</a>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="mid-tall-section">
-					<div style="max-width: 800px; margin: auto; text-align: center; margin-bottom: 60px;">
-						<h2 class="gradient-text">our services</h2>
-							<p class="text-description-desktop">Distrust offers high-impact security consulting and open source tooling for companies that can't afford to fail.
-					</div>
-					<div class="flex-container">
-						<div class="flex-container-inner">
-							<div class="text-well">
-								<h3>retainer / fractional CISO</h3>
-								<p style="max-width: 555px">Get ongoing security leadership tailored precisely to your organization's needs. We embed with your team to provide strategic security direction and eliminate blind trust from your infrastructure—so you're prepared before threats emerge.</p>
-								<ul>
-									<li>Security program development</li>
-									<li>Incident response</li>
-									<li>Due diligence</li>
-									<li>Vetting security talent</li>
-								</ul>
-								<br>
-								<div class="button-container">
-									<a href="/contact.html" class="mega button">Work with us</a>
-								</div>
-							</div>
-						</div>
-						<div class="flex-container-inner">
-							<div class="text-well">
-								<h3>security assessments</h3>
-								<p style="max-width: 555px">Our assessments go beyond vulnerability scans—we eliminate risks at their source. Using first-principles threat modelling, we identify single points of failure and deliver actionable recommendations to secure your systems against sophisticated threats.</p>
-								<ul>
-									<li>Secure architecture review</li>
-									<li>Security audits</li>
-									<li>Penetration testing</li>
-									<li>Secure code review</li>
-								</ul>
-								<br>
-								<div class="button-container">
-									<a href="/contact.html" class="mega button">Book an assessment</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				{% include companies-carousel.html %}
-
-				{% include why-choose-distrust.html %}
-
-				<div class="video-background-container-philosophy">
-					<video autoplay muted loop playsinline class="video-background-philosophy">
-						<source src="assets/videos/swirly-lines.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-						<source src="assets/videos/swirly-lines.webm" type='video/webm; codecs="vp8, vorbis"' />
-					</video>
-					<div class="gradient-overlay-philosophy"></div>
-				</div>
-				<section class="flex-container video-content-philosophy">
-					<div class="flex-container-inner"></div>
-					<div class="flex-container-inner">
-						<h2 class="gradient-text why-distrust">our philosophy</h2>
-						<p>
-						Security shouldn't be based on blind trust, it should be based on <b>dis</b>trust, and verifiability. Most organizations treat cybersecurity like people once treated hygiene—poorly.
-						</p>
-						<p>At Distrust, we've identified fundamental methods to eliminate entire categories of risk at their source. Similarly to how handwashing revolutionized public health by preventing unseen threats like bacteria, our first-principles security methodology brings new levels of security to our clients by eliminating single points of failure, and providing verifiable, resilient protection for critical systems.
-						</p>
-					</div>
-				</section>
-
-				{%- include primary-cta.html -%}
-
-			</main>
+			<div class="waves-container">
+				<a-waves>
+					<svg class="js-svg"></svg>
+				</a-waves>
+			</div>
 		</div>
 		{%- include footer.html -%}
+
+		<script src="{{ '/assets/js/waves.js' | relative_url }}"></script>
 	</body>
 </html>

@@ -84,12 +84,23 @@ html,
 body {
 	min-height: 100vh;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
 	background: radial-gradient(circle at 50% 25%, white 0%, transparent 60%)
 			no-repeat,
 		var(--blue-light);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.page-wrapper {
+	flex: 1 0 auto;
 }
 
 html {
@@ -196,13 +207,9 @@ em {
 	position: relative;
 }
 
-.hero-cta {
-	margin-bottom: 19rem;
-}
-
 .hero-title {
 	max-width: 45rem;
-	margin-top: 23rem;
+	margin-top: 22rem;
 }
 
 .subtext {
@@ -218,7 +225,7 @@ em {
 .btn {
 	display: inline-block;
 	text-align: center;
-	padding: 0.9rem 2.1rem 1rem 2.1rem;
+	padding: 0.8rem 1.8rem 0.9rem 1.9rem;
 	border-radius: 10px;
 	font-size: clamp(1rem, 2.5vw, 1.2rem);
 	font-weight: 600;
@@ -266,8 +273,8 @@ img {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.5rem 2rem;
-	margin: 0 auto;
+	padding: 1.5rem 0;
+	margin: 1.5rem auto;
 }
 
 .nav-menu {
@@ -338,11 +345,14 @@ img {
 	color: var(--pink);
 }
 
-.nav-logo img {
-	height: auto;
-	width: 100%;
-	max-width: 50px;
+.nav-logo {
+	max-width: 190px;
 	display: block;
+}
+
+.nav-logo img {
+	width: auto;
+	height: clamp(0.5rem, 7vw, 5rem);
 	opacity: 0.85;
 }
 
@@ -355,10 +365,6 @@ img {
 	transform: translateX(4px);
 }
 
-.nav-logo {
-	max-width: 50px;
-}
-
 .subtext.landing {
 	max-width: 650px;
 }
@@ -369,6 +375,8 @@ img {
 	background-color: var(--dark);
 	padding: 1.5rem 0 0.75rem 0;
 	align-items: center;
+	flex-shrink: 0;
+	margin-top: auto;
 }
 
 .footer-mobile {
@@ -1413,6 +1421,10 @@ li {
 	.posts {
 		margin-top: 15rem; //to be removed//
 	}
+
+	.btn {
+		padding: 0.5rem 1.3rem 0.75rem 1.5rem;
+	}
 }
 
 @media (max-width: 768px) {
@@ -1507,4 +1519,54 @@ li {
 		align-content: center;
 		min-height: auto;
 	}
+}
+
+/* Waves background effect */
+.waves-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+}
+
+a-waves {
+	--x: -0.5rem;
+	--y: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+a-waves:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: #1a1a1a;
+	border-radius: 50%;
+	transform: translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0);
+	will-change: transform;
+	content: "";
+	opacity: 0.5;
+	pointer-events: auto;
+}
+
+a-waves svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+a-waves svg path {
+	fill: none;
+	stroke: #1a1a1a;
+	stroke-width: 1px;
+	opacity: 0.5;
 }

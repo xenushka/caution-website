@@ -2,28 +2,30 @@
 <html lang="{{ page.lang | default: site.lang | default: en }}">
 	{%- include head.html -%}
 	<body>
-		{%- include header.html -%}
+		<div class="page-wrapper">
+			{%- include header.html -%}
 
-		<main>
-			<section class="hero landing">
-				<div class="hero-content container">
-					<h1 class="hero-title">Caution makes compute verifiable</h1>
-					<p class="subtext">
-						You deserve to know what runs on your servers. No more black boxes.
-						Caution gives you cryptographic proof, total portability, and no
-						complexity.
-					</p>
-					<div class="hero-cta">
-						<a
-							href="/blog.html"
-							class="btn"
-							title="Read our latest blog posts and updates"
-							>Blog <span class="arrow">→</span></a
-						>
+			<main>
+				<section class="hero landing">
+					<div class="hero-content container">
+						<h1 class="hero-title">Caution makes compute verifiable</h1>
+						<p class="subtext">
+							You deserve to know what runs on your servers. No more black
+							boxes. Caution gives you cryptographic proof, total portability,
+							and no complexity.
+						</p>
+						<div class="hero-cta">
+							<a
+								href="/blog.html"
+								class="btn"
+								title="Read our latest blog posts and updates"
+								>Blog <span class="arrow">→</span></a
+							>
+						</div>
 					</div>
-				</div>
-			</section>
-		</main>
+				</section>
+			</main>
+		</div>
 		{%- include footer.html -%}
 	</body>
 </html>

@@ -2,43 +2,46 @@
 <html lang="{{ page.lang | default: site.lang | default: en }}">
 	{%- include head.html -%}
 	<body>
-		{%- include header.html -%}
-		<div class="container">
-			<main class="blog">
-				<div class="entry">
-					<div class="posts">
-						{% for post in site.posts %}
-						<div class="blog-details">
-							<div class="blog-details-date">
-								{{ post.date | date: "%b %e, %Y" }}
+		<div class="page-wrapper">
+			{%- include header.html -%}
+			<div class="container">
+				<main class="blog">
+					<div class="entry">
+						<div class="posts">
+							{% for post in site.posts %}
+							<div class="blog-details">
+								<div class="blog-details-date">
+									{{ post.date | date: "%b %e, %Y" }}
+								</div>
+								<div class="blog-details-read-time">
+									{{ post.content | number_of_words | divided_by: 200 }} min
+									read
+								</div>
 							</div>
-							<div class="blog-details-read-time">
-								{{ post.content | number_of_words | divided_by: 200 }} min read
-							</div>
+							<a
+								class="blog-link"
+								href="{{ post.url | relative_url }}"
+								title="{{ post.title }}"
+							>
+								<article>
+									<h1 style="margin: 1.1rem 0 1.5rem 0">{{ post.title }}</h1>
+									<p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+								</article>
+								<div class="arrow-link">
+									Read
+									<span class="arrow">&#x2192;</span>
+								</div>
+							</a>
+							{% endfor %}
 						</div>
-						<a
-							class="blog-link"
-							href="{{ post.url | relative_url }}"
-							title="{{ post.title }}"
-						>
-							<article>
-								<h1 style="margin: 1.1rem 0 1.5rem 0">{{ post.title }}</h1>
-								<p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-							</article>
-							<div class="arrow-link">
-								Read
-								<span class="arrow">&#x2192;</span>
-							</div>
-						</a>
-						{% endfor %}
 					</div>
-				</div>
 
-				<p>
-					{% for author in page.authors %} — {{ author.name }}{% unless
-					forloop.last %}, {% endunless %} {% endfor %}
-				</p>
-			</main>
+					<p>
+						{% for author in page.authors %} — {{ author.name }}{% unless
+						forloop.last %}, {% endunless %} {% endfor %}
+					</p>
+				</main>
+			</div>
 		</div>
 		{%- include footer.html -%}
 	</body>

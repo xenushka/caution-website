@@ -36,9 +36,9 @@ Together, they form the foundation of true verifiable compute: the ability to ve
 
 ## Why existing platforms fall short
 
-Current offerings from the major cloud providers (AWS, Azure, GCP, etc.) are demanding in terms of both expertise and time to set up. They also lock users into a single vendor’s ecosystem and force reliance and trust in one type of hardware or firmware. For example, AWS requires implicit trust in its proprietary Nitro Card, a black-box technology that customers cannot independently verify.
+Current offerings from the major cloud providers (AWS, Azure, GCP, etc.) are demanding in terms of both expertise and time to set up. They lock users into a single vendor’s ecosystem and force reliance and trust in one type of hardware or firmware. For example, AWS requires implicit trust in its proprietary Nitro Card, a black-box technology that customers cannot independently verify.
 
-Other companies, such as Tinfoil, Turnkey, and Privy, offer wrappers around enclave and attestation technologies, but their solutions are limited to narrow use cases like digital asset wallets or running LLMs. Even then, what they provide is only surface-level verification: proving that a binary’s hash hasn’t changed. That does not give transparency into the entirety of what is running on the server.
+New players are building wrappers around enclave and attestation technologies, but most remain focused on narrow use cases such as digital asset wallets or running LLMs. While promising, they provide only surface-level verification, proving that a binary’s hash hasn’t changed without offering full visibility into what is actually running on the server.
 
 In short, there are currently no solutions offering full transparency and elimination of single points of failure in the market.
 
