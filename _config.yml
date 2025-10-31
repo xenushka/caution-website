@@ -6,7 +6,7 @@ url: "https://caution.co"
 banner: "https://caution.co/assets/base/caution-thumbnail.png"
 
 header_pages:
-- index.md
+  - index.md
 
 style: dark
 listen_for_clients_preferred_style: false
@@ -16,8 +16,7 @@ theme: jekyll-theme-console
 permalink: blog/:title.html
 
 plugins:
-- jekyll-feed
-
+  - jekyll-feed
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
