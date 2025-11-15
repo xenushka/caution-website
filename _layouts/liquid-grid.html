@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Caution - Know what runs on a server</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+					"Segoe UI", sans-serif;
+				color: #0f0f0f;
+				min-height: 100vh;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			body::selection {
+				background-color: rgba(255, 255, 255, 0.1);
+				color: #0f0f0f;
+			}
+
+			.jakarta {
+				font-family: "Plus Jakarta Sans", sans-serif;
+			}
+
+			/* Background image */
+			.bg-image {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 100vh;
+				background-image: url("https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/fdd84beb-a5be-450d-899d-ee857592b271_3840w.webp");
+				background-size: cover;
+				background-position: center;
+				z-index: -10;
+				filter: blur(12px);
+				mask-image: linear-gradient(
+					to bottom,
+					transparent,
+					black 0%,
+					black 80%,
+					transparent
+				);
+				-webkit-mask-image: linear-gradient(
+					to bottom,
+					transparent,
+					black 0%,
+					black 80%,
+					transparent
+				);
+			}
+
+			/* Grid overlay */
+			.grid-overlay {
+				position: fixed;
+				inset: 0;
+				z-index: -20;
+				opacity: 0.45;
+				background: linear-gradient(
+						to right,
+						rgba(255, 255, 255, 0.06) 1px,
+						transparent 1px
+					),
+					linear-gradient(
+						to bottom,
+						rgba(255, 255, 255, 0.06) 1px,
+						transparent 1px
+					);
+				background-size: 56px 56px;
+			}
+
+			/* Glow accents */
+			.glow-container {
+				pointer-events: none;
+				position: fixed;
+				inset: 0;
+				z-index: -10;
+			}
+
+			.glow-blue {
+				position: absolute;
+				top: -96px;
+				left: -96px;
+				height: 520px;
+				width: 520px;
+				border-radius: 9999px;
+				filter: blur(96px);
+				opacity: 0.3;
+				background: radial-gradient(
+					60% 60% at 50% 50%,
+					rgba(59, 130, 246, 0.35),
+					rgba(59, 130, 246, 0) 65%
+				);
+			}
+
+			.glow-green {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				height: 420px;
+				width: 520px;
+				border-radius: 9999px;
+				filter: blur(96px);
+				opacity: 0.25;
+				background: radial-gradient(
+					60% 60% at 50% 50%,
+					rgba(16, 185, 129, 0.28),
+					rgba(16, 185, 129, 0) 65%
+				);
+			}
+
+			/* Border gradient effect */
+			.border-gradient {
+				position: relative;
+			}
+
+			.border-gradient::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: inherit;
+				padding: 1px;
+				-webkit-mask: linear-gradient(#fff 0 0) content-box,
+					linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				background: linear-gradient(
+					225deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0.2) 50%,
+					rgba(255, 255, 255, 0) 100%
+				);
+				pointer-events: none;
+			}
+
+			/* Header */
+			header {
+				max-width: 1280px;
+				margin: 0 auto;
+				padding: 2.5rem 1.5rem;
+			}
+
+			@media (min-width: 768px) {
+				header {
+					padding: 4rem 2.5rem;
+				}
+			}
+
+			/* Top bar */
+			.top-bar {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.logo {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				background-image: url("/logo-bw.svg");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 100px;
+				height: 40px;
+				border-radius: 0.25rem;
+			}
+
+			/* Navigation */
+			nav.desktop-nav {
+				display: none;
+				gap: 0.5rem;
+				align-items: center;
+			}
+
+			@media (min-width: 768px) {
+				nav.desktop-nav {
+					display: flex;
+				}
+			}
+
+			.nav-container {
+				display: flex;
+				gap: 0.25rem;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 9999px;
+				padding: 0.25rem;
+				backdrop-filter: blur(12px);
+				background-color: rgba(255, 255, 255, 0.05);
+			}
+
+			.nav-link {
+				color: rgba(255, 255, 255, 0.7);
+				text-decoration: none;
+				font-size: 0.875rem;
+				font-weight: 500;
+				padding: 0.5rem 0.75rem;
+				border-radius: 9999px;
+				transition: color 0.2s;
+			}
+
+			.nav-link:hover {
+				color: rgb(248, 250, 252);
+			}
+
+			.nav-cta {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 0.875rem;
+				font-weight: 500;
+				border-radius: 9999px;
+				margin-left: 0.25rem;
+				padding: 0.625rem 1rem 0.625rem 1.25rem;
+				background-color: white;
+				color: rgb(23, 23, 23);
+				text-decoration: none;
+				transition: background-color 0.2s;
+			}
+
+			.nav-cta:hover {
+				background-color: rgba(255, 255, 255, 0.9);
+			}
+
+			.nav-cta svg {
+				width: 16px;
+				height: 16px;
+				stroke-width: 1.5;
+			}
+
+			/* Mobile menu button */
+			.mobile-menu-button {
+				display: inline-flex;
+				height: 40px;
+				width: 40px;
+				align-items: center;
+				justify-content: center;
+				border-radius: 9999px;
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				backdrop-filter: blur(12px);
+				background-color: rgba(255, 255, 255, 0.1);
+				cursor: pointer;
+				border: none;
+			}
+
+			@media (min-width: 768px) {
+				.mobile-menu-button {
+					display: none;
+				}
+			}
+
+			.mobile-menu-button svg {
+				height: 20px;
+				width: 20px;
+				color: rgba(255, 255, 255, 0.9);
+				stroke-width: 1.5;
+			}
+
+			/* Mobile menu */
+			.mobile-menu {
+				margin-top: 1rem;
+				display: none;
+			}
+
+			.mobile-menu.active {
+				display: block;
+			}
+
+			@media (min-width: 768px) {
+				.mobile-menu {
+					display: none !important;
+				}
+			}
+
+			.mobile-menu-content {
+				border-radius: 1rem;
+				padding: 0.5rem;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(12px);
+				background-color: rgba(255, 255, 255, 0.05);
+			}
+
+			.mobile-menu-grid {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 0.25rem;
+			}
+
+			.mobile-menu-link {
+				display: block;
+				border-radius: 0.5rem;
+				padding: 0.5rem 0.75rem;
+				font-size: 0.875rem;
+				color: rgba(255, 255, 255, 0.9);
+				text-decoration: none;
+				transition: background-color 0.2s;
+			}
+
+			.mobile-menu-link:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			.mobile-menu-cta {
+				margin-top: 0.25rem;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+				border-radius: 9999px;
+				padding: 0.625rem 1rem;
+				font-size: 0.875rem;
+				font-weight: 500;
+				background-color: white;
+				color: rgb(23, 23, 23);
+				text-decoration: none;
+				width: 100%;
+			}
+
+			/* Hero section */
+			.hero-section {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 2.5rem;
+				margin-top: 2.5rem;
+				align-items: start;
+			}
+
+			@media (min-width: 768px) {
+				.hero-section {
+					margin-top: 4rem;
+					gap: 3rem;
+				}
+			}
+
+			@media (min-width: 1024px) {
+				.hero-section {
+					grid-template-columns: repeat(12, 1fr);
+				}
+			}
+
+			.hero-left {
+				margin-top: 5rem;
+			}
+
+			@media (min-width: 1024px) {
+				.hero-left {
+					grid-column: span 5;
+				}
+			}
+
+			.hero-right {
+				position: relative;
+			}
+
+			@media (min-width: 1024px) {
+				.hero-right {
+					grid-column: span 7;
+				}
+			}
+
+			/* Badge */
+			.badge {
+				display: inline-flex;
+				border-radius: 1rem;
+				padding: 0.375rem 0.625rem;
+				gap: 0.5rem;
+				align-items: center;
+				color: rgb(248, 250, 252);
+			}
+
+			.badge span {
+				font-size: 0.75rem;
+				color: rgb(248, 250, 252);
+			}
+
+			/* Hero title */
+			h1 {
+				line-height: 0.95;
+				font-size: 3rem;
+				font-weight: 600;
+				letter-spacing: -0.025em;
+				margin-top: 1.25rem;
+				color: rgb(248, 250, 252);
+			}
+
+			@media (min-width: 640px) {
+				h1 {
+					font-size: 3.75rem;
+				}
+			}
+
+			@media (min-width: 768px) {
+				h1 {
+					font-size: 3.75rem;
+				}
+			}
+
+			/* Hero description */
+			.hero-description {
+				line-height: 1.625;
+				font-size: 0.875rem;
+				max-width: 32rem;
+				margin-top: 1.25rem;
+				color: rgb(248, 250, 252);
+			}
+
+			@media (min-width: 640px) {
+				.hero-description {
+					font-size: 1rem;
+				}
+			}
+
+			/* CTAs */
+			.cta-container {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75rem;
+				margin-top: 2rem;
+			}
+
+			@media (min-width: 640px) {
+				.cta-container {
+					flex-direction: row;
+				}
+			}
+
+			.email-input-container {
+				display: none;
+				gap: 0.5rem;
+				align-items: center;
+				mask-image: linear-gradient(
+					360deg,
+					transparent,
+					black 0%,
+					black 100%,
+					transparent
+				);
+				-webkit-mask-image: linear-gradient(
+					360deg,
+					transparent,
+					black 0%,
+					black 100%,
+					transparent
+				);
+			}
+
+			@media (min-width: 768px) {
+				.email-input-container {
+					display: flex;
+				}
+			}
+
+			.email-input-wrapper {
+				display: flex;
+				gap: 0.25rem;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 9999px;
+				padding: 0.25rem;
+				backdrop-filter: blur(12px);
+				background-color: rgba(255, 255, 255, 0.05);
+			}
+
+			.email-input {
+				font-size: 0.875rem;
+				font-weight: 500;
+				color: rgb(107, 114, 128);
+				padding: 0.5rem 10rem 0.5rem 0.75rem;
+				background: transparent;
+				border: none;
+				outline: none;
+				transition: color 0.2s;
+			}
+
+			.email-input:hover,
+			.email-input:focus {
+				color: rgb(248, 250, 252);
+			}
+
+			.email-input::placeholder {
+				color: rgb(107, 114, 128);
+			}
+
+			.cta-button {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 0.875rem;
+				font-weight: 500;
+				border-radius: 9999px;
+				padding: 0.625rem 0.75rem 0.625rem 1.25rem;
+				background-color: white;
+				color: rgb(23, 23, 23);
+				text-decoration: none;
+				transition: background-color 0.2s;
+				border: none;
+				cursor: pointer;
+			}
+
+			.cta-button:hover {
+				background-color: rgba(255, 255, 255, 0.9);
+			}
+
+			.cta-button svg {
+				width: 16px;
+				height: 16px;
+				stroke-width: 1.5;
+			}
+
+			/* Divider */
+			.divider {
+				margin-top: 2.5rem;
+				height: 1px;
+				width: 100%;
+				background: linear-gradient(
+					to right,
+					transparent,
+					rgba(255, 255, 255, 0.1),
+					transparent
+				);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Background (image) -->
+		<div class="bg-image"></div>
+
+		<!-- Grid overlay -->
+		<div class="grid-overlay"></div>
+
+		<!-- Glow accents -->
+		<div class="glow-container">
+			<div class="glow-blue"></div>
+			<div class="glow-green"></div>
+		</div>
+
+		<header>
+			<!-- Top bar -->
+			<div class="top-bar">
+				<a href="/#" class="logo" aria-label="Homepage"></a>
+				<nav class="desktop-nav">
+					<div class="nav-container">
+						<a href="#" class="nav-link">Platform</a>
+						<a href="#" class="nav-link">Security</a>
+						<a href="#" class="nav-link">Blog</a>
+						<a href="#" class="nav-cta">
+							Join Waitlist
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path d="M7 7h10v10"></path>
+								<path d="M7 17 17 7"></path>
+							</svg>
+						</a>
+					</div>
+				</nav>
+				<button
+					class="mobile-menu-button"
+					id="mobile-menu-button"
+					aria-expanded="false"
+					aria-label="Toggle menu"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M4 5h16"></path>
+						<path d="M4 12h16"></path>
+						<path d="M4 19h16"></path>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Mobile menu -->
+			<div id="mobile-menu" class="mobile-menu">
+				<div class="mobile-menu-content border-gradient">
+					<div class="mobile-menu-grid">
+						<a href="#" class="mobile-menu-link">Home</a>
+						<a href="#" class="mobile-menu-link">Platform</a>
+						<a href="#" class="mobile-menu-link">Security</a>
+						<a href="#" class="mobile-menu-link">Blog</a>
+						<a href="#" class="mobile-menu-cta">
+							Join Waitlist
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path d="M7 7h10v10"></path>
+								<path d="M7 17 17 7"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<section class="hero-section">
+				<!-- Left: Hero content -->
+				<div class="hero-left">
+					<div class="badge border-gradient">
+						<span>COMING SOON</span>
+					</div>
+
+					<h1 class="jakarta">Know what runs on a server</h1>
+
+					<p class="hero-description">
+						No more black boxes. Caution gives you cryptographic proof, total
+						portability and the ultimate peace of mind.
+					</p>
+
+					<!-- CTAs -->
+					<div class="cta-container">
+						<nav class="email-input-container">
+							<div class="email-input-wrapper">
+								<input
+									type="email"
+									class="email-input"
+									placeholder="Enter email"
+								/>
+							</div>
+						</nav>
+						<a href="#" class="cta-button">
+							Join Waitlist
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path d="M7 7h10v10"></path>
+								<path d="M7 17 17 7"></path>
+							</svg>
+						</a>
+					</div>
+
+					<!-- Divider -->
+					<div class="divider"></div>
+				</div>
+
+				<!-- Right: Interactive grid + floating glass cards -->
+				<div class="hero-right">
+					<!-- Interactive content can be added here -->
+				</div>
+			</section>
+		</header>
+
+		<script>
+			// Mobile menu toggle
+			const mobileMenuButton = document.getElementById("mobile-menu-button");
+			const mobileMenu = document.getElementById("mobile-menu");
+
+			mobileMenuButton.addEventListener("click", () => {
+				const isExpanded =
+					mobileMenuButton.getAttribute("aria-expanded") === "true";
+				mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+				mobileMenu.classList.toggle("active");
+			});
+		</script>
+	</body>
+</html>

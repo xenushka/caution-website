@@ -1,0 +1,76 @@
+// ==========================================================================
+// ABSTRACTS: VARIABLES
+// ==========================================================================
+
+// ------------------------------------------------------------
+// CSS Custom Properties (available in browser)
+// ------------------------------------------------------------
+:root {
+	// Colors - Brand
+	--color-dark: #0f0f0f;
+	--color-grey: #6f6f6f;
+	--color-grey-dark: #232b2b;
+	--color-grey-mid: #ccc;
+	--color-grey-med: #858585;
+	--color-grey-light: #e7e7e7;
+	--color-blue-base: #ecf6fd;
+	--color-blue-light: #e7f1ff;
+	--color-blue-mid: #c7e8ff;
+	--color-blue-dirty: #2e6aea;
+	--color-turq: #a3f1fc;
+	--color-violet: #da93ff;
+	--color-pink: #f048b5;
+	--color-purple: #7c4dff;
+
+	// Spacing scale
+	--spacing-xs: 0.5rem;
+	--spacing-sm: 1rem;
+	--spacing-md: 1.5rem;
+	--spacing-lg: 2rem;
+	--spacing-xl: 2.5rem;
+	--spacing-2xl: 3rem;
+	--spacing-3xl: 4rem;
+	--spacing-4xl: 6rem;
+	--spacing-5xl: 7rem;
+
+	// Border radius
+	--radius-sm: 6px;
+	--radius-md: 10px;
+	--radius-lg: 20px;
+	--radius-xl: 30px;
+	--radius-full: 9999px;
+
+	// Shadows
+	--shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
+	--shadow-md: 0 6px 24px rgba(46, 106, 234, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+	--shadow-lg: 0 10px 34px rgba(46, 106, 234, 0.15), 0 6px 16px rgba(0, 0, 0, 0.08);
+
+	// Layout
+	--site-width: 95%;
+	--site-max-width: 1550px;
+
+	// Transitions
+	--transition-fast: 0.15s ease;
+	--transition-base: 0.2s ease;
+	--transition-slow: 0.3s ease;
+}
+
+// ------------------------------------------------------------
+// SASS Variables (compile-time only)
+// ------------------------------------------------------------
+
+// Typography
+$font-family-base: "Plus Jakarta Sans", sans-serif !default;
+$font-size-base: 1.3rem !default;
+$font-size-mobile: 1.125rem !default;
+$line-height-base: 1.5 !default;
+
+// Layout
+$container-width: 95% !default;
+$container-max-width: 1550px !default;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 960px;
+$breakpoint-desktop: 1090px;
+$breakpoint-large: 1624px;

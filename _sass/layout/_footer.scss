@@ -1,0 +1,64 @@
+// ==========================================================================
+// LAYOUT: FOOTER
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-footer {
+	background-color: var(--color-dark);
+	padding: var(--spacing-md) 0 0.75rem 0;
+	align-items: center;
+	flex-shrink: 0;
+	margin-top: auto;
+
+	@include media-mobile {
+		padding: var(--spacing-md) 0;
+	}
+}
+
+// ------------------------------------------------------------
+// Footer Middle (Simplified Footer)
+// ------------------------------------------------------------
+.footer-middle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: var(--spacing-sm) auto;
+	padding: 0;
+}
+
+// ------------------------------------------------------------
+// Footer Text
+// ------------------------------------------------------------
+.footer-heading {
+	font-size: 1.1rem;
+	color: var(--color-grey-med);
+	margin: 0;
+	line-height: 1.7rem;
+
+	@include media-mobile {
+		font-size: 0.95rem;
+	}
+}
+
+// ------------------------------------------------------------
+// Social Icons
+// ------------------------------------------------------------
+.social-icons {
+	display: flex;
+	gap: 16px;
+
+	img {
+		height: 26px;
+		width: 26px;
+		opacity: 0.85;
+		transition: opacity var(--transition-slow), filter var(--transition-slow);
+
+		&:hover {
+			opacity: 1;
+			filter: brightness(1.5);
+		}
+	}
+}

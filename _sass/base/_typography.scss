@@ -1,0 +1,142 @@
+// ==========================================================================
+// BASE: TYPOGRAPHY
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+
+// ------------------------------------------------------------
+// Font Face Declarations
+// ------------------------------------------------------------
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-ExtraLight.otf") format("opentype");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-Light.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-Regular.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-Medium.otf") format("opentype");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-SemiBold.otf") format("opentype");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-Bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("/assets/fonts/PlusJakartaSans-ExtraBold.otf") format("opentype");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+// ------------------------------------------------------------
+// Base Typography
+// ------------------------------------------------------------
+* {
+	font-family: $font-family-base;
+}
+
+article {
+	font-family: $font-family-base;
+	transition: transform var(--transition-slow);
+}
+
+// ------------------------------------------------------------
+// Headings
+// ------------------------------------------------------------
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 500;
+	margin: 0 0 var(--spacing-lg) 0;
+}
+
+h1 {
+	font-size: clamp(3rem, 8vw, 4.3rem);
+	line-height: 1.05;
+	letter-spacing: 0.005rem;
+	word-spacing: 0.3rem;
+}
+
+h2 {
+	font-size: clamp(2.5rem, 10vw, 4.5rem);
+	line-height: 1.1;
+}
+
+h3 {
+	font-size: clamp(1.4rem, 3vw, 2.1rem);
+	margin: 0 0 var(--spacing-md) 0;
+}
+
+h4 {
+	font-size: 1.1rem;
+}
+
+// ------------------------------------------------------------
+// Body Text
+// ------------------------------------------------------------
+p,
+li {
+	font-weight: 300;
+	font-size: clamp(1.1rem, 2vw, 1.125rem);
+	line-height: $line-height-base;
+	padding: 0;
+}
+
+a {
+	color: var(--color-dark);
+	transition: background-color var(--transition-slow), color var(--transition-slow);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+		color: var(--color-pink);
+	}
+}
+
+strong {
+	font-weight: 500;
+}
+
+small {
+	font-weight: 300;
+}
+
+em {
+	font-weight: 400;
+}

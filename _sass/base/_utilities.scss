@@ -1,0 +1,61 @@
+// ==========================================================================
+// BASE: UTILITY CLASSES
+// ==========================================================================
+
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Text Alignment
+// ------------------------------------------------------------
+.u-text-center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Legacy support
+.center {
+	@extend .u-text-center;
+}
+
+// ------------------------------------------------------------
+// Responsive Display Utilities
+// ------------------------------------------------------------
+.u-show-desktop {
+	display: block;
+
+	@include media-mobile {
+		display: none;
+	}
+}
+
+.u-show-mobile {
+	display: none;
+
+	@include media-mobile {
+		display: block;
+	}
+}
+
+// Legacy support
+.desktop {
+	@extend .u-show-desktop;
+}
+
+.mobile {
+	@extend .u-show-mobile;
+}
+
+// ------------------------------------------------------------
+// Screen Reader Only
+// ------------------------------------------------------------
+.sr-only {
+	@include visually-hidden;
+}
+
+// ------------------------------------------------------------
+// Glassmorphic Effects
+// ------------------------------------------------------------
+.u-glass {
+	@include glass-effect(12px);
+}

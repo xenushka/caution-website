@@ -1,0 +1,103 @@
+// ==========================================================================
+// LAYOUT: HERO
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	min-height: 120vh;
+	background: transparent;
+	align-items: flex-start;
+	padding-top: 22rem;
+
+	@include media-tablet {
+		min-height: 110vh;
+	}
+
+	@include media-mobile {
+		padding-top: 14rem;
+		min-height: 100vh;
+	}
+
+	// Background image for landing hero
+	&--landing {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url("/assets/imgs/fractal.png");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// Hero Content
+// ------------------------------------------------------------
+.hero-content {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-title {
+	font-size: clamp(4rem, 8vw, 6rem);
+	font-weight: 500;
+	max-width: 45rem;
+	line-height: 1;
+
+	&--thankyou {
+		margin-top: var(--spacing-lg);
+	}
+}
+
+// ------------------------------------------------------------
+// Hero Subtext
+// ------------------------------------------------------------
+.hero__subtext {
+	font-size: clamp(1.15rem, 2vw, 1.3rem);
+	max-width: 45rem;
+	line-height: 1.5;
+	margin: 0 0 var(--spacing-xl) 0;
+	word-spacing: 0.05rem;
+	font-weight: 350;
+
+	&--landing {
+		max-width: 650px;
+	}
+
+	@include media-tablet {
+		font-size: 1.15rem;
+		margin: 0 0 15rem 0;
+		max-width: 42rem;
+	}
+
+	@include media-mobile {
+		font-size: 1.15rem;
+		margin: 0 0 5.5rem 0;
+	}
+}
+
+// Legacy class support (can be removed once HTML is updated)
+.subtext {
+	@extend .hero__subtext;
+}
+
+// ------------------------------------------------------------
+// Hero CTA
+// ------------------------------------------------------------
+.hero-cta {
+	@include media-mobile {
+		margin-bottom: 12rem;
+	}
+}

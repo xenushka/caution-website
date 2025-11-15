@@ -1,0 +1,128 @@
+// ==========================================================================
+// COMPONENTS: CAROUSEL
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Carousel Title
+// ------------------------------------------------------------
+.carousel-title {
+	text-transform: none;
+	letter-spacing: 0;
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 300;
+	color: var(--color-dark);
+	margin: 0 0 var(--spacing-lg) 0;
+}
+
+// ------------------------------------------------------------
+// Logo Section Container
+// ------------------------------------------------------------
+.logo-section {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding: var(--spacing-sm) 0;
+
+	// Fade effect on edges
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 150px;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	// Left fade
+	&::before {
+		left: 0;
+		background: linear-gradient(
+			to right,
+			var(--color-blue-light) 0%,
+			transparent 100%
+		);
+	}
+
+	// Right fade
+	&::after {
+		right: 0;
+		background: linear-gradient(
+			to left,
+			var(--color-blue-light) 0%,
+			transparent 100%
+		);
+	}
+}
+
+// ------------------------------------------------------------
+// Logo Slider (Animated Carousel)
+// ------------------------------------------------------------
+.logo-slider {
+	display: flex;
+	align-items: center;
+	gap: clamp(2.5rem, 4vw, 5rem);
+	animation: scroll 95s linear infinite;
+	width: max-content;
+
+	img {
+		height: clamp(30px, 3vw, 40px);
+		width: auto;
+		opacity: 1; // Darker: 0.7 → 1
+		filter: brightness(0) saturate(100%) invert(6%) sepia(0%) saturate(0%)
+			hue-rotate(317deg) brightness(95%) contrast(91%) !important;
+		pointer-events: none; // Disable clicks
+	}
+}
+
+// ------------------------------------------------------------
+// Scroll Animation
+// ------------------------------------------------------------
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		// Move by half the width to create seamless loop
+		// Adjust this value based on your content width
+		transform: translateX(-50%);
+	}
+}
+
+// ------------------------------------------------------------
+// Responsive Adjustments
+// ------------------------------------------------------------
+@include media-mobile {
+	.logo-section {
+		padding: var(--spacing-sm) 0;
+
+		&::before,
+		&::after {
+			width: 80px;
+		}
+	}
+
+	.logo-slider {
+		gap: clamp(2rem, 4vw, 3rem);
+		animation-duration: 45s; // Slower on mobile too (30s → 45s)
+
+		img {
+			height: clamp(25px, 2.5vw, 35px);
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// Mid-Tall Section (Container)
+// ------------------------------------------------------------
+.mid-tall-section {
+	padding: var(--spacing-2xl) 0;
+
+	@include media-mobile {
+		padding: var(--spacing-2xl) 0;
+	}
+}

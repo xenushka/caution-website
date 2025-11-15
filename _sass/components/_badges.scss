@@ -1,0 +1,141 @@
+// ==========================================================================
+// COMPONENTS: BADGES & PILLS
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Status Pill (e.g., "COMING SOON")
+// ------------------------------------------------------------
+.pill {
+	padding: 6px 16px;
+	margin: 0 0 var(--spacing-md) 0;
+	border-radius: var(--radius-full);
+	color: var(--color-dark);
+	font-weight: 500;
+	letter-spacing: 1px;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	width: fit-content;
+	@include glass-effect(8px);
+
+	@include media-mobile {
+		font-size: 0.7rem;
+	}
+}
+
+// Alternative pill with radial gradient background (legacy)
+.pill--gradient {
+	@include glass-simple(
+		radial-gradient(
+			ellipse at center,
+			rgba(230, 244, 255, 0.2) 20%,
+			rgba(199, 232, 255, 0.9) 90%
+		)
+	);
+	box-shadow: var(--shadow-sm);
+	background: radial-gradient(
+		ellipse at center,
+		rgba(230, 244, 255, 0.2) 20%,
+		rgba(199, 232, 255, 0.9) 90%
+	);
+	border: 1px solid rgba(218, 147, 255, 0.1);
+}
+
+// ------------------------------------------------------------
+// Transparent Badge with Border Gradient (e.g., liquid-grid style)
+// ------------------------------------------------------------
+.badge {
+	display: inline-flex;
+	text-align: center;
+	@include glass-effect(8px);
+	color: var(--color-dark);
+	border-radius: var(--radius-full);
+	padding: 0.3rem 1rem 0.3rem 1rem;
+	transition: all var(--transition-base);
+	margin: 0 0 var(--spacing-md) 0;
+
+	span {
+		font-size: clamp(0.5rem, 2vw, 0.8rem);
+		font-weight: 400;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: var(--color-dark);
+	}
+}
+
+// ------------------------------------------------------------
+// Badge Button - Combines button and badge styles
+// ------------------------------------------------------------
+.badge-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-align: center;
+	@include glass-effect(12px);
+	color: var(--color-dark);
+	border-radius: var(--radius-full);
+	padding: 0.7rem 2.3rem 0.8rem 2.3rem;
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-bottom: var(--spacing-md);
+	transition: all var(--transition-base);
+
+	span {
+		color: rgb(248, 250, 252);
+	}
+
+	&:hover {
+		color: var(--color-pink);
+
+		span {
+			color: var(--color-pink);
+		}
+	}
+
+	@include media-tablet {
+		padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+	}
+}
+
+.border-gradient {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		padding: 1px;
+		-webkit-mask: linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		background: linear-gradient(
+			225deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 0.2) 50%,
+			rgba(255, 255, 255, 0) 100%
+		);
+		pointer-events: none;
+	}
+}
+
+// ------------------------------------------------------------
+// Tag Pill (e.g., "Open Source")
+// ------------------------------------------------------------
+.tag-pill {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 1.2rem;
+	padding: 0.2rem 0.9rem 0.4rem 0.9rem;
+	border-radius: var(--radius-full);
+	background: var(--color-blue-mid);
+	margin-bottom: var(--spacing-sm);
+}

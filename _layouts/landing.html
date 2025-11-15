@@ -6,22 +6,121 @@
 			{%- include header.html -%}
 
 			<main>
-				<section class="hero landing">
+				<section class="hero hero--landing">
 					<div class="hero-content container">
-						<h1 class="hero-title">Caution makes compute verifiable</h1>
-						<p class="subtext">
-							You deserve to know what runs on your servers. No more black
-							boxes. Caution gives you cryptographic proof, total portability,
-							and no complexity.
+						<!-- <div class="badge">
+							<span>COMING SOON</span>
+						</div> -->
+						<h1 class="hero-title">Know what runs on a server</h1>
+						<p class="hero__subtext u-show-desktop">
+							No more black boxes. Caution gives you cryptographic proof, total
+							portability, and the ultimate peace of mind.
 						</p>
-						<div class="hero-cta">
-							<a
-								href="/blog.html"
-								class="btn"
-								title="Read our latest blog posts and updates"
-								>Blog <span class="arrow">→</span></a
+
+						<div class="waitlist-form">
+							<form
+								id="contact-form"
+								method="post"
+								class="email-form"
+								action="https://distrust.co/submit-email"
 							>
+								<div class="input-wrapper">
+									<input
+										type="email"
+										name="email"
+										placeholder="Enter email"
+										id="email"
+										class="email-input"
+										required
+									/>
+									<input
+										type="hidden"
+										id="name"
+										name="name"
+										class="form-input"
+										value="caution.co"
+									/>
+									<input
+										type="hidden"
+										id="company-name"
+										value="caution.co"
+										name="company-name"
+										class="form-input"
+									/>
+									<input
+										id="service"
+										type="hidden"
+										name="service"
+										class="form-select"
+										value="caution.co"
+									/>
+									<input
+										type="hidden"
+										id="other-source"
+										name="other-source"
+										class="form-input"
+										placeholder="Please specify"
+									/>
+									<input
+										type="hidden"
+										id="other-source"
+										name="help"
+										class="form-input"
+										placeholder="Please specify"
+									/>
+									<button type="submit" class="btn" aria-label="Submit email">
+										Join Waitlist
+									</button>
+								</div>
+							</form>
 						</div>
+
+						<div class="cube_wrapper hero-cube">
+							<div class="cube">
+								<div class="cube_face"></div>
+								<div class="cube_face"></div>
+								<div class="cube_face"></div>
+								<div class="cube_face"></div>
+								<div class="cube_face"></div>
+								<div class="cube_face"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Statement Section -->
+				<section class="statement-section">
+					<div class="container">
+						<div class="cube_wrapper dark-cube">
+							<div class="cube">
+								<div class="cube_face">?</div>
+								<div class="cube_face">?</div>
+								<div class="cube_face">?</div>
+								<div class="cube_face">?</div>
+								<div class="cube_face">?</div>
+								<div class="cube_face">?</div>
+							</div>
+						</div>
+
+						<h2 class="statement-heading--pt1" data-scroll-text="first">
+							Most of today's technologies are black boxes.
+						</h2>
+						<p class="statement-heading--pt2" data-scroll-text="second">
+							Without verifiability, compromise spreads silently through every
+							layer of the stack.
+						</p>
+					</div>
+				</section>
+
+				<section class="features-section">
+					<div class="container">
+						<h2 class="features-section__heading">Built for Security Teams</h2>
+						<p class="features-section__subheading">
+							Enterprise-grade attestation and verification for modern
+							infrastructure
+						</p>
+
+						<!-- Cards will be added here -->
 					</div>
 				</section>
 			</main>

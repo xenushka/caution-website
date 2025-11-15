@@ -1,0 +1,233 @@
+// ==========================================================================
+// COMPONENTS: BUTTONS
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn,
+.submit-btn {
+	display: inline-block;
+	text-align: center;
+	@include glass-effect(8px);
+	color: var(--color-dark);
+	border-radius: var(--radius-full);
+	padding: 0.7rem 2.3rem 0.8rem 2.3rem;
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 450;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all var(--transition-base);
+
+	&:hover {
+		color: var(--color-pink);
+		box-shadow: inset 0 0 0 1px color-mix(in srgb, white 10%, transparent),
+			inset 1.8px 3px 0px -2px color-mix(in srgb, white 90%, transparent),
+			inset -2px -2px 0px -2px color-mix(in srgb, white 80%, transparent),
+			inset -3px -8px 1px -6px color-mix(in srgb, white 60%, transparent),
+			inset -0.3px -1px 4px 0px
+				color-mix(in srgb, var(--color-dark) 12%, transparent),
+			inset -1.5px 2.5px 0px -2px
+				color-mix(in srgb, var(--color-dark) 6%, transparent),
+			0 6px 16px rgba(0, 0, 0, 0.09);
+	}
+
+	@include media-tablet {
+		padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+	}
+}
+
+// ------------------------------------------------------------
+// Button Variants
+// ------------------------------------------------------------
+.btn--secondary {
+	background: transparent;
+	color: var(--color-dark);
+	font-size: clamp(1rem, 2.5vw, 1.2rem);
+	box-shadow: none;
+}
+
+// Legacy class support (can be removed once HTML is updated)
+.btn-secondary {
+	@extend .btn--secondary;
+}
+
+// ------------------------------------------------------------
+// Button Arrow Icon
+// ------------------------------------------------------------
+.btn__arrow,
+.arrow {
+	display: inline-block;
+	margin-left: 4px;
+	transition: transform var(--transition-slow);
+}
+
+// ------------------------------------------------------------
+// Submit Button (Circular)
+// ------------------------------------------------------------
+// .submit-btn {
+// 	background-color: color-mix(
+// 		in srgb,
+// 		var(--color-grey-light) 12%,
+// 		transparent
+// 	);
+// 	color: var(--color-dark);
+// 	border: none;
+// 	border-radius: var(--radius-full);
+// 	padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+// 	font-size: clamp(0.9rem, 2vw, 1.1rem);
+// 	font-weight: 600;
+// 	cursor: pointer;
+// 	flex-shrink: 0;
+// 	white-space: nowrap;
+// 	transition: all var(--transition-base);
+// 	backdrop-filter: blur(8px) saturate(150%);
+// 	-webkit-backdrop-filter: blur(8px) saturate(150%);
+// 	box-shadow: inset 0 0 0 1px color-mix(in srgb, white 10%, transparent),
+// 		inset 1.8px 3px 0px -2px color-mix(in srgb, white 90%, transparent),
+// 		inset -2px -2px 0px -2px color-mix(in srgb, white 80%, transparent),
+// 		inset -3px -8px 1px -6px color-mix(in srgb, white 60%, transparent),
+// 		inset -0.3px -1px 4px 0px
+// 			color-mix(in srgb, var(--color-dark) 12%, transparent),
+// 		inset -1.5px 2.5px 0px -2px
+// 			color-mix(in srgb, var(--color-dark) 6%, transparent),
+// 		0 4px 12px rgba(0, 0, 0, 0.08);
+
+// 	&:hover {
+// 		color: var(--color-pink);
+// 	}
+
+// 	.arrow {
+// 		display: none;
+// 	}
+// }
+
+// ------------------------------------------------------------
+// Soft Button (3D Neumorphic Effect) - Exact Implementation
+// ------------------------------------------------------------
+@property --primary {
+	syntax: "<color>";
+	initial-value: color-mix(in oklch, var(--secondary) 20%, oklch(1 0 0 / 0));
+	inherits: true;
+}
+
+@property --main-color {
+	syntax: "<color>";
+	initial-value: oklch(1 0 0);
+	inherits: true;
+}
+
+@property --complementary-color {
+	syntax: "<color>";
+	initial-value: oklch(0 0 0);
+	inherits: true;
+}
+
+@property --secondary {
+	syntax: "<color>";
+	initial-value: oklch(0.54 0 0);
+	inherits: true;
+}
+
+@property --material-color {
+	syntax: "<color>";
+	initial-value: oklch(0.8 2.16 203.9 / 1);
+	inherits: true;
+}
+
+@property --inner-color {
+	syntax: "<color>";
+	initial-value: oklch(0.89 0.03 var(5.42));
+	inherits: true;
+}
+
+@property --f_b {
+	syntax: "<number>";
+	initial-value: 1;
+	inherits: true;
+}
+
+@property --f_c {
+	syntax: "<number>";
+	initial-value: 1;
+	inherits: true;
+}
+
+@property --hue {
+	syntax: "<number>";
+	initial-value: 5;
+	inherits: true;
+}
+
+.soft-btn {
+	position: relative;
+	width: min(300px, 65vi);
+	padding: 0.5ch 1ch;
+	display: flex;
+	justify-content: center;
+	font: 400 1.5em system-ui;
+	color: oklch(from var(--inner-color) calc(l + 0.1) c calc(h + 180));
+	text-decoration: none;
+	--radius: calc(1px / 0);
+	border-radius: var(--radius);
+	background: radial-gradient(
+			ellipse farthest-side,
+			oklch(from var(--inner-color) calc(l - 0.2) calc(c + 0.2) h / 0.5),
+			var(--inner-color) 95%
+		)
+		border-box;
+	box-shadow: inset 0px 0px 3px 10px oklch(1 0 0 / 0.07),
+		inset 0px -2px 0px 1px color-mix(in oklch, var(--primaryr) 10%, oklch(1 0 0 /
+						1));
+	backdrop-filter: blur(4px);
+	--primary: color-mix(in oklch, var(--main-color) 10%, oklch(1 0 0 / 1));
+	filter: brightness(var(--f_b)) contrast(var(--f_c))
+		drop-shadow(
+			0px 3px 2px oklch(from var(--inner-color) calc(l - 0.1) c h / 0.2)
+		);
+	transition: --f_b 0.5s, --f_c 0.5s ease;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		padding: 2px 2px 2.2px;
+		border: 1px solid oklch(from var(--complementary-color) calc(l - 0.2) c h);
+		background: linear-gradient(
+			var(--complementary-color),
+			var(--primary),
+			var(--primary),
+			var(--complementary-color)
+		);
+		mix-blend-mode: overlay;
+		border-radius: inherit;
+		mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+		transition: 0.35s ease;
+	}
+
+	& .__txt {
+		padding: 0.8rem;
+	}
+
+	&:hover,
+	&:active {
+		--f_b: 0.8;
+		--f_c: 2;
+		@starting-style {
+			--f_b: 1;
+			--f_c: 1;
+		}
+	}
+
+	@media (any-pointer: fine) {
+		&:focus-visible {
+			--f_b: 0.8;
+			--f_c: 2;
+			@starting-style {
+				--f_b: 1;
+				--f_c: 1;
+			}
+		}
+	}
+}
