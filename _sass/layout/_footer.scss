@@ -7,13 +7,13 @@
 
 .site-footer {
 	background-color: var(--color-dark);
-	padding: var(--spacing-md) 0 0.75rem 0;
+	padding: var(--spacing4) 0 0.75rem 0;
 	align-items: center;
 	flex-shrink: 0;
 	margin-top: auto;
 
 	@include media-mobile {
-		padding: var(--spacing-md) 0;
+		padding: var(--spacing4) 0;
 	}
 }
 
@@ -25,7 +25,7 @@
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: var(--spacing-sm) auto;
+	margin: var(--spacing3) auto;
 	padding: 0;
 }
 
@@ -48,7 +48,7 @@
 // ------------------------------------------------------------
 .social-icons {
 	display: flex;
-	gap: 16px;
+	gap: var(--spacing3);
 
 	img {
 		height: 26px;

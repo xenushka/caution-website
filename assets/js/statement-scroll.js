@@ -97,28 +97,29 @@
 				firstText.style.opacity = '0';
 			}
 
-			// Second text: Slides up from below, pauses at center, then continues up
+			// Second text: Slides up from below, pauses at center (same position as pt1), then continues up
+			// Note: pt2 has CSS transform: translateY(-50%) for vertical centering, so we account for that
 			if (progress < phase2Start) {
 				// Before phase 2: hidden below
-				secondText.style.transform = `translateY(${slideDistance}px)`;
+				secondText.style.transform = `translateY(calc(-50% + ${slideDistance}px))`;
 				secondText.style.opacity = '0';
 			} else if (progress < phase3Start) {
-				// Phase 2: Slide up to center
+				// Phase 2: Slide up to center (accounting for the -50% CSS offset)
 				const secondTextY = slideDistance - (slideDistance * phase2Progress);
 				// CONTROL: Change fadeInDuration to control how quickly pt2 fades in (lower = faster)
 				const fadeInDuration = 0.3;  // pt2 fades in over first 30% of phase 2
 				const secondTextOpacity = Math.min(1, phase2Progress / fadeInDuration);
 
-				secondText.style.transform = `translateY(${secondTextY}px)`;
+				secondText.style.transform = `translateY(calc(-50% + ${secondTextY}px))`;
 				secondText.style.opacity = secondTextOpacity;
 			} else if (progress < phase4Start) {
-				// Phase 3: PAUSE at center for reading
-				secondText.style.transform = `translateY(0px)`;
+				// Phase 3: PAUSE at exact center position (maintaining -50% offset = same position as pt1)
+				secondText.style.transform = `translateY(-50%)`;
 				secondText.style.opacity = '1';
 			} else {
-				// Phase 4: Continue scrolling up and exit
+				// Phase 4: Continue scrolling up and exit off the top
 				const exitDistance = slideDistance * phase4Progress;
-				secondText.style.transform = `translateY(${-exitDistance}px)`;
+				secondText.style.transform = `translateY(calc(-50% - ${exitDistance}px))`;
 				// Fade out during last 40% of exit
 				const exitFadeStart = 0.6;
 				const exitFadeProgress = Math.max(0, (phase4Progress - exitFadeStart) / (1 - exitFadeStart));

@@ -20,8 +20,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--spacing-md) 0;
-	margin: var(--spacing-lg) auto 0 auto;
+	padding: var(--spacing4) 0;
+	margin: var(--spacing5) auto 0 auto;
 }
 
 // ------------------------------------------------------------
@@ -48,7 +48,7 @@
 // ------------------------------------------------------------
 .nav-desktop {
 	display: none;
-	gap: var(--spacing-xs);
+	gap: var(--spacing2);
 	align-items: center;
 
 	@include media-tablet {
@@ -146,7 +146,7 @@
 // Mobile Menu
 // ------------------------------------------------------------
 .mobile-menu {
-	margin-top: var(--spacing-sm);
+	margin-top: var(--spacing3);
 	display: none;
 
 	&.active {
@@ -160,7 +160,7 @@
 
 .mobile-menu-content {
 	border-radius: var(--radius-md);
-	padding: var(--spacing-xs);
+	padding: var(--spacing2);
 	border: 1px solid rgba(15, 15, 15, 0.1);
 	backdrop-filter: blur(12px);
 	background-color: rgba(255, 255, 255, 0.05);
@@ -172,7 +172,7 @@
 .mobile-menu-link {
 	display: block;
 	border-radius: var(--radius-sm);
-	padding: var(--spacing-xs) 0.75rem;
+	padding: var(--spacing2) 0.75rem;
 	font-size: 0.875rem;
 	color: var(--color-dark);
 	text-decoration: none;
@@ -188,9 +188,9 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--spacing-xs);
+	gap: var(--spacing2);
 	border-radius: 9999px;
-	padding: 0.625rem var(--spacing-sm);
+	padding: 0.625rem var(--spacing3);
 	font-size: 0.875rem;
 	font-weight: 500;
 	background-color: var(--color-dark);

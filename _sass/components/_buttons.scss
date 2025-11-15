@@ -59,7 +59,7 @@
 .btn__arrow,
 .arrow {
 	display: inline-block;
-	margin-left: 4px;
+	margin-left: var(--spacing1);
 	transition: transform var(--transition-slow);
 }
 

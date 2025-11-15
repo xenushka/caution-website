@@ -14,7 +14,7 @@
 	font-size: clamp(1rem, 2vw, 1.2rem);
 	font-weight: 300;
 	color: var(--color-dark);
-	margin: 0 0 var(--spacing-lg) 0;
+	margin: 0 0 var(--spacing5) 0;
 }
 
 // ------------------------------------------------------------
@@ -24,7 +24,7 @@
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-	padding: var(--spacing-sm) 0;
+	padding: var(--spacing3) 0;
 
 	// Fade effect on edges
 	&::before,
@@ -98,7 +98,7 @@
 // ------------------------------------------------------------
 @include media-mobile {
 	.logo-section {
-		padding: var(--spacing-sm) 0;
+		padding: var(--spacing3) 0;
 
 		&::before,
 		&::after {
@@ -120,9 +120,9 @@
 // Mid-Tall Section (Container)
 // ------------------------------------------------------------
 .mid-tall-section {
-	padding: var(--spacing-2xl) 0;
+	padding: var(--spacing5) 0;
 
 	@include media-mobile {
-		padding: var(--spacing-2xl) 0;
+		padding: var(--spacing5) 0;
 	}
 }

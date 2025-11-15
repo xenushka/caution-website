@@ -9,8 +9,8 @@
 // Status Pill (e.g., "COMING SOON")
 // ------------------------------------------------------------
 .pill {
-	padding: 6px 16px;
-	margin: 0 0 var(--spacing-md) 0;
+	padding: var(--spacing1) var(--spacing3);
+	margin: 0 0 var(--spacing4) 0;
 	border-radius: var(--radius-full);
 	color: var(--color-dark);
 	font-weight: 500;
@@ -54,7 +54,7 @@
 	border-radius: var(--radius-full);
 	padding: 0.3rem 1rem 0.3rem 1rem;
 	transition: all var(--transition-base);
-	margin: 0 0 var(--spacing-md) 0;
+	margin: 0 0 var(--spacing4) 0;
 
 	span {
 		font-size: clamp(0.5rem, 2vw, 0.8rem);
@@ -84,7 +84,7 @@
 	text-decoration: none;
 	cursor: pointer;
 	white-space: nowrap;
-	margin-bottom: var(--spacing-md);
+	margin-bottom: var(--spacing4);
 	transition: all var(--transition-base);
 
 	span {
@@ -127,15 +127,3 @@
 	}
 }
 
-// ------------------------------------------------------------
-// Tag Pill (e.g., "Open Source")
-// ------------------------------------------------------------
-.tag-pill {
-	display: inline-block;
-	font-weight: 400;
-	font-size: 1.2rem;
-	padding: 0.2rem 0.9rem 0.4rem 0.9rem;
-	border-radius: var(--radius-full);
-	background: var(--color-blue-mid);
-	margin-bottom: var(--spacing-sm);
-}

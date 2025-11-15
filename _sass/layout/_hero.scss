@@ -57,7 +57,7 @@
 	line-height: 1;
 
 	&--thankyou {
-		margin-top: var(--spacing-lg);
+		margin-top: var(--spacing5);
 	}
 }
 
@@ -68,7 +68,7 @@
 	font-size: clamp(1.15rem, 2vw, 1.3rem);
 	max-width: 45rem;
 	line-height: 1.5;
-	margin: 0 0 var(--spacing-xl) 0;
+	margin: 0 0 var(--spacing5) 0;
 	word-spacing: 0.05rem;
 	font-weight: 350;
 
