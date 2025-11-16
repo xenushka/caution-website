@@ -1,0 +1,317 @@
+// ==========================================================================
+// COMPONENT: LIQUID GLASS CARD
+// ==========================================================================
+// A glassmorphism card with SVG liquid displacement effect.
+// Features frosted glass appearance, liquid distortion, and glossy edges.
+//
+// BROWSER SUPPORT:
+// - Chrome/Edge 76+
+// - Safari 9+
+// - Firefox 103+
+// - NO IE11 support (uses backdrop-filter and modern CSS)
+//
+// PERFORMANCE NOTES:
+// - SVG filters are GPU-accelerated in modern browsers
+// - Backdrop-filter may impact performance on lower-end devices
+// - Use sparingly on page (1-3 cards recommended)
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Main Card Container
+// ------------------------------------------------------------
+.liquid-glass-card {
+	// Base dimensions
+	width: 400px;
+	height: 400px;
+	max-width: 100%;
+
+	// Layout
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+
+	// Border radius for smooth corners
+	border-radius: 24px;
+
+	// Depth and elevation
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15),
+		0 2px 8px 0 rgba(0, 0, 0, 0.15);
+
+	// Subtle transform for visual interest
+	transform: translateZ(0); // Force GPU acceleration
+	will-change: transform; // Optimize for animations
+
+	// Responsive sizing
+	@include media-mobile {
+		width: 340px;
+		height: 340px;
+	}
+
+	@media (max-width: 380px) {
+		width: 100%;
+		height: 380px;
+	}
+}
+
+// ------------------------------------------------------------
+// Glass Layer (with SVG displacement filter applied)
+// ------------------------------------------------------------
+.liquid-glass-card__glass {
+	// Fill parent container
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+
+	// Glassmorphism effect
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: brightness(1) blur(20px);
+	-webkit-backdrop-filter: brightness(1) blur(20px);
+
+	// Border for definition
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 24px;
+
+	// SVG filter is applied via inline style in HTML
+	// This ensures unique filter ID per card instance
+
+	// Smooth transitions
+	transition: all 0.3s ease;
+
+	// Hover state - enhance glass effect
+	.liquid-glass-card:hover & {
+		background: rgba(255, 255, 255, 0.15);
+		border-color: rgba(255, 255, 255, 0.25);
+		backdrop-filter: brightness(1.15) blur(12px);
+		-webkit-backdrop-filter: brightness(1.15) blur(12px);
+	}
+}
+
+// ------------------------------------------------------------
+// Glossy Edge Reflections Overlay
+// ------------------------------------------------------------
+.liquid-glass-card__reflection {
+	// Position over glass layer
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	pointer-events: none; // Allow clicks to pass through
+
+	// Border radius to match container
+	border-radius: 24px;
+
+	// Glossy inset highlights (top-left light reflection)
+	box-shadow: inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
+		inset 0 0 12px 1px rgba(255, 255, 255, 0.4),
+		inset -0.5px -0.5px 0px 0px rgba(255, 255, 255, 0.2);
+
+	// Subtle shimmer animation
+	animation: shimmer 4s ease-in-out infinite;
+}
+
+// Shimmer animation for glossy effect
+@keyframes shimmer {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.85;
+	}
+}
+
+// ------------------------------------------------------------
+// Content Container
+// ------------------------------------------------------------
+.liquid-glass-card__content {
+	// Positioning
+	position: relative;
+	z-index: 3; // Above glass and reflection layers
+	height: 100%;
+
+	// Layout
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	// Padding
+	padding: var(--spacing5);
+
+	@include media-mobile {
+		padding: var(--spacing4);
+	}
+}
+
+// ------------------------------------------------------------
+// Title
+// ------------------------------------------------------------
+.liquid-glass-card__title {
+	// Typography
+	font-size: clamp(1.75rem, 4vw, 2.25rem);
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	color: var(--color-dark);
+
+	// Spacing
+	margin: 0 0 var(--spacing3) 0;
+
+	// Text styling
+	text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+
+	// Capitalize first letter
+	text-transform: lowercase;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	@include media-mobile {
+		font-size: clamp(1.5rem, 5vw, 1.85rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Description
+// ------------------------------------------------------------
+.liquid-glass-card__description {
+	// Typography
+	font-size: clamp(1.05rem, 2vw, 1.2rem);
+	font-weight: 400;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+
+	// Spacing
+	margin: 0 0 var(--spacing5) 0;
+
+	// Max width for readability
+	max-width: 90%;
+
+	@include media-mobile {
+		font-size: clamp(0.95rem, 2vw, 1.1rem);
+		margin-bottom: var(--spacing4);
+	}
+}
+
+// ------------------------------------------------------------
+// Button
+// ------------------------------------------------------------
+.liquid-glass-card__button {
+	// Display
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing2);
+
+	// Typography
+	font-size: clamp(1rem, 2vw, 1.1rem);
+	font-weight: 500;
+	color: var(--color-dark);
+	text-decoration: none;
+
+	// Spacing
+	padding: 0.75rem 1.75rem;
+
+	// Styling - subtle glass button
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: var(--radius-full);
+
+	// Effects
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+	// Transitions
+	transition: all var(--transition-base);
+	cursor: pointer;
+
+	// Hover state
+	&:hover {
+		background: rgba(255, 255, 255, 0.35);
+		border-color: rgba(255, 255, 255, 0.5);
+		color: var(--color-pink);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8);
+		transform: translateY(-2px);
+	}
+
+	// Active state
+	&:active {
+		transform: translateY(0);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	@include media-mobile {
+		padding: 0.65rem 1.5rem;
+		font-size: clamp(0.95rem, 2vw, 1.05rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Button Arrow
+// ------------------------------------------------------------
+.liquid-glass-card__button-arrow {
+	// Typography
+	font-size: 1.2em;
+	line-height: 1;
+
+	// Animation
+	display: inline-block;
+	transition: transform var(--transition-base);
+
+	// Hover animation - arrow moves right
+	.liquid-glass-card__button:hover & {
+		transform: translateX(4px);
+	}
+}
+
+// ------------------------------------------------------------
+// SVG Container (hidden)
+// ------------------------------------------------------------
+.liquid-glass-svg {
+	position: absolute;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+// ------------------------------------------------------------
+// Utility Classes
+// ------------------------------------------------------------
+
+// Centered layout helper
+.liquid-glass-card--centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Full width variant (maintains aspect ratio)
+.liquid-glass-card--full-width {
+	width: 100%;
+	max-width: 500px;
+
+	@include media-mobile {
+		max-width: 100%;
+	}
+}
+
+// Compact variant (smaller dimensions)
+.liquid-glass-card--compact {
+	width: 320px;
+	height: 320px;
+
+	@include media-mobile {
+		width: 280px;
+		height: 280px;
+	}
+}

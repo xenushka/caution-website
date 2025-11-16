@@ -22,6 +22,17 @@
 	--color-pink: #f048b5;
 	--color-purple: #7c4dff;
 
+	// HSL Color System (for design system demos)
+	--bg-dark: hsl(205 79% 85%);
+	--bg: hsl(205 80% 90%);
+	--bg-light: hsl(204 77% 95%);
+	--text: hsl(0 0% 5%);
+	--text-muted: hsl(0 0% 30%);
+	--highlight: hsl(300 50% 100%);
+	--border: hsl(300 0% 50%);
+	--border-muted: hsl(340 0% 62%);
+	--accent-pink: hsl(322 87% 62%);
+
 	// Spacing scale - Simple and consistent
 	--spacing1: 4px;
 	--spacing2: 8px;
@@ -41,7 +52,8 @@
 	// Shadows
 	--shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
 	--shadow-md: 0 6px 24px rgba(46, 106, 234, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
-	--shadow-lg: 0 10px 34px rgba(46, 106, 234, 0.15), 0 6px 16px rgba(0, 0, 0, 0.08);
+	--shadow-lg: 0 10px 34px rgba(46, 106, 234, 0.15),
+		0 6px 16px rgba(0, 0, 0, 0.08);
 
 	// Layout
 	--site-width: 95%;
@@ -59,8 +71,8 @@
 
 // Typography
 $font-family-base: "Plus Jakarta Sans", sans-serif !default;
-$font-size-base: 1.3rem !default;
-$font-size-mobile: 1.125rem !default;
+$font-size-base: clamp(1.15rem, 2vw, 1.3rem) !default;
+$font-size-mobile: clamp(1.15rem, 2vw, 1.3rem) !default;
 $line-height-base: 1.5 !default;
 
 // Layout

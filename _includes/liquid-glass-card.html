@@ -1,0 +1,64 @@
+<!--
+═══════════════════════════════════════════════════════════════════
+LIQUID GLASS CARD COMPONENT
+───────────────────────────────────────────────────────────────────
+A reusable glassmorphism card with SVG liquid distortion effect.
+
+USAGE:
+See LIQUID-GLASS-CARD-DOCS.md for full documentation
+
+PARAMETERS:
+- title: Card heading (required)
+- description: Card body text (required)
+- button_text: Text for the CTA button (optional)
+- button_link: URL for the button (optional)
+- card_id: Unique ID for multiple cards on same page (default: "liquid-card-1")
+
+NOTES:
+- Each card needs a unique card_id to avoid SVG filter conflicts
+- Works best on colorful gradient backgrounds
+- Mobile responsive (scales down on small screens)
+- Zero JavaScript dependencies
+═══════════════════════════════════════════════════════════════════
+-->
+
+{% assign card_id = include.card_id | default: "liquid-card-1" %}
+{% assign filter_id = "displacementFilter-" | append: card_id %}
+
+<!-- SVG Filter Definition (hidden) -->
+<svg class="liquid-glass-svg" style="position: absolute; width: 0; height: 0;">
+	<defs>
+		<filter id="{{ filter_id }}">
+			<!-- Simple clean glass effect - no displacement -->
+		</filter>
+	</defs>
+</svg>
+
+<!-- Liquid Glass Card Container -->
+<div class="liquid-glass-card" data-card-id="{{ card_id }}">
+	<!-- Inner glass layer -->
+	<div class="liquid-glass-card__glass">
+		<!-- Content container -->
+		<div class="liquid-glass-card__content">
+			{% if include.title %}
+			<h3 class="liquid-glass-card__title">{{ include.title }}</h3>
+			{% endif %} {% if include.description %}
+			<p class="liquid-glass-card__description">{{ include.description }}</p>
+			{% endif %} {% if include.button_text and include.button_link %}
+			<a
+				href="{{ include.button_link }}"
+				class="liquid-glass-card__button"
+				aria-label="{{ include.button_text }}"
+			>
+				{{ include.button_text }}
+				<span class="liquid-glass-card__button-arrow" aria-hidden="true"
+					>→</span
+				>
+			</a>
+			{% endif %}
+		</div>
+	</div>
+
+	<!-- Glossy edge reflections overlay -->
+	<div class="liquid-glass-card__reflection" aria-hidden="true"></div>
+</div>

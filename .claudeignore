@@ -1,0 +1,32 @@
+# Build outputs and generated files
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Dependencies
+vendor/
+node_modules/
+_vendor/
+
+# Ruby/Bundler
+.bundle/
+Gemfile.lock
+
+# Version control
+.git/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+*~

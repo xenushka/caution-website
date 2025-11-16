@@ -82,29 +82,54 @@ h1,
 h2,
 h3,
 h4 {
-	font-weight: 500;
 	margin: 0 0 var(--spacing5) 0;
 }
 
 h1 {
-	font-size: clamp(3rem, 8vw, 4.3rem);
-	line-height: 1.05;
-	letter-spacing: 0.005rem;
-	word-spacing: 0.3rem;
+	font-weight: 700;
+	font-size: clamp(2.5em, 5vw, 3.25rem);
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	text-transform: lowercase;
+}
+
+h1::first-letter {
+	text-transform: uppercase;
 }
 
 h2 {
-	font-size: clamp(2.5rem, 10vw, 4.5rem);
-	line-height: 1.1;
+	font-weight: 600;
+	font-size: clamp(2em, 4vw, 2.6rem);
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+	text-transform: lowercase;
+}
+
+h2::first-letter {
+	text-transform: uppercase;
 }
 
 h3 {
-	font-size: clamp(1.4rem, 3vw, 2.1rem);
+	font-weight: 600;
+	font-size: clamp(1.5em, 3vw, 2rem);
+	line-height: 1.33;
+	letter-spacing: -0.005em;
 	margin: 0 0 var(--spacing4) 0;
+	text-transform: lowercase;
 }
 
-h4 {
-	font-size: 1.1rem;
+h3::first-letter {
+	text-transform: uppercase;
+}
+
+// ------------------------------------------------------------
+// Subtitle
+// ------------------------------------------------------------
+.subtitle {
+	font-weight: 500;
+	font-size: clamp(1.15rem, 2vw, 1.3rem);
+	line-height: 1.5;
+	letter-spacing: 0em;
 }
 
 // ------------------------------------------------------------
@@ -112,15 +137,17 @@ h4 {
 // ------------------------------------------------------------
 p,
 li {
-	font-weight: 300;
-	font-size: clamp(1.1rem, 2vw, 1.125rem);
-	line-height: $line-height-base;
+	font-weight: 400;
+	font-size: clamp(1.15rem, 2vw, 1.3rem);
+	line-height: 1.5;
+	letter-spacing: 0em;
 	padding: 0;
 }
 
 a {
 	color: var(--color-dark);
-	transition: background-color var(--transition-slow), color var(--transition-slow);
+	transition: background-color var(--transition-slow),
+		color var(--transition-slow);
 	text-decoration: none;
 
 	&:hover {

@@ -1,0 +1,44 @@
+{
+  // File exclusions - hide these from the file explorer
+  "files.exclude": {
+    "**/_site": true,
+    "**/vendor": true,
+    "**/.jekyll-cache": true,
+    "**/.sass-cache": true,
+    "**/.bundle": true,
+    "**/_vendor": true
+  },
+
+  // File watcher exclusions - don't watch these for changes
+  "files.watcherExclude": {
+    "**/_site/**": true,
+    "**/vendor/**": true,
+    "**/.git/**": true,
+    "**/.jekyll-cache/**": true,
+    "**/.sass-cache/**": true,
+    "**/.bundle/**": true,
+    "**/node_modules/**": true,
+    "**/_vendor/**": true
+  },
+
+  // Search exclusions - don't search in these directories
+  "search.exclude": {
+    "**/_site": true,
+    "**/vendor": true,
+    "**/.jekyll-cache": true,
+    "**/.sass-cache": true,
+    "**/.bundle": true,
+    "**/node_modules": true,
+    "**/_vendor": true,
+    "**/*.log": true
+  },
+
+  // Performance optimizations
+  "files.maxMemoryForLargeFilesMB": 4096,
+  "search.followSymlinks": false,
+
+  // Jekyll-specific settings
+  "files.associations": {
+    "*.html": "jekyll"
+  }
+}

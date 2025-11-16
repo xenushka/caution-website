@@ -276,8 +276,7 @@ permalink: /design-system/
 	}
 
 	/* Component Styles */
-	.btn,
-	.submit-btn {
+	.btn {
 		display: inline-block;
 		text-align: center;
 		background-color: color-mix(in srgb, var(--color-grey-light) 12%, transparent);
@@ -836,17 +835,12 @@ permalink: /design-system/
 			<a href="#" class="btn--secondary">Secondary Button</a>
 		</div>
 		<div class="ds-code">&lt;a href="#" class="btn--secondary"&gt;Secondary Button&lt;/a&gt;</div>
-
-		<h3 class="ds-section__subtitle">Submit Button</h3>
-		<div class="ds-component-demo">
-			<button type="submit" class="submit-btn">Submit</button>
-		</div>
 		<div class="ds-code">&lt;button type="submit" class="submit-btn"&gt;Submit&lt;/button&gt;</div>
 	</section>
 
 			<!-- Badges Section -->
 			<section id="badges" class="ds-section">
-				<h2 class="ds-section__title">Badges & Pills</h2>
+				<h2 class="ds-section__title">Badges</h2>
 
 		<h3 class="ds-section__subtitle">Badges</h3>
 		<div class="ds-component-demo">
@@ -921,7 +915,7 @@ permalink: /design-system/
 			</tbody>
 		</table>
 
-		<h3 class="ds-section__subtitle">Usage Example</h3>
+		
 		<div class="ds-code">/* Use spacing tokens in your CSS */<br>padding: var(--spacing3);      /* 16px */<br>margin-bottom: var(--spacing5); /* 40px */<br>gap: var(--spacing4);           /* 20px */</div>
 	</section>
 

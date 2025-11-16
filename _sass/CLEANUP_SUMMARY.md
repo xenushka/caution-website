@@ -54,7 +54,6 @@
 - `.btn` - Primary button
 - `.btn--secondary` - Secondary button variant
 - `.btn__arrow` - Button arrow icon
-- `.submit-btn` - Form submit button
 
 **Lines removed:** ~45 lines
 
