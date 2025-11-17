@@ -24,8 +24,8 @@
 // ------------------------------------------------------------
 .liquid-glass-card {
 	// Base dimensions
-	width: 400px;
-	height: 400px;
+	width: 500px;
+	height: 325px;
 	max-width: 100%;
 
 	// Layout
@@ -81,12 +81,12 @@
 	// Smooth transitions
 	transition: all 0.3s ease;
 
-	// Hover state - enhance glass effect
+	// Hover state - subtle enhancement
 	.liquid-glass-card:hover & {
-		background: rgba(255, 255, 255, 0.15);
-		border-color: rgba(255, 255, 255, 0.25);
-		backdrop-filter: brightness(1.15) blur(12px);
-		-webkit-backdrop-filter: brightness(1.15) blur(12px);
+		background: rgba(255, 255, 255, 0.12);
+		border-color: rgba(255, 255, 255, 0.22);
+		backdrop-filter: brightness(1.05) blur(18px);
+		-webkit-backdrop-filter: brightness(1.05) blur(18px);
 	}
 }
 
@@ -139,11 +139,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	text-align: center;
+	align-items: start;
+	text-align: start;
 
 	// Padding
-	padding: var(--spacing5);
+	padding: var(--spacing5) var(--spacing5);
 
 	@include media-mobile {
 		padding: var(--spacing4);
@@ -155,10 +155,10 @@
 // ------------------------------------------------------------
 .liquid-glass-card__title {
 	// Typography
-	font-size: clamp(1.75rem, 4vw, 2.25rem);
-	font-weight: 700;
+	font-size: clamp(1.2rem, 2vw, 1.6rem);
+	font-weight: 500;
 	line-height: 1.2;
-	letter-spacing: -0.02em;
+	letter-spacing: -0.005em;
 	color: var(--color-dark);
 
 	// Spacing
@@ -185,15 +185,12 @@
 .liquid-glass-card__description {
 	// Typography
 	font-size: clamp(1.05rem, 2vw, 1.2rem);
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 1.6;
 	color: var(--color-grey-dark);
 
 	// Spacing
 	margin: 0 0 var(--spacing5) 0;
-
-	// Max width for readability
-	max-width: 90%;
 
 	@include media-mobile {
 		font-size: clamp(0.95rem, 2vw, 1.1rem);

@@ -47,60 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	initializeCompaniesCarousel();
-	// TODO: useful for news article carousel
-	// fetch('../assets/js/carousel-items.json')
-	// .then(response => response.json())
-	// .then(data => {
-	// 	createCarouselItems(data);
-	// 	initializeCarousel();
-	// })
-	// .catch(error => console.error('Error loading JSON:', error));
 });
-
-function createCarouselItems(items) {
-	const carousel = document.querySelector("#carousel");
-	items.forEach((item) => {
-		const itemDiv = document.createElement("div");
-		itemDiv.className = "carousel-item";
-
-		const link = document.createElement("a");
-		link.className = "carousel-link";
-		link.href = item.link;
-		link.target = "_blank";
-		link.rel = "noopener noreferrer";
-		const linkText = document.createTextNode(item.description);
-
-		link.appendChild(linkText);
-		itemDiv.appendChild(link);
-		carousel.appendChild(itemDiv);
-	});
-}
-
-function initializeCarousel() {
-	const carousel = document.querySelector("#carousel");
-	const items = Array.from(carousel.children);
-	const totalItems = items.length;
-	const middleIndex = Math.floor(totalItems / 2);
-	let currentIndex = -middleIndex;
-
-	function cycleItems() {
-		currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-		updateCarouselItems();
-	}
-
-	function updateCarouselItems() {
-		items.forEach((item, index) => {
-			let positionIndex = (currentIndex + index + totalItems) % totalItems;
-			let offset = positionIndex - middleIndex;
-			item.style.transform = `translateY(${offset * 100}%)`;
-			item.classList.toggle("active", positionIndex === middleIndex);
-			item.style.visibility = "visible";
-		});
-	}
-
-	updateCarouselItems();
-	setInterval(cycleItems, 7000);
-}
 
 function initializeCompaniesCarousel() {
 	const slider = document.getElementById("logoSlider");

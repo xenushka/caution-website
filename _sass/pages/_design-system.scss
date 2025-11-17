@@ -122,8 +122,7 @@
 // Hero Section
 // ------------------------------------------------------------
 .ds-hero {
-	padding: var(--spacing6) 0 var(--spacing5) 0;
-	border-bottom: 1px solid var(--color-grey-light);
+	padding: var(--spacing5) 0;
 }
 
 .ds-hero__title {
@@ -131,7 +130,6 @@
 	font-weight: 700;
 	line-height: 1.2;
 	letter-spacing: -0.02em;
-	margin-bottom: var(--spacing3);
 	color: var(--color-dark);
 }
 
@@ -206,16 +204,18 @@
 // Code Blocks
 // ------------------------------------------------------------
 .ds-code {
-	background: #0f0f0f;
-	color: #e7e7e7;
+	background: #1e1e1e;
+	color: #d4d4d4;
 	padding: var(--spacing4);
 	border-radius: var(--radius-md);
-	font-family: "Courier New", monospace;
-	font-size: 0.875rem;
+	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+		"Courier New", monospace;
+	font-size: 0.9rem;
 	overflow-x: auto;
 	margin-bottom: var(--spacing5);
 	line-height: 1.6;
-	border: 1px solid #2a2a2a;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 // ------------------------------------------------------------
