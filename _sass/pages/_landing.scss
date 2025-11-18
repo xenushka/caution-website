@@ -180,3 +180,565 @@
 		margin-bottom: var(--spacing5);
 	}
 }
+
+// ------------------------------------------------------------
+// Common Section Styles
+// ------------------------------------------------------------
+.section-title {
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 600;
+	text-align: center;
+	margin: 0 0 var(--spacing3) 0;
+	color: var(--color-dark);
+}
+
+.section-subtitle {
+	font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+	font-weight: 300;
+	text-align: center;
+	margin: 0 0 var(--spacing6) 0;
+	color: var(--color-grey-dark);
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// ------------------------------------------------------------
+// Problem Section (Landing V2)
+// ------------------------------------------------------------
+.problem-section {
+	min-height: 100vh;
+	padding: var(--spacing7) 0;
+	background-color: var(--color-dark);
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	.section-title {
+		color: white;
+		font-size: clamp(3rem, 5vw, 5rem);
+		font-weight: 500;
+		margin-bottom: var(--spacing3);
+		position: relative;
+		z-index: 1;
+	}
+
+	.section-subtitle {
+		color: rgba(255, 255, 255, 0.9);
+		font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+		margin-bottom: var(--spacing7);
+		position: relative;
+		z-index: 1;
+	}
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+@keyframes smokeFloat {
+	0%,
+	100% {
+		transform: translate(0, 0) scale(1) rotate(0deg);
+		opacity: 0.4;
+	}
+	25% {
+		transform: translate(20%, -15%) scale(1.15) rotate(5deg);
+		opacity: 0.5;
+	}
+	50% {
+		transform: translate(-10%, 10%) scale(1.1) rotate(-3deg);
+		opacity: 0.45;
+	}
+	75% {
+		transform: translate(-20%, -10%) scale(1.2) rotate(8deg);
+		opacity: 0.5;
+	}
+}
+
+.problem-grid {
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing6-5);
+	width: 100%;
+
+	@include media-tablet {
+		flex-direction: column;
+	}
+
+	@include media-mobile {
+		flex-direction: column;
+		gap: var(--spacing4);
+	}
+}
+
+// Problem card wrapper (used in problem-grid)
+.problem-grid > * {
+	flex: 1;
+	min-width: 0; // Allows flex items to shrink below content size
+}
+
+// ------------------------------------------------------------
+// Solution Section (Landing V2)
+// ------------------------------------------------------------
+.solution-section {
+	min-height: 100vh;
+	padding: var(--spacing7) 0;
+	background-color: white;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	.section-title {
+		color: var(--color-dark);
+		font-size: clamp(3rem, 5vw, 5rem);
+		font-weight: 500;
+		margin-bottom: var(--spacing3);
+		position: relative;
+		z-index: 1;
+		max-width: 60rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.section-subtitle {
+		color: var(--color-grey-dark);
+		font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+		margin-bottom: var(--spacing6);
+		position: relative;
+		z-index: 1;
+	}
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+// Flexbox layout for solution cards
+.solution-grid {
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing6-5);
+	width: 100%;
+
+	@include media-tablet {
+		flex-direction: column;
+	}
+
+	@include media-mobile {
+		flex-direction: column;
+		gap: var(--spacing4);
+	}
+}
+
+// ------------------------------------------------------------
+// Features Section (Landing V2)
+// ------------------------------------------------------------
+.features-section {
+	min-height: 100vh;
+	padding: var(--spacing7) 0;
+	background-color: var(--color-background);
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	.section-title {
+		color: var(--color-dark);
+		font-size: clamp(3rem, 5vw, 5rem);
+		font-weight: 500;
+		margin-bottom: var(--spacing3);
+	}
+
+	.section-subtitle {
+		color: var(--color-grey-dark);
+		font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+		margin-bottom: var(--spacing7);
+	}
+}
+
+// Bento-style layout for feature cards using flexbox
+.features-bento {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing5);
+	width: 100%;
+}
+
+// Flex row container
+.features-bento__row {
+	display: flex;
+	gap: var(--spacing5);
+	width: 100%;
+
+	@include media-mobile {
+		flex-direction: column;
+		gap: var(--spacing4);
+	}
+}
+
+// Narrow card - larger share in row 1
+.features-bento__narrow {
+	flex: 1.6;
+	min-width: 0;
+
+	@include media-mobile {
+		flex: none;
+	}
+}
+
+// Large card - smaller share in row 1
+.features-bento__large {
+	flex: 1.4;
+	min-width: 0;
+
+	@include media-mobile {
+		flex: none;
+	}
+}
+
+// Small cards - equal width (1/3 each)
+.features-bento__small {
+	flex: 1;
+	min-width: 0;
+
+	@include media-mobile {
+		flex: none;
+	}
+}
+
+// Square card - fixed aspect ratio, no flex grow
+.features-bento__square {
+	flex: 0.7;
+	width: calc(
+		(100% - (var(--spacing5) * 2)) / 3
+	); // Match width of other cards in row
+	aspect-ratio: 1;
+	min-width: 0;
+
+	@include media-mobile {
+		width: 100%;
+		aspect-ratio: 1;
+	}
+}
+
+// ------------------------------------------------------------
+// Value Proposition Section
+// ------------------------------------------------------------
+.value-section {
+	padding: var(--spacing7) 0;
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+}
+
+.value-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--spacing5);
+	max-width: 1200px;
+	margin: 0 auto;
+
+	@include media-mobile {
+		grid-template-columns: 1fr;
+		gap: var(--spacing4);
+	}
+}
+
+.value-card {
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing5);
+	text-align: center;
+	transition: all var(--transition-base);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		border-color: rgba(0, 0, 0, 0.12);
+	}
+}
+
+.value-card__icon {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto var(--spacing4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #e8f6fd 0%, #f0f9ff 100%);
+	border-radius: var(--radius-full);
+	color: var(--color-blue-mid);
+}
+
+.value-card__title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 0 0 var(--spacing3) 0;
+	color: var(--color-dark);
+}
+
+.value-card__description {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+	margin: 0;
+}
+
+// ------------------------------------------------------------
+// Trust Section (Empathy & Competency)
+// ------------------------------------------------------------
+.trust-section {
+	padding: var(--spacing7) 0;
+	background: white;
+}
+
+.trust-content {
+	display: flex;
+	gap: var(--spacing6);
+	align-items: start;
+
+	@include media-tablet {
+		flex-direction: column;
+	}
+}
+
+.trust-left,
+.trust-right {
+	flex: 1;
+}
+
+.trust-description {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: var(--color-grey-dark);
+	margin: 0 0 var(--spacing4) 0;
+}
+
+.trust-logos {
+	margin-top: var(--spacing5);
+}
+
+.trust-logos__label {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--color-grey-dark);
+	margin-bottom: var(--spacing3);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.logo-carousel {
+	display: flex;
+	gap: var(--spacing4);
+	flex-wrap: wrap;
+}
+
+.logo-item {
+	flex: 0 0 auto;
+}
+
+.logo-placeholder {
+	padding: var(--spacing3) var(--spacing4);
+	background: rgba(0, 0, 0, 0.03);
+	border: 1px dashed rgba(0, 0, 0, 0.15);
+	border-radius: var(--radius-md);
+	font-size: 0.9rem;
+	color: var(--color-grey-dark);
+	font-weight: 500;
+}
+
+// Testimonial Card
+.testimonial-card {
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing5);
+	margin-bottom: var(--spacing4);
+	position: relative;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-quote-icon {
+	position: absolute;
+	top: var(--spacing4);
+	right: var(--spacing4);
+	color: var(--color-blue-light);
+}
+
+.testimonial-text {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: var(--color-dark);
+	font-style: italic;
+	margin: 0 0 var(--spacing4) 0;
+}
+
+.testimonial-author {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing3);
+}
+
+.testimonial-avatar {
+	flex-shrink: 0;
+}
+
+.avatar-circle {
+	width: 48px;
+	height: 48px;
+	border-radius: var(--radius-full);
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.testimonial-name {
+	font-weight: 600;
+	color: var(--color-dark);
+	margin-bottom: 0.25rem;
+}
+
+.testimonial-role {
+	font-size: 0.9rem;
+	color: var(--color-grey-dark);
+}
+
+// Stats Grid
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing3);
+}
+
+.stat-card {
+	background: linear-gradient(135deg, #e8f6fd 0%, #f0f9ff 100%);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	border-radius: var(--radius-md);
+	padding: var(--spacing4);
+	text-align: center;
+}
+
+.stat-value {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: var(--color-blue-mid);
+	margin-bottom: var(--spacing2);
+}
+
+.stat-label {
+	font-size: 0.9rem;
+	color: var(--color-grey-dark);
+	line-height: 1.4;
+}
+
+// ------------------------------------------------------------
+// Plan Section (3 Steps)
+// ------------------------------------------------------------
+.plan-section {
+	padding: var(--spacing7) 0;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), transparent);
+}
+
+.plan-steps {
+	display: flex;
+	gap: var(--spacing5);
+	margin-bottom: var(--spacing6);
+
+	@include media-tablet {
+		flex-direction: column;
+	}
+}
+
+.plan-step {
+	flex: 1;
+	display: flex;
+	gap: var(--spacing4);
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing5);
+	transition: all var(--transition-base);
+
+	&:hover {
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+		transform: translateY(-2px);
+	}
+}
+
+.plan-step__number {
+	flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	border-radius: var(--radius-full);
+	background: linear-gradient(135deg, var(--color-blue-mid) 0%, #667eea 100%);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.plan-step__content {
+	flex: 1;
+}
+
+.plan-step__title {
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: var(--color-dark);
+	margin: 0 0 var(--spacing2) 0;
+}
+
+.plan-step__description {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+	margin: 0;
+}
+
+.plan-cta {
+	display: flex;
+	gap: var(--spacing3);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+// ------------------------------------------------------------
+// Details Section (SEO Content)
+// ------------------------------------------------------------
+.details-section {
+	padding: var(--spacing7) 0;
+	background: white;
+}
+
+.details-content {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.details-body {
+	p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: var(--color-grey-dark);
+		margin-bottom: var(--spacing4);
+	}
+}
+
+.details-subtitle {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: var(--color-dark);
+	margin: var(--spacing5) 0 var(--spacing3) 0;
+
+	&:first-of-type {
+		margin-top: var(--spacing6);
+	}
+}

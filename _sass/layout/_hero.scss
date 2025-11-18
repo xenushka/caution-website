@@ -101,3 +101,18 @@
 		margin-bottom: 12rem;
 	}
 }
+
+// ------------------------------------------------------------
+// Landing V2 Overrides
+// ------------------------------------------------------------
+.landing-v2 {
+	.hero-title {
+		font-size: clamp(5rem, 8vw, 7rem);
+		max-width: 55rem;
+	}
+
+	.hero__subtext {
+		font-size: clamp(1.2rem, 2vw, 1.5rem);
+		max-width: 47rem;
+	}
+}

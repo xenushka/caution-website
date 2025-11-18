@@ -87,5 +87,77 @@
 				mobileMenu.classList.toggle("active");
 			});
 		}
+
+		// Intent-based auto-hiding navbar
+		const navbar = document.querySelector(".header-navbar");
+		if (!navbar) return;
+
+		let lastScrollY = window.scrollY;
+		let ticking = false;
+		let isNavbarVisible = true;
+
+		// Thresholds for scroll behavior
+		const SCROLL_THRESHOLD = 5; // Minimum scroll distance to trigger hide/show (prevents jitter)
+		const SHOW_THRESHOLD = 10; // Pixels to scroll up before showing navbar
+		const TOP_THRESHOLD = 100; // Distance from top where navbar always shows
+
+		// Debounced scroll handler for performance
+		function handleScroll() {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					updateNavbarVisibility();
+					ticking = false;
+				});
+				ticking = true;
+			}
+		}
+
+		// Intent detection: show navbar when scrolling up, hide when scrolling down
+		function updateNavbarVisibility() {
+			const currentScrollY = window.scrollY;
+			const scrollDelta = currentScrollY - lastScrollY;
+
+			// Always show navbar when near the top
+			if (currentScrollY < TOP_THRESHOLD) {
+				showNavbar();
+				lastScrollY = currentScrollY;
+				return;
+			}
+
+			// Check scroll direction and apply threshold to prevent jitter
+			if (Math.abs(scrollDelta) > SCROLL_THRESHOLD) {
+				if (scrollDelta > 0) {
+					// Scrolling down - hide navbar
+					hideNavbar();
+				} else if (Math.abs(scrollDelta) > SHOW_THRESHOLD) {
+					// Scrolling up with intent - show navbar
+					showNavbar();
+				}
+			}
+
+			lastScrollY = currentScrollY;
+		}
+
+		function hideNavbar() {
+			if (isNavbarVisible) {
+				navbar.classList.add("navbar--hidden");
+				isNavbarVisible = false;
+			}
+		}
+
+		function showNavbar() {
+			if (!isNavbarVisible) {
+				navbar.classList.remove("navbar--hidden");
+				isNavbarVisible = true;
+			}
+		}
+
+		// Attach scroll listener
+		window.addEventListener("scroll", handleScroll, { passive: true });
+
+		// Cleanup on page unload (prevents memory leaks)
+		window.addEventListener("beforeunload", () => {
+			window.removeEventListener("scroll", handleScroll);
+		});
 	});
 </script>

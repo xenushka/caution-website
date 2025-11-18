@@ -40,6 +40,9 @@ NOTES:
 	<div class="liquid-glass-card__glass">
 		<!-- Content container -->
 		<div class="liquid-glass-card__content">
+			{% if include.show_icon %}
+			<div class="liquid-glass-card__icon"></div>
+			{% endif %}
 			{% if include.title %}
 			<h3 class="liquid-glass-card__title">{{ include.title }}</h3>
 			{% endif %} {% if include.description %}

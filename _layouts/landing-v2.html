@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+	{%- include head.html -%}
+	<body class="landing-v2">
+		<div class="page-wrapper">
+			{%- include header.html -%}
+
+			<main>
+				<section class="hero hero--landing">
+					<div class="hero-content container">
+						<!-- <div class="badge">
+							<span>COMING SOON</span>
+						</div> -->
+						<h1 class="hero-title">Trust no one, verify everything</h1>
+						<p class="hero__subtext u-show-desktop">
+							Run sensitive workloads with cryptographic proof of execution. Portable across any cloud and bare metal, simple as Heroku.
+						</p>
+
+						<div class="waitlist-form">
+							<form
+								id="contact-form"
+								method="post"
+								class="email-form"
+								action="https://distrust.co/submit-email"
+							>
+								<div class="input-wrapper">
+									<input
+										type="email"
+										name="email"
+										placeholder="Enter email"
+										id="email"
+										class="email-input"
+										required
+									/>
+									<input
+										type="hidden"
+										id="name"
+										name="name"
+										class="form-input"
+										value="caution.co"
+									/>
+									<input
+										type="hidden"
+										id="company-name"
+										value="caution.co"
+										name="company-name"
+										class="form-input"
+									/>
+									<input
+										id="service"
+										type="hidden"
+										name="service"
+										class="form-select"
+										value="caution.co"
+									/>
+									<input
+										type="hidden"
+										id="other-source"
+										name="other-source"
+										class="form-input"
+										placeholder="Please specify"
+									/>
+									<input
+										type="hidden"
+										id="other-source"
+										name="help"
+										class="form-input"
+										placeholder="Please specify"
+									/>
+									<button type="submit" class="btn" aria-label="Submit email">
+										Get early access
+									</button>
+								</div>
+							</form>
+						</div>
+
+						</div>
+					</div>
+				</section>
+
+				<!-- Problem Section -->
+				<section class="problem-section">
+					<div class="container">
+						<h1 class="section-title">The hidden cost of blind trust</h1>
+						<p class="section-subtitle">
+							What if the software running your systems isn't what you think it is? To secure high-stakes compute, you need cryptographic proof, not promises.
+						</p>
+
+						<div class="problem-grid">
+							{% include problem-card.html
+								card_id="problem-1"
+								title="Zero proof of execution"
+								description="Cloud providers offer zero cryptographic proof of execution. Financial transactions, healthcare data, and AI models run in complete opacity."
+							%}
+
+							{% include problem-card.html
+								card_id="problem-2"
+								title="Total vendor lock-in"
+								description="Moving infrastructure means rewriting your entire security stack. Legacy clouds trap you with vendor lock-in."
+							%}
+
+							{% include problem-card.html
+								card_id="problem-3"
+								title="\"Trust us\" isn't security"
+								description="Blind trust creates compliance gaps and catastrophic breaches. High-stakes workloads need proof, not promises."
+							%}
+						</div>
+					</div>
+				</section>
+
+				<!-- Solution Section -->
+				<section class="solution-section">
+					<div class="container">
+						<h1 class="section-title">The ultimate solution for verifiable infrastructure</h1>
+						<p class="section-subtitle">
+							Built by the security engineers behind Distrust—who spent years auditing crypto, fintech, and critical infrastructure—we understand what breaks when you can't verify your stack.
+						</p>
+
+						<div class="features-bento">
+							<!-- First Row: Narrow + Large -->
+							<div class="features-bento__row">
+								<div class="features-bento__narrow">
+									{% include feature-card.html
+										card_id="solution-1"
+										title="Prove what ran, every time"
+										description="Breaches thrive in blind spots. Guessing what ran in production is not a security strategy. Caution gives you cryptographic proof."
+									%}
+								</div>
+
+								<div class="features-bento__large">
+									{% include feature-card.html
+										card_id="solution-2"
+										title="Run anywhere"
+										description="We fit into your stack, not the other way around. Run Caution on AWS, Azure, GCP, or bare metal."
+									%}
+								</div>
+							</div>
+
+							<!-- Second Row: Three Cards -->
+							<div class="features-bento__row">
+								<div class="features-bento__small">
+									{% include feature-card.html
+										card_id="solution-3"
+										title="Deploy in minutes"
+										description="It is 2025. Enclaves and attestation should not take months to set up. Caution handles the hard parts so you can keep building."
+									%}
+								</div>
+
+								<div class="features-bento__small">
+									{% include feature-card.html
+										card_id="solution-4"
+										title="Verify any workload"
+										description="Caution delivers generalized verifiable compute for any critical workload, from healthcare and AI to aeronautical systems."
+									%}
+								</div>
+
+								<div class="features-bento__square">
+									{% include feature-card.html
+										card_id="solution-5"
+										title="Open source, fully"
+										description="Closed code keeps secrets. We prefer honesty. Caution is and will always be fully open source."
+									%}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+		</div>
+		{%- include footer.html -%}
+	</body>
+</html>

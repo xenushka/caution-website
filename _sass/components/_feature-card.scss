@@ -1,0 +1,97 @@
+// ==========================================================================
+// COMPONENT: FEATURE CARD
+// ==========================================================================
+// Feature card component for the features section bento layout
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Main Card Container
+// ------------------------------------------------------------
+.feature-card__container {
+	// Layout
+	height: 100%;
+	min-height: 20rem;
+	width: 100%;
+	position: relative;
+
+	// Styling
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 0;
+
+	// Transitions
+	transition: all var(--transition-base);
+
+	// Hover effects
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+		border-color: rgba(0, 0, 0, 0.12);
+	}
+}
+
+// ------------------------------------------------------------
+// Card Content
+// ------------------------------------------------------------
+.feature-card__content {
+	// Layout
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing4);
+	height: 100%;
+
+	// Spacing
+	padding: var(--spacing5);
+}
+
+// ------------------------------------------------------------
+// Icon Placeholder
+// ------------------------------------------------------------
+.feature-card__icon {
+	// Size
+	width: 86px;
+	height: 86px;
+	flex-shrink: 0;
+
+	// Styling
+	background: rgba(0, 0, 0, 0.03);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+
+	// Spacing
+	margin-bottom: var(--spacing3);
+}
+
+// ------------------------------------------------------------
+// Title
+// ------------------------------------------------------------
+.feature-card__title {
+	font-size: clamp(1.2rem, 3vw, 1.5rem);
+	font-weight: 500;
+	color: var(--color-dark);
+	margin: 0;
+	line-height: 1.2;
+}
+
+// ------------------------------------------------------------
+// Description
+// ------------------------------------------------------------
+.feature-card__description {
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 350;
+	color: var(--color-grey-dark);
+	margin: 0;
+	line-height: 1.6;
+	flex: 1;
+}
+
+// ------------------------------------------------------------
+// Square Card Variant
+// ------------------------------------------------------------
+.features-bento__square {
+	.feature-card__content {
+		justify-content: center;
+	}
+}

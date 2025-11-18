@@ -1,0 +1,110 @@
+// ==========================================================================
+// COMPONENT: PROBLEM CARD
+// ==========================================================================
+// A minimal card component for displaying problems on the landing-v2 page.
+// Features: transparent background, subtle border, icon placeholder, white text.
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Main Card Container
+// ------------------------------------------------------------
+.problem-card__container {
+	// Layout
+	height: 100%;
+	min-height: 28rem;
+	width: 100%;
+	position: relative;
+
+	// Styling
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 0;
+
+	// No shadows or effects
+	box-shadow: none;
+}
+
+// ------------------------------------------------------------
+// Content Container
+// ------------------------------------------------------------
+.problem-card__content {
+	// Layout
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	// Padding
+	padding: var(--spacing5);
+}
+
+// ------------------------------------------------------------
+// Icon Placeholder
+// ------------------------------------------------------------
+.problem-card__icon {
+	// Size
+	width: 86px;
+	height: 86px;
+	flex-shrink: 0;
+
+	// Styling
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+
+	// Spacing
+	margin-bottom: var(--spacing6);
+}
+
+// ------------------------------------------------------------
+// Title
+// ------------------------------------------------------------
+.problem-card__title {
+	// Typography
+	font-size: clamp(1.2rem, 2vw, 1.6rem);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.005em;
+	color: white;
+
+	// Remove any effects
+	text-shadow: none;
+
+	// Spacing
+	margin: 0 0 var(--spacing3) 0;
+
+	// Capitalize first letter
+	text-transform: lowercase;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	@include media-mobile {
+		font-size: clamp(1.5rem, 5vw, 1.85rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Description
+// ------------------------------------------------------------
+.problem-card__description {
+	// Typography
+	font-size: clamp(1.05rem, 2vw, 1.2rem);
+	font-weight: 300;
+	line-height: 1.6;
+	color: white;
+
+	// Remove any effects
+	text-shadow: none;
+
+	// Spacing
+	margin: 0;
+
+	@include media-mobile {
+		font-size: clamp(0.95rem, 2vw, 1.1rem);
+	}
+}

@@ -1,0 +1,110 @@
+// ==========================================================================
+// COMPONENT: SOLUTION CARD
+// ==========================================================================
+// A card component for displaying solutions on the landing-v2 page.
+// Features: white background, subtle border, icon placeholder, dark text.
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Main Card Container
+// ------------------------------------------------------------
+.solution-card__container {
+	// Layout
+	height: 100%;
+	min-height: 28rem;
+	width: 100%;
+	position: relative;
+
+	// Styling
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 0;
+
+	// Subtle shadow
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+// ------------------------------------------------------------
+// Content Container
+// ------------------------------------------------------------
+.solution-card__content {
+	// Layout
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	// Padding
+	padding: var(--spacing5);
+}
+
+// ------------------------------------------------------------
+// Icon Placeholder
+// ------------------------------------------------------------
+.solution-card__icon {
+	// Size
+	width: 86px;
+	height: 86px;
+	flex-shrink: 0;
+
+	// Styling
+	background: rgba(0, 0, 0, 0.03);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+
+	// Spacing
+	margin-bottom: var(--spacing6);
+}
+
+// ------------------------------------------------------------
+// Title
+// ------------------------------------------------------------
+.solution-card__title {
+	// Typography
+	font-size: clamp(1.2rem, 2vw, 1.6rem);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.005em;
+	color: var(--color-dark);
+
+	// Remove any effects
+	text-shadow: none;
+
+	// Spacing
+	margin: 0 0 var(--spacing3) 0;
+
+	// Capitalize first letter
+	text-transform: lowercase;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	@include media-mobile {
+		font-size: clamp(1.5rem, 5vw, 1.85rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Description
+// ------------------------------------------------------------
+.solution-card__description {
+	// Typography
+	font-size: clamp(1.05rem, 2vw, 1.2rem);
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+
+	// Remove any effects
+	text-shadow: none;
+
+	// Spacing
+	margin: 0;
+
+	@include media-mobile {
+		font-size: clamp(0.95rem, 2vw, 1.1rem);
+	}
+}

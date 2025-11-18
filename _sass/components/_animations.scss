@@ -131,6 +131,9 @@ a-waves {
 			/* gentle inner glow, no dark tint */ inset 0 0 16px 0
 				color-mix(in srgb, #a3f1fc 20%, transparent),
 			/* subtle outer lift */ 0 4px 12px rgba(0, 0, 0, 0.05);
+		// Show both sides for true transparency
+		backface-visibility: visible;
+		-webkit-backface-visibility: visible;
 	}
 }
 

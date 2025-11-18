@@ -1,0 +1,29 @@
+{% comment %}
+═══════════════════════════════════════════════════════════════════
+SOLUTION CARD COMPONENT
+───────────────────────────────────────────────────────────────────
+A card component for the solution section on landing-v2.
+
+USAGE:
+{% raw %}
+{% include solution-card.html
+	card_id="solution-1"
+	title="Card Title"
+	description="Card description text."
+%}
+{% endraw %}
+
+PARAMETERS:
+- card_id: Unique ID for the card (required)
+- title: Card heading (required)
+- description: Card body text (required)
+═══════════════════════════════════════════════════════════════════
+{% endcomment %}
+
+<div class="solution-card__container" data-card-id="{{ include.card_id }}">
+	<div class="solution-card__content">
+		<div class="solution-card__icon"></div>
+		<h3 class="solution-card__title">{{ include.title }}</h3>
+		<p class="solution-card__description">{{ include.description }}</p>
+	</div>
+</div>
