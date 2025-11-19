@@ -108,11 +108,11 @@
 .landing-v2 {
 	.hero-title {
 		font-size: clamp(5rem, 8vw, 7rem);
-		max-width: 55rem;
+		max-width: 50rem;
 	}
 
 	.hero__subtext {
-		font-size: clamp(1.2rem, 2vw, 1.5rem);
+		font-size: var(--body-font-size);
 		max-width: 47rem;
 	}
 }

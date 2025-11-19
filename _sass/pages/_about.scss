@@ -1,0 +1,236 @@
+// ==========================================================================
+// PAGE: ABOUT
+// ==========================================================================
+// Styles for the about page
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Hero Section
+// ------------------------------------------------------------
+.about-hero-section {
+	padding: var(--spacing7) 0 var(--spacing5) 0;
+	background-color: var(--color-light);
+	display: flex;
+	align-items: center;
+	height: 60vh;
+
+	.container {
+		max-width: 1300px;
+	}
+}
+
+.about-hero-title {
+	font-size: clamp(3.5rem, 6vw, 4.5rem);
+	font-weight: 500;
+	line-height: 1.1;
+	color: var(--color-dark);
+	margin: 0 auto;
+	letter-spacing: -0.02em;
+	max-width: 60rem;
+	text-align: center;
+}
+
+// ------------------------------------------------------------
+// About the Team Section
+// ------------------------------------------------------------
+.about-team-section {
+	padding: var(--spacing6) 0;
+	background-color: var(--color-light);
+	display: flex;
+	align-items: center;
+
+	.container {
+		max-width: 1300px;
+	}
+}
+
+.about-team-content {
+	display: flex;
+	gap: var(--spacing7);
+	align-items: flex-start;
+
+	@include media-mobile {
+		flex-direction: column;
+		gap: var(--spacing5);
+	}
+}
+
+.about-team-left {
+	flex: 0 0 35%;
+
+	@include media-mobile {
+		flex: 1;
+	}
+}
+
+.about-team-title {
+	font-size: clamp(2.5rem, 5vw, 3rem);
+	font-weight: 400;
+	line-height: 1.2;
+	color: var(--color-dark);
+	margin: 0;
+	letter-spacing: -0.02em;
+}
+
+.about-team-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing4);
+	width: 95%;
+	padding-top: var(--spacing3);
+}
+
+.about-team-paragraph {
+	font-size: clamp(1.1rem, 2vw, 1.25rem);
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+	margin: 0;
+}
+
+// ------------------------------------------------------------
+// Guiding Principles Section
+// ------------------------------------------------------------
+.guiding-principles-section {
+	padding: var(--spacing6) 0;
+	background-color: var(--color-light);
+	display: flex;
+	align-items: center;
+
+	.container {
+		max-width: 1300px;
+	}
+}
+
+.guiding-principles-content {
+	display: flex;
+	gap: var(--spacing7);
+	align-items: flex-start;
+
+	@include media-mobile {
+		flex-direction: column;
+		gap: var(--spacing5);
+	}
+}
+
+.guiding-principles-left {
+	flex: 0 0 35%;
+
+	@include media-mobile {
+		flex: 1;
+	}
+}
+
+.guiding-principles-title {
+	font-size: clamp(2.5rem, 5vw, 3rem);
+	font-weight: 400;
+	line-height: 1.2;
+	color: var(--color-dark);
+	margin: 0;
+	letter-spacing: -0.02em;
+}
+
+.guiding-principles-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing4);
+	padding-top: var(--spacing3);
+}
+
+.guiding-principles-subheading {
+	font-size: clamp(1.1rem, 2vw, 1.25rem);
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+	margin: 0 0 var(--spacing4) 0;
+}
+
+.guiding-principles-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing3);
+	counter-reset: principle-counter;
+}
+
+.guiding-principles-item {
+	@include list-text;
+	color: var(--color-grey-dark);
+	margin: 0;
+	counter-increment: principle-counter;
+	position: relative;
+	padding-left: 3rem;
+
+	&::before {
+		content: counter(principle-counter) "/";
+		position: absolute;
+		left: 0;
+		font-weight: inherit;
+		opacity: 0.7;
+	}
+}
+
+// ------------------------------------------------------------
+// Mission Statement Section
+// ------------------------------------------------------------
+.mission-statement-section {
+	padding: var(--spacing6) 0;
+	background-color: var(--color-light);
+	display: flex;
+	align-items: center;
+
+	.container {
+		max-width: 1300px;
+	}
+}
+
+.mission-statement-content {
+	display: flex;
+	gap: var(--spacing7);
+	align-items: flex-start;
+
+	@include media-mobile {
+		flex-direction: column;
+		gap: var(--spacing5);
+	}
+}
+
+.mission-statement-left {
+	flex: 0 0 35%;
+
+	@include media-mobile {
+		flex: 1;
+	}
+}
+
+.mission-statement-title {
+	font-size: clamp(2.5rem, 5vw, 3rem);
+	font-weight: 400;
+	line-height: 1.2;
+	color: var(--color-dark);
+	margin: 0;
+	letter-spacing: -0.02em;
+}
+
+.mission-statement-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing4);
+	padding-top: var(--spacing3);
+}
+
+.mission-statement-paragraph {
+	font-size: clamp(1.1rem, 2vw, 1.25rem);
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+	margin: 0;
+}

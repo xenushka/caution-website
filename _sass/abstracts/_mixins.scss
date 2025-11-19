@@ -129,3 +129,63 @@
 		outline-offset: 2px;
 	}
 }
+
+// ------------------------------------------------------------
+// Typography Mixins
+// ------------------------------------------------------------
+
+// Heading 1
+@mixin heading1 {
+	font-size: var(--heading1-font-size);
+	font-weight: var(--heading1-font-weight);
+	line-height: var(--heading1-line-height);
+	letter-spacing: var(--heading1-letter-spacing);
+}
+
+// Heading 2
+@mixin heading2 {
+	font-size: var(--heading2-font-size);
+	font-weight: var(--heading2-font-weight);
+	line-height: var(--heading2-line-height);
+	letter-spacing: var(--heading2-letter-spacing);
+}
+
+// Heading 3
+@mixin heading3 {
+	font-size: var(--heading3-font-size);
+	font-weight: var(--heading3-font-weight);
+	line-height: var(--heading3-line-height);
+	letter-spacing: var(--heading3-letter-spacing);
+}
+
+// Subtitle
+@mixin subtitle {
+	font-size: var(--subtitle-font-size);
+	font-weight: var(--subtitle-font-weight);
+	line-height: var(--subtitle-line-height);
+	letter-spacing: var(--subtitle-letter-spacing);
+}
+
+// Body text
+@mixin body {
+	font-size: var(--body-font-size);
+	font-weight: var(--body-font-weight);
+	line-height: var(--body-line-height);
+	letter-spacing: var(--body-letter-spacing);
+}
+
+// Button text
+@mixin button-text {
+	font-size: var(--button-font-size);
+	font-weight: var(--button-font-weight);
+	line-height: var(--button-line-height);
+	letter-spacing: var(--button-letter-spacing);
+}
+
+// List text
+@mixin list-text {
+	font-size: var(--list-font-size);
+	font-weight: var(--list-font-weight);
+	line-height: var(--list-line-height);
+	letter-spacing: var(--list-letter-spacing);
+}

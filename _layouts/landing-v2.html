@@ -11,9 +11,11 @@
 						<!-- <div class="badge">
 							<span>COMING SOON</span>
 						</div> -->
-						<h1 class="hero-title">Trust no one, verify everything</h1>
+						<h1 class="hero-title">Know what runs on a server</h1>
 						<p class="hero__subtext u-show-desktop">
-							Run sensitive workloads with cryptographic proof of execution. Portable across any cloud and bare metal, simple as Heroku.
+							No more black boxes. Run sensitive workloads with cryptographic
+							proof of execution. Portable across any cloud and bare metal,
+							simple as Heroku.
 						</p>
 
 						<div class="waitlist-form">
@@ -73,101 +75,235 @@
 								</div>
 							</form>
 						</div>
-
-						</div>
 					</div>
 				</section>
+
+				{%- include statement-section.html -%}
 
 				<!-- Problem Section -->
 				<section class="problem-section">
 					<div class="container">
-						<h1 class="section-title">The hidden cost of blind trust</h1>
-						<p class="section-subtitle">
-							What if the software running your systems isn't what you think it is? To secure high-stakes compute, you need cryptographic proof, not promises.
-						</p>
+						<h1 class="section-title">
+							What happens when you can't verify what runs in production?
+						</h1>
 
 						<div class="problem-grid">
 							{% include problem-card.html
 								card_id="problem-1"
-								title="Zero proof of execution"
-								description="Cloud providers offer zero cryptographic proof of execution. Financial transactions, healthcare data, and AI models run in complete opacity."
+								title="Zero execution visibility"
+								description="Breaches persist for months because teams cannot see what actually runs."
+								video="tv-glitch.mp4"
+								video_start="0"
 							%}
-
 							{% include problem-card.html
 								card_id="problem-2"
-								title="Total vendor lock-in"
-								description="Moving infrastructure means rewriting your entire security stack. Legacy clouds trap you with vendor lock-in."
+								title="Hidden attack surface"
+								description="Unverified code drives $120B+ in annual losses globally."
+								video="tv-glitch.mp4"
+								video_start="2"
 							%}
-
 							{% include problem-card.html
 								card_id="problem-3"
-								title="\"Trust us\" isn't security"
-								description="Blind trust creates compliance gaps and catastrophic breaches. High-stakes workloads need proof, not promises."
+								title="Systemic trust failures"
+								description="Legacy clouds offer no proof, leaving defenders blind."
+								video="tv-glitch.mp4"
+								video_start="4"
 							%}
 						</div>
 					</div>
 				</section>
 
-				<!-- Solution Section -->
-				<section class="solution-section">
+				<!-- Features Section -->
+				<section class="features-section">
 					<div class="container">
-						<h1 class="section-title">The ultimate solution for verifiable infrastructure</h1>
-						<p class="section-subtitle">
-							Built by the security engineers behind Distrust—who spent years auditing crypto, fintech, and critical infrastructure—we understand what breaks when you can't verify your stack.
-						</p>
+						<h1 class="section-title">
+							Run any software verifiably
+						</h1>
 
-						<div class="features-bento">
-							<!-- First Row: Narrow + Large -->
-							<div class="features-bento__row">
-								<div class="features-bento__narrow">
-									{% include feature-card.html
-										card_id="solution-1"
-										title="Prove what ran, every time"
-										description="Breaches thrive in blind spots. Guessing what ran in production is not a security strategy. Caution gives you cryptographic proof."
-									%}
+						<div class="features-grid">
+							<!-- Feature 1 -->
+							<div class="feature-item">
+								<div class="feature-item__icon">
+									<!-- Icon placeholder -->
 								</div>
+								<h3 class="feature-item__title">Know what ran</h3>
+								<p class="feature-item__description">
+									Guessing what ran in production is not security. Get ground truth with reproducible workloads and hardware attestation.
+								</p>
+							</div>
 
-								<div class="features-bento__large">
-									{% include feature-card.html
-										card_id="solution-2"
-										title="Run anywhere"
-										description="We fit into your stack, not the other way around. Run Caution on AWS, Azure, GCP, or bare metal."
-									%}
+							<!-- Feature 2 -->
+							<div class="feature-item">
+								<div class="feature-item__icon">
+									<!-- Icon placeholder -->
+								</div>
+								<h3 class="feature-item__title">Run anywhere</h3>
+								<p class="feature-item__description">
+									We fit into your stack, not the other way around. Run Caution on AWS, Azure, GCP, or bare metal.
+								</p>
+							</div>
+
+							<!-- Feature 3 -->
+							<div class="feature-item">
+								<div class="feature-item__icon">
+									<!-- Icon placeholder -->
+								</div>
+								<h3 class="feature-item__title">Deploy in minutes</h3>
+								<p class="feature-item__description">
+									It is 2025. Secure enclaves and attestation should not take months to configure.
+								</p>
+							</div>
+
+							<!-- Feature 4 -->
+							<div class="feature-item">
+								<div class="feature-item__icon">
+									<!-- Icon placeholder -->
+								</div>
+								<h3 class="feature-item__title">Verify any workload</h3>
+								<p class="feature-item__description">
+									From healthcare and AI to critical finance systems, Caution delivers generalized verifiable compute.
+								</p>
+							</div>
+
+							<!-- Feature 5 -->
+							<div class="feature-item">
+								<div class="feature-item__icon">
+									<!-- Icon placeholder -->
+								</div>
+								<h3 class="feature-item__title">Open source, fully</h3>
+								<p class="feature-item__description">
+									Caution is full-source bootstrapped, reproducible, and completely open.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Building Blocks Section -->
+				<section class="building-blocks-section">
+					<div class="container">
+						<h1 class="section-title">
+							Building blocks
+						</h1>
+
+						<div class="features">
+							<!-- Feature 1: Text Left -->
+							<div class="feature feature--text-left">
+								<div class="feature__text">
+									<h2 class="feature__title">Prove what ran, every time</h2>
+									<p class="feature__description">
+										Breaches thrive in blind spots. Guessing what ran in production is not a security strategy. Caution gives you cryptographic proof.
+									</p>
+								</div>
+								<div class="feature__media">
+									<!-- Media placeholder -->
 								</div>
 							</div>
 
-							<!-- Second Row: Three Cards -->
-							<div class="features-bento__row">
-								<div class="features-bento__small">
-									{% include feature-card.html
-										card_id="solution-3"
-										title="Deploy in minutes"
-										description="It is 2025. Enclaves and attestation should not take months to set up. Caution handles the hard parts so you can keep building."
-									%}
+							<!-- Feature 2: Text Right -->
+							<div class="feature feature--text-right">
+								<div class="feature__text">
+									<h2 class="feature__title">Run anywhere</h2>
+									<p class="feature__description">
+										We fit into your stack, not the other way around. Run Caution on AWS, Azure, GCP, or bare metal.
+									</p>
 								</div>
-
-								<div class="features-bento__small">
-									{% include feature-card.html
-										card_id="solution-4"
-										title="Verify any workload"
-										description="Caution delivers generalized verifiable compute for any critical workload, from healthcare and AI to aeronautical systems."
-									%}
+								<div class="feature__media">
+									<!-- Media placeholder -->
 								</div>
+							</div>
 
-								<div class="features-bento__square">
-									{% include feature-card.html
-										card_id="solution-5"
-										title="Open source, fully"
-										description="Closed code keeps secrets. We prefer honesty. Caution is and will always be fully open source."
-									%}
+							<!-- Feature 3: Text Left -->
+							<div class="feature feature--text-left">
+								<div class="feature__text">
+									<h2 class="feature__title">Deploy in minutes</h2>
+									<p class="feature__description">
+										It is 2025. Enclaves and attestation should not take months to set up. Caution handles the hard parts so you can keep building.
+									</p>
+								</div>
+								<div class="feature__media">
+									<!-- Media placeholder -->
+								</div>
+							</div>
+
+							<!-- Feature 4: Text Right -->
+							<div class="feature feature--text-right">
+								<div class="feature__text">
+									<h2 class="feature__title">Verify any workload</h2>
+									<p class="feature__description">
+										Caution delivers generalized verifiable compute for any critical workload, from healthcare and AI to aeronautical systems.
+									</p>
+								</div>
+								<div class="feature__media">
+									<!-- Media placeholder -->
+								</div>
+							</div>
+
+							<!-- Feature 5: Text Left -->
+							<div class="feature feature--text-left">
+								<div class="feature__text">
+									<h2 class="feature__title">Open source, fully</h2>
+									<p class="feature__description">
+										Closed code keeps secrets. We prefer honesty. Caution is and will always be fully open source.
+									</p>
+								</div>
+								<div class="feature__media">
+									<!-- Media placeholder -->
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
 
+				<!-- How It Works Section -->
+				<section class="how-it-works-section">
+					<div class="container">
+						<h1 class="section-title">
+							How it works
+						</h1>
+
+						<div class="how-it-works-grid">
+							<!-- Add content here -->
+						</div>
+					</div>
+				</section>
 			</main>
 		</div>
 		{%- include footer.html -%}
+
+		<script>
+			// Ensure videos loop properly
+			const statementVideo = document.getElementById("statement-video");
+
+			function ensureVideoLoops(video) {
+				if (video) {
+					video.addEventListener("ended", function () {
+						this.currentTime = 0;
+						this.play();
+					});
+
+					// Try to play the video (some browsers require user interaction)
+					video.play().catch((err) => {
+						console.log("Video autoplay failed:", err);
+					});
+				}
+			}
+
+			ensureVideoLoops(statementVideo);
+
+			// Set start times and playback speed for problem card videos
+			document.addEventListener("DOMContentLoaded", function() {
+				const problemCardVideos = document.querySelectorAll(".problem-card__video");
+
+				problemCardVideos.forEach(function(video) {
+					const startTime = parseFloat(video.getAttribute("data-start-time")) || 0;
+
+					video.addEventListener("loadedmetadata", function() {
+						this.currentTime = startTime;
+						this.playbackRate = 0.5; // Slow down to 50% speed
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

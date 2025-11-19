@@ -42,6 +42,7 @@
 	--spacing6: 80px;
 	--spacing6-5: 120px;
 	--spacing7: 160px;
+	--spacing8: 240px;
 
 	// Border radius
 	--radius-sm: 6px;
@@ -64,6 +65,49 @@
 	--transition-fast: 0.15s ease;
 	--transition-base: 0.2s ease;
 	--transition-slow: 0.3s ease;
+
+	// Typography Styles
+	// Heading 1
+	--heading1-font-size: clamp(2.5rem, 5vw, 3.25rem);
+	--heading1-font-weight: 700;
+	--heading1-line-height: 1.2;
+	--heading1-letter-spacing: -0.02em;
+
+	// Heading 2
+	--heading2-font-size: clamp(2rem, 4vw, 2.6rem);
+	--heading2-font-weight: 600;
+	--heading2-line-height: 1.25;
+	--heading2-letter-spacing: -0.01em;
+
+	// Heading 3
+	--heading3-font-size: clamp(1.5rem, 3vw, 2rem);
+	--heading3-font-weight: 600;
+	--heading3-line-height: 1.33;
+	--heading3-letter-spacing: -0.005em;
+
+	// Subtitle
+	--subtitle-font-size: clamp(1.15rem, 2vw, 1.3rem);
+	--subtitle-font-weight: 500;
+	--subtitle-line-height: 1.5;
+	--subtitle-letter-spacing: 0em;
+
+	// Body
+	--body-font-size: clamp(1.15rem, 2vw, 1.3rem);
+	--body-font-weight: 300;
+	--body-line-height: 1.5;
+	--body-letter-spacing: 0em;
+
+	// Button
+	--button-font-size: clamp(1.05rem, 2vw, 1.2rem);
+	--button-font-weight: 400;
+	--button-line-height: 1.5;
+	--button-letter-spacing: 0em;
+
+	// List
+	--list-font-size: clamp(1.5rem, 3vw, 2rem);
+	--list-font-weight: 300;
+	--list-line-height: 1.33;
+	--list-letter-spacing: -0.005em;
 }
 
 // ------------------------------------------------------------

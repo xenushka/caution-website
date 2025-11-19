@@ -17,20 +17,13 @@
 	width: 100%;
 	position: relative;
 
-	// Styling
-	background: white;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	border-radius: 0;
-
-	// Transitions
-	transition: all var(--transition-base);
-
-	// Hover effects
-	&:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-		border-color: rgba(0, 0, 0, 0.12);
-	}
+	// Liquid glass styling (glassmorphism)
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: var(--radius-lg);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 // ------------------------------------------------------------
