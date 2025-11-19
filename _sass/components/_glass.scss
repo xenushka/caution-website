@@ -1,0 +1,273 @@
+// ==========================================================================
+// COMPONENTS: GLASSMORPHISM
+// ==========================================================================
+// All glassmorphic UI components including buttons, cards, and containers.
+// Uses consistent frosted glass effect with Display-P3 color space support.
+//
+// Components:
+// - .btn-glass: Glassmorphic button with 50px radius
+// - .card-glass: Glassmorphic card container
+// - .card-glass__title: Card title with preset typography
+// - .card-glass__description: Card description with preset typography
+// - .cards-glass-grid: Container for multiple glass cards
+// - Size variants: --third, --half, --full
+// ==========================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ------------------------------------------------------------
+// Glassmorphic Button (50px radius)
+// ------------------------------------------------------------
+.btn-glass {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing2);
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+
+	// Reset button defaults
+	border: none;
+	background: none;
+
+	// Typography
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 500;
+	color: var(--color-dark);
+
+	// Spacing
+	padding: 1rem 2.5rem;
+
+	// Border radius
+	border-radius: 50px;
+
+	// Glassmorphism effect
+	@include glassmorphism-light;
+
+	@include media-mobile {
+		padding: 0.85rem 2rem;
+		font-size: clamp(0.95rem, 2vw, 1.05rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Glassmorphic Button Dark Variant (50px radius)
+// ------------------------------------------------------------
+.btn-glass--dark {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing2);
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+
+	// Typography
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 500;
+	color: hsl(0, 0%, 90%);
+
+	// Spacing
+	padding: 1rem 2.5rem;
+
+	// Border radius
+	border-radius: 50px;
+
+	// Glassmorphism effect
+	@include glassmorphism-dark;
+
+	@include media-mobile {
+		padding: 0.85rem 2rem;
+		font-size: clamp(0.95rem, 2vw, 1.05rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Legacy Card Component (Backwards Compatibility)
+// ------------------------------------------------------------
+// Generic card component used in: live-tools, powered-by sections
+.card {
+	// Add styles if needed for generic cards
+	// Currently styled inline in HTML or via other classes
+}
+
+// ------------------------------------------------------------
+// Glassmorphic Cards Container
+// ------------------------------------------------------------
+.cards-glass-grid {
+	// Layout
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing6);
+	width: 100%;
+	justify-content: center;
+	align-items: stretch;
+
+	// Glassmorphism effect
+	@include glassmorphism-light;
+
+	// Spacing
+	padding: var(--spacing5);
+
+	// Border radius
+	border-radius: 24px;
+
+	@include media-tablet {
+		gap: var(--spacing5);
+		padding: var(--spacing4);
+	}
+
+	@include media-mobile {
+		gap: var(--spacing4);
+		flex-direction: column;
+		padding: var(--spacing4);
+	}
+}
+
+// ------------------------------------------------------------
+// Glassmorphic Card (Reusable)
+// ------------------------------------------------------------
+.card-glass {
+	// Layout
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+
+	// Spacing
+	padding: var(--spacing5);
+
+	// Border radius
+	border-radius: 24px;
+
+	// Glassmorphism effect
+	@include glassmorphism-light;
+
+	@include media-mobile {
+		padding: var(--spacing4);
+	}
+}
+
+// ------------------------------------------------------------
+// Card Glass Title
+// ------------------------------------------------------------
+.card-glass__title {
+	// Typography
+	font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--color-dark);
+
+	// Spacing
+	margin: 0 0 var(--spacing3) 0;
+
+	// Text alignment
+	text-align: left;
+
+	@include media-mobile {
+		font-size: clamp(1.2rem, 4vw, 1.4rem);
+		margin-bottom: var(--spacing2);
+	}
+}
+
+// ------------------------------------------------------------
+// Card Glass Description
+// ------------------------------------------------------------
+.card-glass__description {
+	// Typography
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 400;
+	line-height: 1.6;
+	color: var(--color-grey-dark);
+
+	// Spacing
+	margin: 0;
+
+	// Text alignment
+	text-align: left;
+
+	@include media-mobile {
+		font-size: clamp(0.95rem, 2vw, 1.05rem);
+	}
+}
+
+// ------------------------------------------------------------
+// Card Glass Size Variants
+// ------------------------------------------------------------
+
+// Three cards per row
+.card-glass--third {
+	flex: 1 1 calc((100% - (var(--spacing6) * 2)) / 3);
+	min-width: 280px;
+
+	@include media-tablet {
+		flex: 1 1 calc((100% - var(--spacing5)) / 2);
+	}
+
+	@include media-mobile {
+		flex: 1 1 100%;
+		min-width: 0;
+	}
+}
+
+// Two cards per row
+.card-glass--half {
+	flex: 1 1 calc((100% - var(--spacing6)) / 2);
+	min-width: 320px;
+
+	@include media-tablet {
+		flex: 1 1 100%;
+	}
+
+	@include media-mobile {
+		flex: 1 1 100%;
+		min-width: 0;
+	}
+}
+
+// Full width card
+.card-glass--full {
+	flex: 1 1 100%;
+}
+
+// ------------------------------------------------------------
+// Dark Glass Card Variant
+// ------------------------------------------------------------
+.card-glass--dark {
+	// Glassmorphism effect
+	@include glassmorphism-dark;
+
+	// Layout
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+
+	// Spacing
+	padding: var(--spacing5);
+
+	// Border radius
+	border-radius: 20px;
+
+	// Special border styling
+	border-bottom: 4px solid rgba(153, 153, 153, 0);
+	border-bottom: 4px solid color(display-p3 0.6 0.6 0.6 / 0);
+
+	// Blend mode
+	mix-blend-mode: plus-lighter;
+
+	// Text color overrides for dark variant
+	.card-glass__title,
+	h3 {
+		color: hsl(0 0% 90%);
+	}
+
+	.card-glass__description,
+	p {
+		color: hsl(0 0% 90%);
+	}
+
+	@include media-mobile {
+		padding: var(--spacing4);
+	}
+}

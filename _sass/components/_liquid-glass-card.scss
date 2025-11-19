@@ -66,14 +66,56 @@
 	position: relative;
 	z-index: 1;
 
-	// Glassmorphism effect
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: brightness(1) blur(20px);
-	-webkit-backdrop-filter: brightness(1) blur(20px);
-
-	// Border for definition
-	border: 1px solid rgba(255, 255, 255, 0.18);
+	// Glassmorphism effect - matching feature item icons
 	border-radius: 24px;
+	background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.2) 0%,
+			rgba(255, 255, 255, 0.2) 32.69%
+		),
+		linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.05) 50%,
+			rgba(255, 255, 255, 0.15) 100%
+		),
+		linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%),
+		linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.3) 0%,
+			rgba(255, 255, 255, 0.3) 100%
+		),
+		rgba(240, 240, 240, 0.25);
+	background: linear-gradient(
+			180deg,
+			color(display-p3 0 0 0 / 0.01) 0%,
+			color(display-p3 0 0 0 / 0.01) 35%
+		),
+		linear-gradient(
+			180deg,
+			color(display-p3 0.4 0.4 0.4 / 0) 50%,
+			color(display-p3 0.4 0.4 0.4 / 0.05) 100%
+		),
+		linear-gradient(
+			0deg,
+			color(display-p3 0.2 0.2 0.2 / 0.01) 0%,
+			color(display-p3 0.2 0.2 0.2 / 0.01) 100%
+		),
+		linear-gradient(
+			0deg,
+			color(display-p3 0.5 0.5 0.5 / 0.03) 0%,
+			color(display-p3 0.5 0.5 0.5 / 0.05) 100%
+		),
+		color(display-p3 0.95 0.95 0.95 / 0.03);
+	background-blend-mode: plus-lighter, plus-lighter, normal, color-burn, overlay;
+	box-shadow: 16px 16px 9px -18px #fff inset,
+		-12px -12px 6px -14px #e0e0e0 inset, 2px 2px 1px -2px #e0e0e0 inset,
+		0 0 22px 0 rgba(242, 242, 242, 0.5) inset;
+	box-shadow: 16px 16px 9px -18px color(display-p3 1 1 1) inset,
+		-12px -12px 6px -14px color(display-p3 0.88 0.88 0.88) inset,
+		2px 2px 1px -2px color(display-p3 0.88 0.88 0.88) inset,
+		0 0 22px 0 color(display-p3 0.949 0.949 0.949 / 0.3) inset;
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
 
 	// SVG filter is applied via inline style in HTML
 	// This ensures unique filter ID per card instance
@@ -84,9 +126,8 @@
 	// Hover state - subtle enhancement
 	.liquid-glass-card:hover & {
 		background: rgba(255, 255, 255, 0.12);
-		border-color: rgba(255, 255, 255, 0.22);
-		backdrop-filter: brightness(1.05) blur(18px);
-		-webkit-backdrop-filter: brightness(1.05) blur(18px);
+		backdrop-filter: blur(32px);
+		-webkit-backdrop-filter: blur(32px);
 	}
 }
 

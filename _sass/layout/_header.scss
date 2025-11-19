@@ -42,11 +42,18 @@
 		width: auto;
 		height: clamp(1.4rem, 3vw, 1.9rem);
 		opacity: 0.85;
-		transition: opacity var(--transition-base);
+		transition: opacity var(--transition-base), filter var(--transition-base);
 
 		&:hover {
 			opacity: 1;
 		}
+	}
+}
+
+// Adaptive logo color based on background
+.navbar--on-dark {
+	.nav-logo img {
+		filter: invert(1) brightness(1.2);
 	}
 }
 
@@ -68,14 +75,11 @@
 }
 
 .nav-glass-container {
-	@include glass-effect(8px);
+	@include glassmorphism-light;
 	display: flex;
 	gap: 0.25rem;
-	border: 1px solid rgba(15, 15, 15, 0.1);
 	border-radius: 9999px;
 	padding: 0.25rem;
-	backdrop-filter: blur(12px);
-	background-color: rgba(255, 255, 255, 0.05);
 }
 
 .nav-link {

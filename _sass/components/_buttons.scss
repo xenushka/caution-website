@@ -6,36 +6,34 @@
 @use "../abstracts/mixins" as *;
 
 .btn {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing2);
 	text-align: center;
-	@include glass-effect(8px);
-	color: var(--color-dark);
-	border-radius: var(--radius-full);
-	padding: 0.7rem 2.3rem 0.8rem 2.3rem;
-	font-size: clamp(1.05rem, 2vw, 1.2rem);
-	font-weight: 400;
-	line-height: 1.5;
-	letter-spacing: 0em;
 	text-decoration: none;
 	cursor: pointer;
 	white-space: nowrap;
-	transition: all var(--transition-base);
 
-	&:hover {
-		color: var(--color-pink);
-		box-shadow: inset 0 0 0 1px color-mix(in srgb, white 10%, transparent),
-			inset 1.8px 3px 0px -2px color-mix(in srgb, white 90%, transparent),
-			inset -2px -2px 0px -2px color-mix(in srgb, white 80%, transparent),
-			inset -3px -8px 1px -6px color-mix(in srgb, white 60%, transparent),
-			inset -0.3px -1px 4px 0px
-				color-mix(in srgb, var(--color-dark) 12%, transparent),
-			inset -1.5px 2.5px 0px -2px
-				color-mix(in srgb, var(--color-dark) 6%, transparent),
-			0 6px 16px rgba(0, 0, 0, 0.09);
-	}
+	// Reset button defaults
+	border: none;
+	background: none;
+
+	// Typography
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	font-weight: 500;
+	color: var(--color-dark);
+
+	// Spacing
+	padding: 1rem 2.5rem;
+
+	// Border radius
+	border-radius: 50px;
+
+	// Glassmorphism effect
+	@include glassmorphism-light;
 
 	@include media-tablet {
-		padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+		padding: 1rem 1.5rem;
 	}
 }
 
@@ -43,43 +41,16 @@
 // Button Variants
 // ------------------------------------------------------------
 .btn--secondary {
-	display: inline-block;
-	text-align: center;
-	@include glass-effect(8px);
-	color: var(--color-dark);
-	border-radius: var(--radius-full);
-	padding: 0.7rem 2.3rem 0.8rem 2.3rem;
-	font-size: clamp(1.05rem, 2vw, 1.2rem);
-	font-weight: 400;
-	line-height: 1.5;
-	letter-spacing: 0em;
-	text-decoration: none;
-	cursor: pointer;
-	white-space: nowrap;
-	transition: all var(--transition-base);
-
-	&:hover {
-		color: var(--color-pink);
-		box-shadow: inset 0 0 0 1px color-mix(in srgb, white 10%, transparent),
-			inset 1.8px 3px 0px -2px color-mix(in srgb, white 90%, transparent),
-			inset -2px -2px 0px -2px color-mix(in srgb, white 80%, transparent),
-			inset -3px -8px 1px -6px color-mix(in srgb, white 60%, transparent),
-			inset -0.3px -1px 4px 0px
-				color-mix(in srgb, var(--color-dark) 12%, transparent),
-			inset -1.5px 2.5px 0px -2px
-				color-mix(in srgb, var(--color-dark) 6%, transparent),
-			0 6px 16px rgba(0, 0, 0, 0.09);
-	}
-
-	@include media-tablet {
-		padding: 0.7rem 1.5rem 0.8rem 1.5rem;
-	}
+	@extend .btn;
 }
 
 // Legacy class support (can be removed once HTML is updated)
 .btn-secondary {
 	@extend .btn--secondary;
 }
+
+// NOTE: .btn-glass has been moved to _glass.scss
+// All glassmorphic components are now centralized in that file
 
 // ------------------------------------------------------------
 // Button Arrow Icon

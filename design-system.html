@@ -145,6 +145,9 @@ permalink: /design-system/
 						<li class="ds-nav__item">
 							<a href="#forms" class="ds-nav__link">Forms</a>
 						</li>
+						<li class="ds-nav__item">
+							<a href="#glassmorphism" class="ds-nav__link">Glassmorphism</a>
+						</li>
 					</ul>
 				</div>
 
@@ -153,9 +156,6 @@ permalink: /design-system/
 					<ul class="ds-nav__list">
 						<li class="ds-nav__item">
 							<a href="#animations" class="ds-nav__link">Animations</a>
-						</li>
-						<li class="ds-nav__item">
-							<a href="#liquid-glass" class="ds-nav__link">Liquid Glass</a>
 						</li>
 					</ul>
 				</div>
@@ -1432,13 +1432,15 @@ permalink: /design-system/
 				<section id="forms" class="ds-section">
 					<h2 class="ds-section__title">Forms</h2>
 
-					<!-- Email Input -->
+					<!-- Standard Email Input -->
+					<h3 class="ds-section__subtitle">Standard Form</h3>
 					<div
 						style="
 							display: grid;
 							grid-template-columns: 1fr 1fr;
 							gap: 60px;
 							align-items: start;
+							margin-bottom: 60px;
 						"
 					>
 						<!-- Form demo -->
@@ -1462,6 +1464,242 @@ permalink: /design-system/
 							Waitlist&lt;/button&gt;<br />&lt;/div&gt;
 						</div>
 					</div>
+
+					<!-- Glass Form Demo -->
+					<h3 class="ds-section__subtitle">Glass Form</h3>
+					<div
+						style="
+							padding: var(--spacing6);
+							background: url('/assets/imgs/frosted.jpeg') center center /
+								cover no-repeat;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							min-height: 300px;
+						"
+					>
+						<div class="input-wrapper" style="max-width: 500px; width: 100%;">
+							<input
+								type="email"
+								class="email-input--glass"
+								placeholder="Enter email"
+							/>
+							<button type="submit" class="btn-glass">Join Waitlist</button>
+						</div>
+					</div>
+				</section>
+
+				<!-- Glassmorphism Section -->
+				<section id="glassmorphism" class="ds-section">
+					<h2 class="ds-section__title">Glassmorphism</h2>
+					<p style="margin-bottom: 40px; color: var(--color-grey)">
+						Advanced frosted glass UI components with Display-P3 color space,
+						layered gradients, and backdrop blur effects.
+					</p>
+
+					<!-- Glassmorphic Button -->
+					<h3 class="ds-section__subtitle">Glass Button</h3>
+					<div
+						style="
+							display: flex;
+							gap: var(--spacing5);
+							flex-wrap: nowrap;
+							width: 100%;
+							margin-bottom: 60px;
+						"
+					>
+						<!-- Light button demo with background -->
+						<div
+							style="
+								flex: 1;
+								padding: var(--spacing5);
+								background: url('/assets/imgs/frosted.jpeg') center center /
+									cover no-repeat;
+								display: flex;
+								justify-content: center;
+								align-items: flex-start;
+							padding-top: var(--spacing6);
+								min-height: 200px;
+							"
+						>
+							<a href="#" class="btn-glass">
+								Learn more
+							</a>
+						</div>
+
+						<!-- Dark button demo with background -->
+						<div
+							style="
+								flex: 1;
+								padding: var(--spacing5);
+								background: #0f0f0f;
+								display: flex;
+								justify-content: center;
+								align-items: flex-start;
+							padding-top: var(--spacing6);
+								min-height: 200px;
+							"
+						>
+							<a href="#" class="btn-glass--dark">
+								Learn more
+							</a>
+						</div>
+					</div>
+
+					<!-- Glassmorphic Card -->
+					<h3 class="ds-section__subtitle">Glass Card</h3>
+
+					<!-- Card demos side by side -->
+					<div
+						style="
+							display: flex;
+							gap: var(--spacing5);
+							flex-wrap: nowrap;
+							width: 100%;
+						"
+					>
+							<!-- Light card demo with background -->
+							<div
+								style="
+									flex: 1;
+									padding: var(--spacing5);
+									background: url('/assets/imgs/frosted.jpeg') center center /
+										cover no-repeat;
+									display: flex;
+									justify-content: center;
+									align-items: flex-start;
+							padding-top: var(--spacing6);
+									min-height: 280px;
+								"
+							>
+								<div class="card-glass" style="max-width: 350px; width: 100%;">
+									<h3 class="card-glass__title">Light card</h3>
+									<p class="card-glass__description">
+										Uses the .card-glass class with @include glassmorphism-light mixin
+										for subtle frosted glass effect with light backgrounds.
+									</p>
+								</div>
+							</div>
+
+							<!-- Dark card demo with background -->
+							<div
+								style="
+									flex: 1;
+									padding: var(--spacing5);
+									background: #0f0f0f;
+									display: flex;
+									justify-content: center;
+									align-items: flex-start;
+							padding-top: var(--spacing6);
+									min-height: 280px;
+								"
+							>
+								<div class="card-glass--dark" style="max-width: 350px; width: 100%;">
+									<h3 class="card-glass__title">Dark card</h3>
+									<p class="card-glass__description">
+										Uses the .card-glass--dark class with @include glassmorphism-dark mixin
+										for darker frosted glass effect with mix-blend-mode: plus-lighter.
+									</p>
+								</div>
+							</div>
+					</div>
+
+					<!-- Technical Details -->
+					<details
+						style="
+							margin-top: var(--spacing6);
+							padding: var(--spacing4);
+							background: var(--color-blue-base);
+							border: 1px solid var(--color-blue-mid);
+							border-radius: var(--radius-md);
+						"
+					>
+						<summary
+							style="
+								cursor: pointer;
+								font-weight: 500;
+								font-size: clamp(1.05rem, 2vw, 1.15rem);
+								color: var(--color-dark);
+								user-select: none;
+							"
+						>
+							Technical implementation details
+						</summary>
+						<div
+							style="
+								margin-top: var(--spacing4);
+								padding-top: var(--spacing4);
+								border-top: 1px solid var(--color-blue-mid);
+								font-size: 0.95rem;
+								line-height: 1.8;
+								color: var(--color-grey-dark);
+							"
+						>
+							<p style="margin-bottom: var(--spacing3)">
+								The glassmorphism effect is defined in
+								<code>_sass/abstracts/_mixins.scss</code> as a reusable mixin:
+							</p>
+
+							<pre
+								class="ds-code"
+								style="margin-bottom: var(--spacing4)"
+							><code>@mixin glassmorphism-light($blur: 5px) {
+  // 5 layered gradients with Display-P3 color space
+  background: linear-gradient(...);
+  background-blend-mode: plus-lighter, plus-lighter,
+                         normal, color-burn, overlay;
+
+  // Inset shadows + drop shadow
+  box-shadow: 16px 16px 9px -18px color(display-p3 1 1 1) inset,
+              -12px -12px 6px -14px color(display-p3 0.88 0.88 0.88) inset,
+              ...;
+
+  // Backdrop blur
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+
+  transition: all var(--transition-base);
+}
+
+@mixin glassmorphism-dark($blur: 5px) {
+  // Same properties as glassmorphism-light
+  // Used for dark variant glass cards
+}</code></pre>
+
+							<h4 style="margin-top: var(--spacing4); font-size: 1rem">
+								Usage in SCSS
+							</h4>
+							<pre class="ds-code"><code>.my-glass-element {
+  @include glassmorphism-light;      // Default 5px blur
+  @include glassmorphism-light(10px); // Custom blur amount
+}
+
+.my-dark-glass-element {
+  @include glassmorphism-dark;
+}</code></pre>
+
+							<h4 style="margin-top: var(--spacing4); font-size: 1rem">
+								Card Size Variants
+							</h4>
+							<pre class="ds-code"><code>// Three cards per row
+.card-glass--third { flex: 1 1 calc((100% - (var(--spacing6) * 2)) / 3); }
+
+// Two cards per row
+.card-glass--half { flex: 1 1 calc((100% - var(--spacing6)) / 2); }
+
+// Full width
+.card-glass--full { flex: 1 1 100%; }</code></pre>
+
+							<h4 style="margin-top: var(--spacing4); font-size: 1rem">
+								Cards Grid Container
+							</h4>
+							<pre class="ds-code"><code>&lt;div class="cards-glass-grid"&gt;
+  &lt;div class="card-glass card-glass--third"&gt;...&lt;/div&gt;
+  &lt;div class="card-glass card-glass--third"&gt;...&lt;/div&gt;
+  &lt;div class="card-glass card-glass--third"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+						</div>
+					</details>
 				</section>
 
 				<!-- Animations Section -->
@@ -1507,324 +1745,6 @@ permalink: /design-system/
 					</div>
 				</section>
 
-				<!-- Liquid Glass Section -->
-				<section id="liquid-glass" class="ds-section">
-					<h2 class="ds-section__title">Liquid Glass</h2>
-
-					<div style="max-width: 1200px">
-						<!-- 1. Neutral Glass (Default) -->
-						<div
-							style="
-								display: flex;
-								gap: var(--spacing5);
-								align-items: start;
-								margin-bottom: var(--spacing6);
-							"
-						>
-							<div
-								style="
-									flex: 1;
-									min-width: 0;
-									padding: var(--spacing5);
-									background: url('/assets/imgs/fractal.png') center center /
-										cover no-repeat;
-									border-radius: var(--radius-lg);
-								"
-							>
-								{% include liquid-glass-card.html title="Neutral Glass"
-								description="The default balanced glass effect with moderate
-								transparency and blur." button_link="#liquid-glass"
-								card_id="neutral-card" %}
-							</div>
-							<div style="flex: 1; min-width: 0">
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>background: rgba(255, 255, 255, 0.1);
-backdrop-filter: brightness(1) blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.18);</code></pre>
-							</div>
-						</div>
-
-						<!-- 2. Heavy Frosted Glass -->
-						<div
-							style="
-								display: flex;
-								gap: var(--spacing5);
-								align-items: start;
-								margin-bottom: var(--spacing6);
-							"
-						>
-							<div
-								style="
-									flex: 1;
-									min-width: 0;
-									padding: var(--spacing5);
-									background: url('/assets/imgs/fractal.png') center center /
-										cover no-repeat;
-									border-radius: var(--radius-lg);
-								"
-							>
-								<div class="liquid-glass-card" data-card-id="frosted-card">
-									<div
-										class="liquid-glass-card__glass"
-										style="
-											background: rgba(255, 255, 255, 0.2);
-											backdrop-filter: brightness(1) blur(20px);
-											-webkit-backdrop-filter: brightness(1) blur(20px);
-											border: 1px solid rgba(255, 255, 255, 0.1);
-										"
-									>
-										<div class="liquid-glass-card__content">
-											<h3 class="liquid-glass-card__title">
-												Heavy Frosted Glass
-											</h3>
-											<p class="liquid-glass-card__description">
-												Maximum blur with higher opacity for a deeply frosted
-												appearance.
-											</p>
-											<a href="#liquid-glass" class="liquid-glass-card__button">
-												Learn More
-												<span class="liquid-glass-card__button-arrow">→</span>
-											</a>
-										</div>
-									</div>
-									<div
-										class="liquid-glass-card__reflection"
-										aria-hidden="true"
-									></div>
-								</div>
-							</div>
-							<div style="flex: 1; min-width: 0">
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>background: rgba(255, 255, 255, 0.2);
-backdrop-filter: brightness(1.0) blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.1);</code></pre>
-							</div>
-						</div>
-
-						<!-- 3. Dark Tinted Glass -->
-						<div
-							style="
-								display: flex;
-								gap: var(--spacing5);
-								align-items: start;
-								margin-bottom: var(--spacing6);
-							"
-						>
-							<div
-								style="
-									flex: 1;
-									min-width: 0;
-									padding: var(--spacing5);
-									background: url('/assets/imgs/fractal.png') center center /
-										cover no-repeat;
-									border-radius: var(--radius-lg);
-								"
-							>
-								<div class="liquid-glass-card" data-card-id="dark-card">
-									<div
-										class="liquid-glass-card__glass"
-										style="
-											background: rgba(0, 0, 0, 0.2);
-											backdrop-filter: brightness(0.8) blur(12px);
-											-webkit-backdrop-filter: brightness(0.8) blur(12px);
-											border: 1px solid rgba(255, 255, 255, 0.1);
-										"
-									>
-										<div class="liquid-glass-card__content">
-											<h3
-												class="liquid-glass-card__title"
-												style="color: rgba(255, 255, 255, 0.95)"
-											>
-												Dark Tinted Glass
-											</h3>
-											<p
-												class="liquid-glass-card__description"
-												style="color: rgba(255, 255, 255, 0.85)"
-											>
-												Dark background with reduced brightness for dramatic
-												contrast.
-											</p>
-											<a href="#liquid-glass" class="liquid-glass-card__button">
-												Learn More
-												<span class="liquid-glass-card__button-arrow">→</span>
-											</a>
-										</div>
-									</div>
-									<div
-										class="liquid-glass-card__reflection"
-										aria-hidden="true"
-									></div>
-								</div>
-							</div>
-							<div style="flex: 1; min-width: 0">
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>background: rgba(0, 0, 0, 0.2);
-backdrop-filter: brightness(0.8) blur(12px);
-border: 1px solid rgba(255, 255, 255, 0.1);</code></pre>
-							</div>
-						</div>
-
-						<!-- Usage Example -->
-						<h3
-							class="ds-section__subtitle"
-							style="margin-top: var(--spacing6)"
-						>
-							Usage
-						</h3>
-						<div class="ds-code">
-							&lt;%&#x25; include liquid-glass-card.html<br />
-							&nbsp;&nbsp;title="Your Title"<br />
-							&nbsp;&nbsp;description="Your description text"<br />
-							&nbsp;&nbsp;button_text="Click Here"<br />
-							&nbsp;&nbsp;button_link="/your-link"<br />
-							&nbsp;&nbsp;card_id="unique-id"<br />
-							%&gt;
-						</div>
-
-						<!-- Collapsible Customization Guide -->
-						<details
-							style="
-								margin-top: var(--spacing5);
-								padding: var(--spacing4);
-								background: var(--color-blue-base);
-								border: 1px solid var(--color-blue-mid);
-								border-radius: var(--radius-md);
-							"
-						>
-							<summary
-								style="
-									cursor: pointer;
-									font-weight: 500;
-									font-size: clamp(1.05rem, 2vw, 1.15rem);
-									color: var(--color-dark);
-									user-select: none;
-								"
-							>
-								Properties to customize the glass effect
-							</summary>
-							<div
-								style="
-									margin-top: var(--spacing4);
-									padding-top: var(--spacing4);
-									border-top: 1px solid var(--color-blue-mid);
-									font-size: 0.95rem;
-									line-height: 1.8;
-									color: var(--color-grey-dark);
-								"
-							>
-								<p style="margin-bottom: var(--spacing3)">
-									In <code>_sass/components/_liquid-glass-card.scss</code>:
-								</p>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									1. Glass Background Transparency
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>.liquid-glass-card__glass {
-    background: rgba(255, 255, 255, 0.1);  // Change 0.1 (10% opacity)
-                                           // Higher = more opaque/visible
-                                           // Lower = more transparent
-}</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									2. Backdrop Blur Intensity
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>.liquid-glass-card__glass {
-    backdrop-filter: brightness(1.1) blur(10px);  // Change blur amount
-    // blur(5px) = subtle frosting
-    // blur(15px) = heavy frosting
-    // blur(20px) = very blurred
-}</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									3. Brightness Adjustment
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>backdrop-filter: brightness(1.1) blur(10px);  // Change 1.1
-// brightness(1.0) = normal
-// brightness(1.2) = lighter glass
-// brightness(0.9) = darker glass</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									4. Border Opacity
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>.liquid-glass-card__glass {
-    border: 1px solid rgba(255, 255, 255, 0.18);  // Change 0.18
-    // Higher = more visible border
-    // Lower = more subtle border
-}</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									5. Glossy Edge Reflections
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>.liquid-glass-card__reflection {
-    box-shadow:
-        inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),  // Top-left highlight
-        inset 0 0 12px 1px rgba(255, 255, 255, 0.4),      // Overall glow
-        inset -1px -1px 0px 0px rgba(255, 255, 255, 0.2); // Bottom-right
-
-    // Adjust opacity values (0.7, 0.4, 0.2)
-    // Adjust blur (12px) and spread (1px)
-}</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									6. Card Shadow Depth
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>.liquid-glass-card {
-    box-shadow:
-        0 8px 32px 0 rgba(31, 38, 135, 0.15),  // Main shadow
-        0 2px 8px 0 rgba(0, 0, 0, 0.08);       // Subtle shadow
-
-    // Change blur (32px, 8px) and opacity (0.15, 0.08)
-}</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									7. Hover Effects
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>.liquid-glass-card:hover & {
-    background: rgba(255, 255, 255, 0.15);  // Brighter on hover
-    backdrop-filter: brightness(1.15) blur(12px);  // More blur on hover
-}</code></pre>
-
-								<h4 style="margin-top: var(--spacing4); font-size: 1rem">
-									8. Border Radius
-								</h4>
-								<pre
-									class="ds-code"
-									style="margin: 0"
-								><code>border-radius: 24px;  // Change for rounded corners
-// 12px = slightly rounded
-// 32px = very rounded
-// 50% = circular (if square)</code></pre>
-							</div>
-						</details>
-					</div>
-				</section>
 
 				<!-- Breakpoints Section -->
 				<section id="breakpoints" class="ds-section">

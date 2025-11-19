@@ -13,7 +13,7 @@
 				<a href="/blog.html" class="nav-link">Blog</a>
 				<a href="#" class="nav-cta">
 					Join Waitlist
-	
+
 						<path d="M7 7h10v10"></path>
 						<path d="M7 17 17 7"></path>
 					</svg>
@@ -74,6 +74,37 @@
 </header>
 
 <script>
+	// Adaptive logo color based on background
+	function updateLogoColor() {
+		const logo = document.querySelector(".nav-logo img");
+		const navbar = document.querySelector(".header-navbar");
+
+		if (!logo || !navbar) return;
+
+		// Get the logo's position
+		const logoRect = logo.getBoundingClientRect();
+		const logoCenter = logoRect.left + logoRect.width / 2;
+		const viewportWidth = window.innerWidth;
+
+		// Calculate the gradient breakpoint (45% where video is transparent, 52% where it's white)
+		const gradientMidpoint = viewportWidth * 0.485; // Average of 45% and 52%
+
+		// If logo center is on the left side (video side), make it white
+		// If on the right side (white background), make it black
+		if (logoCenter < gradientMidpoint) {
+			navbar.classList.add("navbar--on-dark");
+		} else {
+			navbar.classList.remove("navbar--on-dark");
+		}
+	}
+
+	// Update on load and scroll
+	if (document.body.classList.contains("landing-v2")) {
+		window.addEventListener("load", updateLogoColor);
+		window.addEventListener("scroll", updateLogoColor);
+		window.addEventListener("resize", updateLogoColor);
+	}
+
 	// Mobile menu toggle
 	document.addEventListener("DOMContentLoaded", function () {
 		const mobileMenuButton = document.getElementById("mobile-menu-button");
