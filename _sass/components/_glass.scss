@@ -271,3 +271,44 @@
 		padding: var(--spacing4);
 	}
 }
+
+// ------------------------------------------------------------
+// Code Block Card Variant
+// ------------------------------------------------------------
+.code-block {
+	// Glassmorphism effect
+	@include glassmorphism-dark;
+
+	// Layout
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+
+	// Spacing
+	padding: var(--spacing4);
+
+	// Border radius
+	border-radius: 20px;
+
+	// Special border styling
+	border-bottom: 4px solid rgba(153, 153, 153, 0);
+	border-bottom: 4px solid color(display-p3 0.6 0.6 0.6 / 0);
+
+	// Blend mode
+	mix-blend-mode: plus-lighter;
+
+	// Monospace font for code-like appearance
+	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+		"Courier New", monospace;
+
+	// Text color overrides for dark variant
+	.card-glass__title,
+	h3 {
+		color: hsl(0 0% 90%);
+	}
+
+	.card-glass__description,
+	p {
+		color: hsl(0 0% 90%);
+	}
+}

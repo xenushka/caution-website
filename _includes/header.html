@@ -76,33 +76,18 @@
 <script>
 	// Adaptive logo color based on background
 	function updateLogoColor() {
-		const logo = document.querySelector(".nav-logo img");
 		const navbar = document.querySelector(".header-navbar");
 
-		if (!logo || !navbar) return;
+		if (!navbar) return;
 
-		// Get the logo's position
-		const logoRect = logo.getBoundingClientRect();
-		const logoCenter = logoRect.left + logoRect.width / 2;
-		const viewportWidth = window.innerWidth;
-
-		// Calculate the gradient breakpoint (45% where video is transparent, 52% where it's white)
-		const gradientMidpoint = viewportWidth * 0.485; // Average of 45% and 52%
-
-		// If logo center is on the left side (video side), make it white
-		// If on the right side (white background), make it black
-		if (logoCenter < gradientMidpoint) {
-			navbar.classList.add("navbar--on-dark");
-		} else {
-			navbar.classList.remove("navbar--on-dark");
-		}
+		// For landing-v2, the hero now has a light radial gradient background
+		// So the logo should always be dark (not inverted)
+		navbar.classList.remove("navbar--on-dark");
 	}
 
-	// Update on load and scroll
+	// Update on load for landing-v2 page
 	if (document.body.classList.contains("landing-v2")) {
 		window.addEventListener("load", updateLogoColor);
-		window.addEventListener("scroll", updateLogoColor);
-		window.addEventListener("resize", updateLogoColor);
 	}
 
 	// Mobile menu toggle

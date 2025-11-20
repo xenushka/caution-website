@@ -5,27 +5,11 @@ minimal card component for the problem section on landing-v2. USAGE: {% raw %}
 {% include problem-card.html card_id="problem-1" title="Card Title"
 description="Card description text." %} {% endraw %} PARAMETERS: - card_id:
 Unique ID for the card (required) - title: Card heading (required) -
-description: Card body text (required) - video: Video filename from
-/assets/videos/cards/ (required) - video_start: Start time in seconds (optional,
-defaults to 0)
+description: Card body text (required)
 ═══════════════════════════════════════════════════════════════════ {%
 endcomment %}
 
 <div class="problem-card__container" data-card-id="{{ include.card_id }}">
-	<div class="problem-card__video-container">
-		<video
-			class="problem-card__video"
-			autoplay
-			muted
-			loop
-			playsinline
-			disablePictureInPicture
-			webkit-playsinline
-			data-start-time="{{ include.video_start | default: 0 }}"
-		>
-			<source src="/assets/videos/cards/{{ include.video }}" type="video/mp4" />
-		</video>
-	</div>
 	<div class="problem-card__content">
 		<h3 class="problem-card__title">{{ include.title }}</h3>
 		<p class="problem-card__description">{{ include.description }}</p>

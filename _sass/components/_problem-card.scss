@@ -14,153 +14,18 @@
 .problem-card__container {
 	// Layout
 	height: 100%;
-	min-height: 24rem;
+	min-height: 16rem;
 	width: 100%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 
-	// Glass-like styling for dark background
-	background: var(--color-dark);
-	border-radius: var(--radius-lg);
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6),
-		0 0 0 1px rgba(255, 255, 255, 0.05), 0 -2px 20px rgba(255, 255, 255, 0.03);
+	// Apply dark glassmorphism effect
+	@include glassmorphism-dark;
 
+	border-radius: var(--radius-lg);
 	overflow: hidden;
 	isolation: isolate;
-
-	// Default borders (center card - light from above)
-	border-top: 1px solid color-mix(in srgb, white 20%, transparent);
-	border-left: 1px solid color-mix(in srgb, white 12%, transparent);
-	border-right: 1px solid color-mix(in srgb, white 12%, transparent);
-	border-bottom: 1px solid color-mix(in srgb, white 8%, transparent);
-
-	// Left card - light from top-right
-	&[data-card-id="problem-1"] {
-		border-top: 1px solid color-mix(in srgb, white 18%, transparent);
-		border-left: 1px solid color-mix(in srgb, white 8%, transparent);
-		border-right: 1px solid color-mix(in srgb, white 20%, transparent);
-		border-bottom: 1px solid color-mix(in srgb, white 8%, transparent);
-	}
-
-	// Right card - light from top-left
-	&[data-card-id="problem-3"] {
-		border-top: 1px solid color-mix(in srgb, white 18%, transparent);
-		border-left: 1px solid color-mix(in srgb, white 20%, transparent);
-		border-right: 1px solid color-mix(in srgb, white 8%, transparent);
-		border-bottom: 1px solid color-mix(in srgb, white 8%, transparent);
-	}
-}
-
-// ------------------------------------------------------------
-// Dots Container
-// ------------------------------------------------------------
-.problem-card__dots-container {
-	// Layout
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: grid;
-	grid-template-columns: repeat(20, 1fr);
-	gap: 8px;
-	padding: var(--spacing4);
-	overflow: hidden;
-	z-index: 0;
-
-	// Fade out at bottom
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 40%;
-		background: linear-gradient(
-			to bottom,
-			transparent 0%,
-			var(--color-dark) 100%
-		);
-		pointer-events: none;
-		z-index: 1;
-	}
-}
-
-.problem-card__dot {
-	width: 4px;
-	height: 4px;
-	background: rgba(255, 255, 255, 0.5);
-	border-radius: 30%;
-	opacity: 0.2;
-	animation: wave 5s ease-in-out infinite;
-	animation-delay: calc(var(--delay) * 0.015s);
-}
-
-@keyframes wave {
-	0%,
-	100% {
-		opacity: 0.3;
-		transform: scale(1);
-	}
-	50% {
-		opacity: 0.7;
-		transform: scale(1.5);
-	}
-}
-
-// ------------------------------------------------------------
-// Video Container
-// ------------------------------------------------------------
-.problem-card__video-container {
-	// Layout
-	width: 100%;
-	height: 50%;
-	min-height: 12rem;
-	position: relative;
-	overflow: hidden;
-	z-index: 1;
-
-	// Overall darkening overlay
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: radial-gradient(
-			ellipse at center,
-			rgba(0, 0, 0, 0.2) 0%,
-			rgba(0, 0, 0, 0.5) 100%
-		);
-		pointer-events: none;
-		z-index: 1;
-	}
-
-	// Gradient overlay to blend with content below
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 30%;
-		background: linear-gradient(
-			to bottom,
-			transparent 0%,
-			var(--color-dark) 100%
-		);
-		pointer-events: none;
-		z-index: 2;
-	}
-}
-
-.problem-card__video {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
 }
 
 // ------------------------------------------------------------
@@ -172,12 +37,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: flex-start;
+	justify-content: center;
 	position: relative;
 	z-index: 2;
 
 	// Padding
 	padding: var(--spacing5);
+
+	@include media-mobile {
+		padding: var(--spacing4);
+	}
 }
 
 // ------------------------------------------------------------

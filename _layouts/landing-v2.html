@@ -7,84 +7,104 @@
 
 			<main>
 				<section class="hero hero--landing">
-					<video
-						id="hero-video"
-						class="hero__video"
-						autoplay
-						muted
-						loop
-						playsinline
-					>
-						<source src="/assets/videos/fractal-white.mp4" type="video/mp4" />
-					</video>
-					<div class="hero__overlay"></div>
 					<div class="hero-content container">
-						<!-- <div class="badge">
-							<span>COMING SOON</span>
-						</div> -->
-						<h1 class="hero-title">Know what runs on a server</h1>
-						<p class="hero__subtext u-show-desktop">
-							No more black boxes. Run sensitive workloads with cryptographic
-							proof of execution. Portable across any cloud and bare metal,
-							simple as Heroku.
-						</p>
+						<div class="hero-content__left">
+							<!-- <div class="badge">
+								<span>COMING SOON</span>
+							</div> -->
+							<h1 class="hero-title">Know what runs on a server</h1>
+							<p class="hero__subtext u-show-desktop">
+								No more black boxes. Run sensitive workloads with cryptographic
+								proof of execution. Portable across any cloud and bare metal,
+								simple as Heroku.
+							</p>
 
-						<div class="waitlist-form">
-							<form
-								id="contact-form"
-								method="post"
-								class="email-form"
-								action="https://distrust.co/submit-email"
-							>
-								<div class="input-wrapper">
-									<input
-										type="email"
-										name="email"
-										placeholder="Enter email"
-										id="email"
-										class="email-input"
-										required
-									/>
-									<input
-										type="hidden"
-										id="name"
-										name="name"
-										class="form-input"
-										value="caution.co"
-									/>
-									<input
-										type="hidden"
-										id="company-name"
-										value="caution.co"
-										name="company-name"
-										class="form-input"
-									/>
-									<input
-										id="service"
-										type="hidden"
-										name="service"
-										class="form-select"
-										value="caution.co"
-									/>
-									<input
-										type="hidden"
-										id="other-source"
-										name="other-source"
-										class="form-input"
-										placeholder="Please specify"
-									/>
-									<input
-										type="hidden"
-										id="other-source"
-										name="help"
-										class="form-input"
-										placeholder="Please specify"
-									/>
-									<button type="submit" class="btn" aria-label="Submit email">
-										Get early access
-									</button>
+							<div class="waitlist-form">
+								<form
+									id="contact-form"
+									method="post"
+									class="email-form"
+									action="https://distrust.co/submit-email"
+								>
+									<div class="input-wrapper">
+										<input
+											type="email"
+											name="email"
+											placeholder="Enter email"
+											id="email"
+											class="email-input"
+											required
+										/>
+										<input
+											type="hidden"
+											id="name"
+											name="name"
+											class="form-input"
+											value="caution.co"
+										/>
+										<input
+											type="hidden"
+											id="company-name"
+											value="caution.co"
+											name="company-name"
+											class="form-input"
+										/>
+										<input
+											id="service"
+											type="hidden"
+											name="service"
+											class="form-select"
+											value="caution.co"
+										/>
+										<input
+											type="hidden"
+											id="other-source"
+											name="other-source"
+											class="form-input"
+											placeholder="Please specify"
+										/>
+										<input
+											type="hidden"
+											id="other-source"
+											name="help"
+											class="form-input"
+											placeholder="Please specify"
+										/>
+										<button type="submit" class="btn" aria-label="Submit email">
+											Get early access
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="hero-content__right u-show-desktop">
+							<div class="terminal-card code-block">
+								<div class="terminal-card__buttons">
+									<span class="terminal-card__button terminal-card__button--close"></span>
+									<span class="terminal-card__button terminal-card__button--minimize"></span>
+									<span class="terminal-card__button terminal-card__button--maximize"></span>
 								</div>
-							</form>
+								<div class="terminal-card__content">
+									<div class="terminal-line">
+										<span class="terminal-prompt">$</span>
+										<span class="terminal-command">caution deploy app.py</span>
+									</div>
+									<div class="terminal-line">
+										<span class="terminal-output">Building reproducible image...</span>
+									</div>
+									<div class="terminal-line">
+										<span class="terminal-output">Generating attestation...</span>
+									</div>
+									<div class="terminal-line">
+										<span class="terminal-output terminal-output--success">✓ Deployed with proof</span>
+									</div>
+									<div class="terminal-line">
+										<span class="terminal-prompt">$</span>
+										<span class="terminal-cursor">_</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -113,96 +133,371 @@
 					</div>
 				</section>
 
+				<!-- Solution Section -->
+				<section class="solution-new">
+					<div class="container">
+						<span class="badge">/SOLUTION</span>
+						<h1 class="section-title">Make the stack visible</h1>
+						<p class="section-subtext">
+							Most workloads disappear into layers you cannot inspect. Caution brings them into view with proof built in.
+						</p>
+
+						<!-- Stack Layers Animation -->
+						<div class="stack-layers-container">
+							<div class="stack-comparison">
+								<!-- Legacy Stack (Opaque) -->
+								<div class="stack-column stack-column--legacy">
+									<div class="stack-layers">
+										<div class="stack-layer stack-layer--opaque"></div>
+										<div class="stack-layer stack-layer--opaque"></div>
+										<div class="stack-layer stack-layer--opaque"></div>
+									</div>
+									<div class="stack-label">
+										<h3>Legacy cloud</h3>
+										<p>Black box compute</p>
+									</div>
+								</div>
+
+								<!-- Caution Stack (Transparent) -->
+								<div class="stack-column stack-column--caution">
+									<div class="stack-layers">
+										<div class="stack-layer stack-layer--transparent card-glass">Application</div>
+										<div class="stack-layer stack-layer--transparent card-glass">Dependencies</div>
+										<div class="stack-layer stack-layer--transparent card-glass">Kernel</div>
+									</div>
+									<div class="stack-label">
+										<h3>Caution</h3>
+										<p>Fully verifiable</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Stack Layers Animation - Variant 2 -->
+						<div class="stack-layers-container stack-layers-container--v2">
+							<div class="stack-comparison">
+								<!-- Legacy Stack (Opaque) -->
+								<div class="stack-column stack-column--legacy">
+									<div class="stack-layers">
+										<div class="stack-layer stack-layer--opaque"></div>
+										<div class="stack-layer stack-layer--opaque"></div>
+										<div class="stack-layer stack-layer--opaque"></div>
+									</div>
+									<div class="stack-label">
+										<h3>Legacy cloud</h3>
+										<p>Black box compute</p>
+									</div>
+								</div>
+
+								<!-- Caution Stack with Layered Effect -->
+								<div class="stack-column stack-column--caution stack-column--layered">
+									<div class="stack-layers stack-layers--layered">
+										<!-- Legacy Stack (Behind) -->
+										<div class="stack-layers stack-layers--background">
+											<div class="stack-layer stack-layer--opaque"></div>
+											<div class="stack-layer stack-layer--opaque"></div>
+											<div class="stack-layer stack-layer--opaque"></div>
+										</div>
+										<!-- Caution Stack (Front/Transparent) -->
+										<div class="stack-layers stack-layers--foreground">
+											<div class="stack-layer stack-layer--transparent card-glass">Application</div>
+											<div class="stack-layer stack-layer--transparent card-glass">Dependencies</div>
+											<div class="stack-layer stack-layer--transparent card-glass">Kernel</div>
+										</div>
+									</div>
+									<div class="stack-label">
+										<h3>Caution</h3>
+										<p>Transparent view into compute</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Cubes Comparison -->
+						<div class="cubes-comparison">
+							<!-- Dark Cube 1 (Statement Section Style) -->
+							<div class="cube-wrapper">
+								<div class="cube cube--dark">
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+								</div>
+							</div>
+
+							<!-- Dark Cube 2 (Statement Section Style) -->
+							<div class="cube-wrapper">
+								<div class="cube cube--dark">
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+								</div>
+							</div>
+
+							<!-- Clear Cube (Hero Section Style) -->
+							<div class="cube-wrapper">
+								<div class="cube cube--clear">
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+									<div class="cube_face"></div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Runtime Boxes Animation -->
+						<div class="runtime-boxes">
+							<!-- Laser Container -->
+							<div class="laser-container">
+								<!-- Scan Line -->
+								<div class="scan-line"></div>
+
+								<!-- Box 1: Legacy Cloud -->
+								<div class="runtime-box runtime-box--legacy">
+									<div class="runtime-box__inner">
+										<div class="runtime-box__content"></div>
+									</div>
+									<div class="runtime-box__label">
+										<h3>Legacy cloud</h3>
+										<p>Black box compute</p>
+									</div>
+								</div>
+
+								<!-- Box 2: Niche Providers -->
+								<div class="runtime-box runtime-box--niche">
+									<div class="runtime-box__inner">
+										<div class="runtime-box__content">
+											<div class="runtime-box__circle"></div>
+										</div>
+									</div>
+									<div class="runtime-box__label">
+										<h3>Niche providers</h3>
+										<p>Partially verifiable</p>
+									</div>
+								</div>
+
+								<!-- Box 3: Caution -->
+								<div class="runtime-box runtime-box--caution">
+									<div class="runtime-box__inner card-glass">
+										<div class="runtime-box__content">
+											<div class="runtime-box__circle"></div>
+										</div>
+									</div>
+									<div class="runtime-box__label">
+										<h3>Caution</h3>
+										<p>Fully verifiable</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Description -->
+							<h3>Runtime verification</h3>
+							<p>Caution provides continuous proof of execution</p>
+						</div>
+
+						<!-- Scanner Stream V2 (Experimental) -->
+						<div class="scanner-stream-v2">
+							<div class="scanner-line-v2"></div>
+							<div class="card-stream-container-v2">
+								<!-- Cards will be dynamically generated -->
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+				<section class="solution-section">
+					<div class="container">
+						<h1 class="section-title">See what your infra actually does</h1>
+						<p class="section-subtext">
+							Most workloads disappear into layers you cannot inspect. Caution brings them into view with proof built in.
+						</p>
+
+						<!-- Runtime Boxes Animation -->
+						<div class="runtime-boxes">
+							<!-- Laser Container -->
+							<div class="laser-container">
+								<!-- Scan Line -->
+								<div class="scan-line"></div>
+
+								<!-- Box 1: Legacy Cloud -->
+								<div class="runtime-box runtime-box--legacy">
+									<div class="runtime-box__inner">
+										<div class="runtime-box__content"></div>
+									</div>
+									<div class="runtime-box__label">
+										<h3>Legacy cloud</h3>
+										<p>Black box compute</p>
+									</div>
+								</div>
+
+								<!-- Box 2: Niche Providers -->
+								<div class="runtime-box runtime-box--niche">
+									<div class="runtime-box__inner">
+										<div class="runtime-box__content">
+											<div class="runtime-box__circle"></div>
+										</div>
+									</div>
+									<div class="runtime-box__label">
+										<h3>Niche providers</h3>
+										<p>Partially verifiable</p>
+									</div>
+								</div>
+
+								<!-- Box 3: Caution -->
+								<div class="runtime-box runtime-box--caution">
+									<div class="runtime-box__inner card-glass">
+										<div class="runtime-box__content">
+											<div class="runtime-box__circle"></div>
+										</div>
+									</div>
+									<div class="runtime-box__label">
+										<h3>Caution</h3>
+										<p>Fully verifiable</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Description -->
+							<h3>Runtime verification</h3>
+							<p>Caution provides continuous proof of execution</p>
+						</div>
+
+						<!-- Scanner Card Stream -->
+						<div class="scanner-stream">
+							<div class="scanner-line"></div>
+							<div class="card-stream-container">
+								<!-- Cards will be dynamically generated -->
+							</div>
+						</div>
+					</div>
+				</section>
+
 				<!-- Features Section -->
 				<section class="features-section">
 					<div class="container">
-						<h1 class="section-title">Run any software verifiably</h1>
+						<h1 class="section-title">Why verifiable compute?</h1>
+						<p class="section-subtext">
+							Caution delivers verifiable compute technologies that anyone can inspect and run on their own terms. Everything we design follows this principle.
+						</p>
+
+						<!-- SVG Gradient Definition -->
+						<svg width="0" height="0" style="position: absolute;">
+							<defs>
+								<linearGradient id="icon-gradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+									<stop offset="0%" style="stop-color:#99D5FF;stop-opacity:1" />
+									<stop offset="50%" style="stop-color:#ADDDFF;stop-opacity:1" />
+									<stop offset="100%" style="stop-color:#D6EEFF;stop-opacity:1" />
+								</linearGradient>
+							</defs>
+						</svg>
 
 						<div class="features-grid">
 							<!-- Feature 1 -->
 							<div class="feature-item">
 								<div class="feature-item__icon">
-									<!-- Icon placeholder -->
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-eye-icon lucide-scan-eye"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="1"/><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"/></svg>
 								</div>
-								<h3 class="feature-item__title">Know what ran</h3>
+								<h3 class="feature-item__title">Verify everything</h3>
 								<p class="feature-item__description">
-									Guessing what ran in production is not security. Get ground
-									truth with reproducible workloads and hardware attestation.
+									Caution full-source bootstrapped, open, and reproducible so you can verify the platform itself.
 								</p>
 							</div>
 
 							<!-- Feature 2 -->
 							<div class="feature-item">
 								<div class="feature-item__icon">
-									<!-- Icon placeholder -->
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server-icon lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
 								</div>
 								<h3 class="feature-item__title">Run anywhere</h3>
 								<p class="feature-item__description">
-									We fit into your stack, not the other way around. Run Caution
-									on AWS, Azure, GCP, or bare metal.
+									Caution runs across clouds and bare metal without changing your trust model.
 								</p>
 							</div>
 
 							<!-- Feature 3 -->
 							<div class="feature-item">
 								<div class="feature-item__icon">
-									<!-- Icon placeholder -->
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
 								</div>
 								<h3 class="feature-item__title">Deploy in minutes</h3>
 								<p class="feature-item__description">
-									It is 2025. Secure enclaves and attestation should not take
-									months to configure.
+									Caution abstracts the complexity of enclaves and attestation so you can move fast.
 								</p>
 							</div>
 
 							<!-- Feature 4 -->
 							<div class="feature-item">
 								<div class="feature-item__icon">
-									<!-- Icon placeholder -->
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
 								</div>
 								<h3 class="feature-item__title">Verify any workload</h3>
 								<p class="feature-item__description">
-									From healthcare and AI to critical finance systems, Caution
-									delivers generalized verifiable compute.
+									From AI pipelines to finance systems, Caution turns execution into verifiable proof.
 								</p>
 							</div>
 
-							<!-- Feature 5 -->
-							<div class="feature-item">
-								<div class="feature-item__icon">
-									<!-- Icon placeholder -->
-								</div>
-								<h3 class="feature-item__title">Open source, fully</h3>
-								<p class="feature-item__description">
-									Caution is full-source bootstrapped, reproducible, and
-									completely open.
-								</p>
-							</div>
-						</div>
-
-						<!-- Glassmorphic CTA Button -->
-						<div style="display: flex; justify-content: center; margin-top: var(--spacing7);">
-							<a href="#" class="btn-glass">
-								Learn more
-								</svg>
-							</a>
-						</div>
-
-						<!-- Glassmorphic Light Cards Demo -->
-						<div style="display: flex; gap: var(--spacing6); margin-top: var(--spacing7); justify-content: center; flex-wrap: wrap;">
-							<!-- Standard Glass Card -->
-							<div class="card-glass" style="max-width: 400px; flex: 1 1 calc(50% - var(--spacing3));">
-								<h3 class="feature-item__title">Light card</h3>
-								<p class="feature-item__description">
-									We fit into your stack, not the other way around. Run Caution
-									on AWS, Azure, GCP, or bare metal.
-								</p>
-							</div>
-							
-						</div>
+						</div>						
 					</div>
 				</section>
 
+				<!-- How Section -->
+				<section class="how-section">
+					<div class="container">
+						<h1 class="section-title">How we bring compute into the open</h1>
+						<p class="section-subtext">
+							Caution combines three core technologies so you can verify software from the toolchain that builds it to the hardware that runs it.
+						</p>
+
+						<div class="how-subsection">
+							<div class="how-subsection__left how-subsection__left--frosted">
+								<div class="stacked-tiles">
+									<div class="stacked-tiles__tile"></div>
+									<div class="stacked-tiles__tile"></div>
+									<div class="stacked-tiles__tile"></div>
+									<div class="stacked-tiles__tile"></div>
+								</div>
+							</div>
+							<div class="how-subsection__right">
+								<span class="how-subsection__label">Integrity</span>
+								<h3 class="how-subsection__heading">Reproducible builds</h3>
+								<p class="how-subsection__description">
+									Builds that are bit for bit identical from the same source.
+									They ensure software integrity, catch supply chain tampering, and make opaque systems verifiable.
+								</p>
+							</div>
+						</div>
+
+						<div class="how-subsection">
+							<div class="how-subsection__right">
+								<span class="how-subsection__label">Isolation</span>
+								<h3 class="how-subsection__heading">Secure enclaves</h3>
+								<p class="how-subsection__description">
+									Hardware isolated execution that keeps external processes from touching sensitive workloads. Enclaves provide strong isolation, but isolation alone cannot prove what actually ran.
+								</p>
+							</div>
+							<div class="how-subsection__left how-subsection__left--image"></div>
+						</div>
+
+						<div class="how-subsection">
+							<div class="how-subsection__left"></div>
+							<div class="how-subsection__right">
+								<span class="how-subsection__label">Proof</span>
+								<h3 class="how-subsection__heading">Remote attestation</h3>
+								<p class="how-subsection__description">
+									Hardware attestation reports the measured state of a machine and gives cryptographic proof of what is running. It anchors trust in hardware, but does not verify how the software was built.
+								</p>
+							</div>
+						</div>
+
+					</div>
 				</section>
 
 
@@ -232,7 +527,7 @@
 
 			// Slow down hero video
 			if (heroVideo) {
-				heroVideo.playbackRate = 0.5; // Slow down to 50% speed
+				heroVideo.playbackRate = 0.1; // Slow down to 90% speed
 			}
 
 			// Set start times and playback speed for problem card videos
@@ -249,6 +544,242 @@
 						this.currentTime = startTime;
 						this.playbackRate = 0.5; // Slow down to 50% speed
 					});
+				});
+			});
+
+			// Scanner Card Stream Animation
+			document.addEventListener("DOMContentLoaded", function () {
+				const container = document.querySelector(".card-stream-container");
+				if (!container) return;
+
+				// Generate code snippet for ASCII layer
+				function generateCode(width, height) {
+					const codeSnippets = [
+						"const runtime = new TEE({ mode: 'verify' });",
+						"runtime.attestation.validate(proof);",
+						"if (hash === expected) { approve(); }",
+						"function attest(input) { return hash(input); }",
+						"const proof = tee.generateProof(workload);",
+						"verify(signature, publicKey, message);",
+						"enclave.execute(() => { return result; });",
+						"const sealed = encrypt(data, key);",
+						"measurement.extend(pcr, value);",
+						"if (attestation.valid) { proceed(); }",
+					];
+
+					let code = "";
+					for (let row = 0; row < height; row++) {
+						const snippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+						code += snippet.padEnd(width, " ") + "\\n";
+					}
+					return code;
+				}
+
+				// Create a card element
+				function createCard(index) {
+					const card = document.createElement("div");
+					card.className = "stream-card";
+
+					// Normal layer (black box)
+					const normalLayer = document.createElement("div");
+					normalLayer.className = "stream-card__normal";
+					normalLayer.style.background = "#0a0a0a";
+
+					// Glass layer (transparent glassmorphism)
+					const glassLayer = document.createElement("div");
+					glassLayer.className = "stream-card__glass card-glass";
+
+					card.appendChild(normalLayer);
+					card.appendChild(glassLayer);
+
+					return card;
+				}
+
+				// Populate cards
+				for (let i = 0; i < 20; i++) {
+					container.appendChild(createCard(i));
+				}
+
+				// Update clipping based on scanner position
+				function updateClipping() {
+					const scannerX = window.innerWidth / 2;
+					const scannerWidth = 8;
+					const scannerLeft = scannerX - scannerWidth / 2;
+					const scannerRight = scannerX + scannerWidth / 2;
+
+					document.querySelectorAll(".stream-card").forEach((card) => {
+						const rect = card.getBoundingClientRect();
+						const cardLeft = rect.left;
+						const cardRight = rect.right;
+						const cardWidth = rect.width;
+
+						const normalLayer = card.querySelector(".stream-card__normal");
+						const glassLayer = card.querySelector(".stream-card__glass");
+
+						if (!normalLayer || !glassLayer) return;
+
+						if (cardLeft < scannerRight && cardRight > scannerLeft) {
+							// Scanner is intersecting this card
+							const intersectStart = Math.max(scannerLeft, cardLeft);
+							const revealedWidth = intersectStart - cardLeft;
+							const revealPercent = (revealedWidth / cardWidth) * 100;
+
+							// Glass layer: clip from left as scanner passes
+							glassLayer.style.setProperty("--clip-right", `${revealPercent}%`);
+							// Normal layer: reveal from left as scanner passes
+							normalLayer.style.setProperty("--clip-left", `${revealPercent}%`);
+						} else {
+							// Scanner is not intersecting
+							if (cardRight <= scannerLeft) {
+								// Card is completely to the left of scanner - fully black
+								glassLayer.style.setProperty("--clip-right", "100%");
+								normalLayer.style.setProperty("--clip-left", "100%");
+							} else if (cardLeft >= scannerRight) {
+								// Card is completely to the right of scanner - fully glass
+								glassLayer.style.setProperty("--clip-right", "0%");
+								normalLayer.style.setProperty("--clip-left", "0%");
+							}
+						}
+					});
+
+					requestAnimationFrame(updateClipping);
+				}
+
+				updateClipping();
+			});
+
+			// Scanner Card Stream V2 Animation
+			document.addEventListener("DOMContentLoaded", function () {
+				const container = document.querySelector(".card-stream-container-v2");
+				const scannerLine = document.querySelector(".scanner-line-v2");
+				if (!container || !scannerLine) return;
+
+				const labels = ["Legacy cloud", "Niche providers", "Caution"];
+
+				// Create a card element
+				function createCardV2(index) {
+					const card = document.createElement("div");
+					card.className = "stream-card-v2";
+
+					// Normal layer (black box)
+					const normalLayer = document.createElement("div");
+					normalLayer.className = "stream-card-v2__normal";
+					normalLayer.style.background = "#0a0a0a";
+
+					// Glass layer (transparent glassmorphism)
+					const glassLayer = document.createElement("div");
+					glassLayer.className = "stream-card-v2__glass card-glass";
+
+					// Label
+					const label = document.createElement("div");
+					label.className = "stream-card-v2__label";
+					label.textContent = labels[index];
+
+					card.appendChild(normalLayer);
+					card.appendChild(glassLayer);
+					card.appendChild(label);
+
+					return card;
+				}
+
+				// Populate 3 cards
+				for (let i = 0; i < 3; i++) {
+					container.appendChild(createCardV2(i));
+				}
+
+				// Update clipping based on scanner position
+				function updateClippingV2() {
+					// Get scanner position from CSS animation
+					const scannerRect = scannerLine.getBoundingClientRect();
+					const scannerX = scannerRect.left + scannerRect.width / 2;
+					const scannerWidth = 8;
+					const scannerLeft = scannerX - scannerWidth / 2;
+					const scannerRight = scannerX + scannerWidth / 2;
+
+					document.querySelectorAll(".stream-card-v2").forEach((card) => {
+						const rect = card.getBoundingClientRect();
+						const cardLeft = rect.left;
+						const cardRight = rect.right;
+						const cardWidth = rect.width;
+
+						const normalLayer = card.querySelector(".stream-card-v2__normal");
+						const glassLayer = card.querySelector(".stream-card-v2__glass");
+
+						if (!normalLayer || !glassLayer) return;
+
+						if (cardLeft < scannerRight && cardRight > scannerLeft) {
+							// Scanner is intersecting this card
+							const intersectStart = Math.max(scannerLeft, cardLeft);
+							const revealedWidth = intersectStart - cardLeft;
+							const revealPercent = (revealedWidth / cardWidth) * 100;
+
+							// Glass layer: clip from left as scanner passes
+							glassLayer.style.setProperty("--clip-right", `${revealPercent}%`);
+							// Normal layer: reveal from left as scanner passes
+							normalLayer.style.setProperty("--clip-left", `${revealPercent}%`);
+						} else {
+							// Scanner is not intersecting
+							if (cardRight <= scannerLeft) {
+								// Card is completely to the left of scanner - fully black
+								glassLayer.style.setProperty("--clip-right", "100%");
+								normalLayer.style.setProperty("--clip-left", "100%");
+							} else if (cardLeft >= scannerRight) {
+								// Card is completely to the right of scanner - fully glass
+								glassLayer.style.setProperty("--clip-right", "0%");
+								normalLayer.style.setProperty("--clip-left", "0%");
+							}
+						}
+					});
+
+					requestAnimationFrame(updateClippingV2);
+				}
+
+				updateClippingV2();
+			});
+
+			// Runtime Boxes Scan Reveal Animation
+			document.addEventListener("DOMContentLoaded", function () {
+				const runtimeBoxes = document.querySelectorAll(".runtime-box");
+
+				// Trigger animation on hover/mouseenter
+				runtimeBoxes.forEach(function (box) {
+					box.addEventListener("mouseenter", function () {
+						const content = this.querySelector(".runtime-box__content");
+						if (content) {
+							content.style.animationPlayState = "running";
+						}
+					});
+
+					// Optional: Reset on mouse leave for re-triggering
+					box.addEventListener("mouseleave", function () {
+						const content = this.querySelector(".runtime-box__content");
+						if (content) {
+							// Reset animation
+							content.style.animation = "none";
+							setTimeout(function () {
+								content.style.animation = "";
+							}, 10);
+						}
+					});
+				});
+
+				// Optional: Trigger automatically on scroll into view
+				const observer = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								const content = entry.target.querySelector(".runtime-box__content");
+								if (content) {
+									content.style.animationPlayState = "running";
+								}
+							}
+						});
+					},
+					{ threshold: 0.3 }
+				);
+
+				runtimeBoxes.forEach(function (box) {
+					observer.observe(box);
 				});
 			});
 		</script>
